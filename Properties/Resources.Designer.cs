@@ -103,6 +103,16 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap endereco_do_website_1 {
+            get {
+                object obj = ResourceManager.GetObject("endereco-do-website 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logoFitness {
             get {
                 object obj = ResourceManager.GetObject("logoFitness", resourceCulture);

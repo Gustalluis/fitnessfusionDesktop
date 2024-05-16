@@ -84,7 +84,7 @@
             // pctLogin
             // 
             this.pctLogin.BackgroundImage = global::fitnessfusion.Properties.Resources.telalogin;
-            this.pctLogin.Location = new System.Drawing.Point(0, 0);
+            this.pctLogin.Location = new System.Drawing.Point(-8, 3);
             this.pctLogin.Name = "pctLogin";
             this.pctLogin.Size = new System.Drawing.Size(505, 500);
             this.pctLogin.TabIndex = 0;

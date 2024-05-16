@@ -186,5 +186,8 @@
   <ItemGroup>
     <None Include="img\voltar1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\endereco-do-website 1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

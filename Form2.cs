@@ -17,14 +17,6 @@ namespace fitnessfusion
             InitializeComponent();
         }
 
-        private void btnVoltar_MouseEnter(object sender, EventArgs e)
-        {
-            btnVoltar.BackgroundImage = Properties.Resources.voltar1;
-        }
-
-        private void btnVoltar_MouseLeave(object sender, EventArgs e)
-        {
-            btnVoltar.BackgroundImage = Properties.Resources.voltar;
-        }
+        
     }
 }
