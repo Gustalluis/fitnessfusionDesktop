@@ -118,29 +118,38 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="sair1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\sair1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="silhueta-de-multiplos-usuarios 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\silhueta-de-multiplos-usuarios 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="cadeado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\cadeado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="endereco-do-website 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\endereco-do-website 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="email" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnEntrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\btnEntrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logoFitnessvazio" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\logoFitnessvazio.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="voltar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\voltar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="academia 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\academia 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="btnEntrar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\btnEntrar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="opcao-de-sair 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\opcao-de-sair 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="agendar 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\agendar 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cadeado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\cadeado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoFitness" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\logoFitness.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoFitnessvazio1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\logoFitnessvazio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="voltar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\voltar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="carteira-de-identidade 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\carteira-de-identidade 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="voltar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\voltar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,13 +157,22 @@
   <data name="telalogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\telalogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoFitnessvazio1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\logoFitnessvazio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnEntrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\btnEntrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logoFitness" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\logoFitness.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sair1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\sair1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="endereco-do-website 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\endereco-do-website 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="sair" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\sair.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="email" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logoFitnessvazio" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\logoFitnessvazio.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ajuda 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\ajuda 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

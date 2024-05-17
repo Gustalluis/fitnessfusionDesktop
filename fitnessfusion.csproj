@@ -189,5 +189,23 @@
   <ItemGroup>
     <None Include="img\endereco-do-website 1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="img\silhueta-de-multiplos-usuarios 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\academia 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\carteira-de-identidade 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\opcao-de-sair 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\agendar 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\ajuda 1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
