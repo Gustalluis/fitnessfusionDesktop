@@ -50,6 +50,9 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
             this.pnlCad = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.mtbTelefone = new System.Windows.Forms.MaskedTextBox();
+            this.pnltele = new System.Windows.Forms.Panel();
             this.pnlNome.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -58,6 +61,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).BeginInit();
             this.panel6.SuspendLayout();
             this.pnlCad.SuspendLayout();
+            this.pnltele.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCadastroTitulo
@@ -156,7 +160,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.lblEmail.Location = new System.Drawing.Point(21, 191);
+            this.lblEmail.Location = new System.Drawing.Point(21, 266);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(83, 25);
             this.lblEmail.TabIndex = 7;
@@ -175,7 +179,7 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
             this.panel3.Controls.Add(this.txtEmail);
-            this.panel3.Location = new System.Drawing.Point(24, 219);
+            this.panel3.Location = new System.Drawing.Point(24, 294);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(406, 30);
             this.panel3.TabIndex = 8;
@@ -184,18 +188,18 @@
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
             this.panel5.Controls.Add(this.txtSenha);
-            this.panel5.Location = new System.Drawing.Point(24, 294);
+            this.panel5.Location = new System.Drawing.Point(473, 294);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(406, 30);
+            this.panel5.Size = new System.Drawing.Size(298, 30);
             this.panel5.TabIndex = 10;
             // 
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(3, 2);
+            this.txtSenha.Location = new System.Drawing.Point(0, 1);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(400, 26);
+            this.txtSenha.Size = new System.Drawing.Size(295, 26);
             this.txtSenha.TabIndex = 3;
             // 
             // lblSenha
@@ -203,7 +207,7 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.lblSenha.Location = new System.Drawing.Point(21, 266);
+            this.lblSenha.Location = new System.Drawing.Point(470, 266);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(81, 25);
             this.lblSenha.TabIndex = 9;
@@ -270,6 +274,8 @@
             // 
             this.pnlCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
             this.pnlCad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCad.Controls.Add(this.pnltele);
+            this.pnlCad.Controls.Add(this.label1);
             this.pnlCad.Controls.Add(this.lblNome);
             this.pnlCad.Controls.Add(this.lblEndereco);
             this.pnlCad.Controls.Add(this.lblStatus);
@@ -285,6 +291,36 @@
             this.pnlCad.Name = "pnlCad";
             this.pnlCad.Size = new System.Drawing.Size(1101, 483);
             this.pnlCad.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.label1.Location = new System.Drawing.Point(22, 188);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 25);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "TELEFONE";
+            // 
+            // mtbTelefone
+            // 
+            this.mtbTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtbTelefone.Font = new System.Drawing.Font("Bahnschrift Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbTelefone.Location = new System.Drawing.Point(2, 4);
+            this.mtbTelefone.Mask = "(00) 00000-0000";
+            this.mtbTelefone.Name = "mtbTelefone";
+            this.mtbTelefone.Size = new System.Drawing.Size(319, 23);
+            this.mtbTelefone.TabIndex = 16;
+            // 
+            // pnltele
+            // 
+            this.pnltele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.pnltele.Controls.Add(this.mtbTelefone);
+            this.pnltele.Location = new System.Drawing.Point(22, 216);
+            this.pnltele.Name = "pnltele";
+            this.pnltele.Size = new System.Drawing.Size(322, 32);
+            this.pnltele.TabIndex = 9;
             // 
             // frmCadastro
             // 
@@ -313,6 +349,8 @@
             this.panel6.ResumeLayout(false);
             this.pnlCad.ResumeLayout(false);
             this.pnlCad.PerformLayout();
+            this.pnltele.ResumeLayout(false);
+            this.pnltele.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -340,5 +378,8 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Panel pnlCad;
+        private System.Windows.Forms.MaskedTextBox mtbTelefone;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pnltele;
     }
 }
