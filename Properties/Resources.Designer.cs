@@ -73,6 +73,16 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap adicionar_botao_2 {
+            get {
+                object obj = ResourceManager.GetObject("adicionar-botao 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap agendar_1 {
             get {
                 object obj = ResourceManager.GetObject("agendar 1", resourceCulture);
@@ -186,6 +196,16 @@ namespace fitnessfusion.Properties {
         internal static System.Drawing.Bitmap opcao_de_sair_3 {
             get {
                 object obj = ResourceManager.GetObject("opcao-de-sair 3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pesquisa_de_lupa_2 {
+            get {
+                object obj = ResourceManager.GetObject("pesquisa-de-lupa 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

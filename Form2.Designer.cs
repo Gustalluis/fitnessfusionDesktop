@@ -71,6 +71,7 @@
             this.BtnCliente.Text = "CLIENTE";
             this.BtnCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnCliente.UseVisualStyleBackColor = false;
+            this.BtnCliente.Click += new System.EventHandler(this.BtnCliente_Click);
             // 
             // btnEquipamento
             // 
