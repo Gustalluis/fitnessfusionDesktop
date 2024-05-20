@@ -1,6 +1,6 @@
 ﻿namespace fitnessfusion
 {
-    partial class frmCliente
+    partial class frmMenuCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuCliente));
             this.lblMenuCliente = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
@@ -198,7 +198,7 @@
             this.btnSair.TabIndex = 13;
             this.btnSair.UseVisualStyleBackColor = false;
             // 
-            // frmCliente
+            // frmMenuCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -215,7 +215,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmCliente";
+            this.Name = "frmMenuCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             this.panel1.ResumeLayout(false);

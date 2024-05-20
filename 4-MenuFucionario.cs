@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace fitnessfusion
 {
-    public partial class frmCadastro : Form
+    public partial class _3_SubMenuFucionario : Form
     {
-        public frmCadastro()
+        public _3_SubMenuFucionario()
         {
             InitializeComponent();
         }
-
-       
     }
 }

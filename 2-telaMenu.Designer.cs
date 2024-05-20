@@ -36,7 +36,7 @@
             this.btnFuncionarios = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.dgvAgenda = new System.Windows.Forms.DataGridView();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
             this.pnlUsuario = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMenu = new System.Windows.Forms.Label();
@@ -146,18 +146,19 @@
             this.dgvAgenda.Size = new System.Drawing.Size(610, 410);
             this.dgvAgenda.TabIndex = 8;
             // 
-            // button5
+            // btnSair
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
-            this.button5.BackgroundImage = global::fitnessfusion.Properties.Resources.voltar;
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(1159, 3);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(40, 40);
-            this.button5.TabIndex = 9;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
+            this.btnSair.BackgroundImage = global::fitnessfusion.Properties.Resources.voltar;
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Location = new System.Drawing.Point(1159, 3);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(40, 40);
+            this.btnSair.TabIndex = 9;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // pnlUsuario
             // 
@@ -296,7 +297,7 @@
             this.Controls.Add(this.pnlmenu);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlUsuario);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnFuncionarios);
             this.Controls.Add(this.btnSite);
             this.Controls.Add(this.btnEquipamento);
@@ -322,7 +323,7 @@
         private System.Windows.Forms.Button btnFuncionarios;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.DataGridView dgvAgenda;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel pnlUsuario;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblMenu;
