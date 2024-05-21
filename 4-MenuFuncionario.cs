@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace fitnessfusion
 {
-    public partial class _3_SubMenuFucionario : Form
+    public partial class frmMenuFuncionario : Form
     {
-        public _3_SubMenuFucionario()
+        public frmMenuFuncionario()
         {
             InitializeComponent();
         }
