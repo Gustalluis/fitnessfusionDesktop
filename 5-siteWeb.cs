@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace fitnessfusion
 {
-    public partial class frmMenuFuncionario : Form
+    public partial class _5_siteWeb : Form
     {
-        public frmMenuFuncionario()
+        public _5_siteWeb()
         {
             InitializeComponent();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            new frmMenu().Show(this);
-            Hide();
-        }
-
-        private void btnCadastrar_Click(object sender, EventArgs e)
-        {
-            new frmMenuCadastroFuncionario().Show(this);
+            new frmMenu().Show();
             Hide();
         }
     }

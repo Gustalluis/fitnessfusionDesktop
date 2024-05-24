@@ -28,115 +28,175 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblMenuFuncionario = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cbmCliente = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMenuCliente = new System.Windows.Forms.Label();
+            this.pctPesquisa = new System.Windows.Forms.PictureBox();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPesquisa)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblMenuFuncionario
+            // btnSair
             // 
-            this.lblMenuFuncionario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
-            this.lblMenuFuncionario.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenuFuncionario.Location = new System.Drawing.Point(356, 20);
-            this.lblMenuFuncionario.Name = "lblMenuFuncionario";
-            this.lblMenuFuncionario.Size = new System.Drawing.Size(500, 38);
-            this.lblMenuFuncionario.TabIndex = 1;
-            this.lblMenuFuncionario.Text = "MENU FUNCIONARIO";
-            this.lblMenuFuncionario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
+            this.btnSair.BackgroundImage = global::fitnessfusion.Properties.Resources.voltar;
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Location = new System.Drawing.Point(1161, 1);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(40, 40);
+            this.btnSair.TabIndex = 22;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // button1
+            // btnExcluir
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(78, 112);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(330, 210);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "CADASTRO FUNCIONARIO";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
+            this.btnExcluir.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.btnExcluir.FlatAppearance.BorderSize = 2;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExcluir.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.Location = new System.Drawing.Point(1015, 533);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(170, 37);
+            this.btnExcluir.TabIndex = 20;
+            this.btnExcluir.Text = "EXCLUIR";
+            this.btnExcluir.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnAlterar
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.button2.Location = new System.Drawing.Point(786, 112);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(330, 210);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "AGENDA-TREINO";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
+            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.btnAlterar.FlatAppearance.BorderSize = 2;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Location = new System.Drawing.Point(495, 533);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(170, 37);
+            this.btnAlterar.TabIndex = 19;
+            this.btnAlterar.Text = "ALTERAR";
+            this.btnAlterar.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnCadastrar
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.button3.Location = new System.Drawing.Point(431, 112);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(330, 210);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "TREINO CLIENTE";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
+            this.btnCadastrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnCadastrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.btnCadastrar.FlatAppearance.BorderSize = 2;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(15, 533);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(170, 37);
+            this.btnCadastrar.TabIndex = 18;
+            this.btnCadastrar.Text = "CADASTRAR";
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // button4
+            // panel4
             // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.button4.Location = new System.Drawing.Point(431, 350);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(330, 210);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "AJUDA";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = false;
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
+            this.panel4.Controls.Add(this.dgvCliente);
+            this.panel4.Location = new System.Drawing.Point(15, 99);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1170, 415);
+            this.panel4.TabIndex = 17;
             // 
-            // button5
+            // dgvCliente
             // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.button5.Location = new System.Drawing.Point(786, 350);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(330, 210);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "AVALIACAO CLIENTE";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = false;
+            this.dgvCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.Location = new System.Drawing.Point(4, 3);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.Size = new System.Drawing.Size(1161, 410);
+            this.dgvCliente.TabIndex = 6;
             // 
-            // button6
+            // panel3
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.button6.Location = new System.Drawing.Point(78, 350);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(330, 210);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "CONTATO";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = false;
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
+            this.panel3.Controls.Add(this.cbmCliente);
+            this.panel3.Location = new System.Drawing.Point(993, 53);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(177, 40);
+            this.panel3.TabIndex = 16;
+            // 
+            // cbmCliente
+            // 
+            this.cbmCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbmCliente.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmCliente.FormattingEnabled = true;
+            this.cbmCliente.Items.AddRange(new object[] {
+            "ATIVO",
+            "DESATIVADO"});
+            this.cbmCliente.Location = new System.Drawing.Point(4, 5);
+            this.cbmCliente.Name = "cbmCliente";
+            this.cbmCliente.Size = new System.Drawing.Size(170, 31);
+            this.cbmCliente.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
+            this.panel2.Controls.Add(this.txtPesquisa);
+            this.panel2.Location = new System.Drawing.Point(52, 58);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(590, 35);
+            this.panel2.TabIndex = 15;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPesquisa.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisa.Location = new System.Drawing.Point(3, 4);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(584, 26);
+            this.txtPesquisa.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
+            this.panel1.Controls.Add(this.lblMenuCliente);
+            this.panel1.Location = new System.Drawing.Point(283, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(600, 40);
+            this.panel1.TabIndex = 14;
+            // 
+            // lblMenuCliente
+            // 
+            this.lblMenuCliente.BackColor = System.Drawing.Color.White;
+            this.lblMenuCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblMenuCliente.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMenuCliente.Location = new System.Drawing.Point(4, 5);
+            this.lblMenuCliente.Name = "lblMenuCliente";
+            this.lblMenuCliente.Size = new System.Drawing.Size(590, 30);
+            this.lblMenuCliente.TabIndex = 0;
+            this.lblMenuCliente.Text = "MENU FUNCIONARIO";
+            this.lblMenuCliente.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pctPesquisa
+            // 
+            this.pctPesquisa.Image = global::fitnessfusion.Properties.Resources.lupa_pesquisa;
+            this.pctPesquisa.Location = new System.Drawing.Point(10, 58);
+            this.pctPesquisa.Name = "pctPesquisa";
+            this.pctPesquisa.Size = new System.Drawing.Size(39, 35);
+            this.pctPesquisa.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctPesquisa.TabIndex = 21;
+            this.pctPesquisa.TabStop = false;
             // 
             // frmMenuFuncionario
             // 
@@ -144,29 +204,44 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(1200, 600);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblMenuFuncionario);
+            this.Controls.Add(this.btnSair);
+            this.Controls.Add(this.pctPesquisa);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnAlterar);
+            this.Controls.Add(this.btnCadastrar);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMenuFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "_4_MenuFuncionario";
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctPesquisa)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblMenuFuncionario;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.PictureBox pctPesquisa;
+        private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btnCadastrar;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox cbmCliente;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblMenuCliente;
     }
 }

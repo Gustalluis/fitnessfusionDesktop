@@ -63,9 +63,9 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap academia_1 {
+        internal static System.Drawing.Bitmap agenda {
             get {
-                object obj = ResourceManager.GetObject("academia 1", resourceCulture);
+                object obj = ResourceManager.GetObject("agenda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap adicionar_botao_2 {
+        internal static System.Drawing.Bitmap agendaTreino {
             get {
-                object obj = ResourceManager.GetObject("adicionar-botao 2", resourceCulture);
+                object obj = ResourceManager.GetObject("agendaTreino", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap agendar_1 {
+        internal static System.Drawing.Bitmap ajuda {
             get {
-                object obj = ResourceManager.GetObject("agendar 1", resourceCulture);
+                object obj = ResourceManager.GetObject("ajuda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ajuda_1 {
+        internal static System.Drawing.Bitmap banner {
             get {
-                object obj = ResourceManager.GetObject("ajuda 1", resourceCulture);
+                object obj = ResourceManager.GetObject("banner", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,16 +123,6 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cadastroFuncionario {
-            get {
-                object obj = ResourceManager.GetObject("cadastroFuncionario", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap cadeado {
             get {
                 object obj = ResourceManager.GetObject("cadeado", resourceCulture);
@@ -143,9 +133,39 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap carteira_de_identidade_1 {
+        internal static System.Drawing.Bitmap cliente {
             get {
-                object obj = ResourceManager.GetObject("carteira-de-identidade 1", resourceCulture);
+                object obj = ResourceManager.GetObject("cliente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contatoMenu {
+            get {
+                object obj = ResourceManager.GetObject("contatoMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contatos {
+            get {
+                object obj = ResourceManager.GetObject("contatos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap contatos__1_ {
+            get {
+                object obj = ResourceManager.GetObject("contatos__1_", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +183,19 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap endereco_do_website_1 {
+        internal static System.Drawing.Bitmap feedback_do_cliente {
             get {
-                object obj = ResourceManager.GetObject("endereco-do-website 1", resourceCulture);
+                object obj = ResourceManager.GetObject("feedback_do_cliente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap funcionario {
+            get {
+                object obj = ResourceManager.GetObject("funcionario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -181,21 +211,21 @@ namespace fitnessfusion.Properties {
         }
         
         /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Icon semelhante a (Ícone).
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Icon logoFitnessvazio {
+        internal static System.Drawing.Bitmap logoFitnessMenulogo {
+            get {
+                object obj = ResourceManager.GetObject("logoFitnessMenulogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logoFitnessvazio {
             get {
                 object obj = ResourceManager.GetObject("logoFitnessvazio", resourceCulture);
-                return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap logoFitnessvazio1 {
-            get {
-                object obj = ResourceManager.GetObject("logoFitnessvazio1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +233,9 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap opcao_de_sair_3 {
+        internal static System.Drawing.Bitmap lupa_pesquisa {
             get {
-                object obj = ResourceManager.GetObject("opcao-de-sair 3", resourceCulture);
+                object obj = ResourceManager.GetObject("lupa_pesquisa", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +243,19 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pesquisa_de_lupa_2 {
+        internal static System.Drawing.Bitmap modalidadeMenu {
             get {
-                object obj = ResourceManager.GetObject("pesquisa-de-lupa 2", resourceCulture);
+                object obj = ResourceManager.GetObject("modalidadeMenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap postagem {
+            get {
+                object obj = ResourceManager.GetObject("postagem", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,9 +283,19 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap silhueta_de_multiplos_usuarios_1 {
+        internal static System.Drawing.Bitmap sairHover {
             get {
-                object obj = ResourceManager.GetObject("silhueta-de-multiplos-usuarios 1", resourceCulture);
+                object obj = ResourceManager.GetObject("sairHover", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap siteweb {
+            get {
+                object obj = ResourceManager.GetObject("siteweb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,6 +313,16 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap treinomenu {
+            get {
+                object obj = ResourceManager.GetObject("treinomenu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap voltar {
             get {
                 object obj = ResourceManager.GetObject("voltar", resourceCulture);
@@ -273,9 +333,9 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap voltar1 {
+        internal static System.Drawing.Bitmap voltarHover {
             get {
-                object obj = ResourceManager.GetObject("voltar1", resourceCulture);
+                object obj = ResourceManager.GetObject("voltarHover", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

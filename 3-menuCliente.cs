@@ -16,11 +16,17 @@ namespace fitnessfusion
         {
             InitializeComponent();
         }
-
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            new frmMenu().Show(this);
+            Hide();
+        }
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             new frmCadastro().Show(this);
             Hide();
         }
+
+        
     }
 }

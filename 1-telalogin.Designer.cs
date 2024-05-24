@@ -30,26 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.pctLogin = new System.Windows.Forms.PictureBox();
             this.pnlSenha = new System.Windows.Forms.Panel();
             this.txtSenha = new System.Windows.Forms.TextBox();
-            this.pctSenha = new System.Windows.Forms.PictureBox();
             this.pnlEmail = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.pctEmail = new System.Windows.Forms.PictureBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.btnEntrar = new System.Windows.Forms.Button();
+            this.pctLogin = new System.Windows.Forms.PictureBox();
+            this.pctSenha = new System.Windows.Forms.PictureBox();
+            this.pctEmail = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogin)).BeginInit();
             this.pnlSenha.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctSenha)).BeginInit();
             this.pnlEmail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSenha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmail)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,15 +81,6 @@
             this.splitContainer1.TabIndex = 0;
             this.splitContainer1.TabStop = false;
             // 
-            // pctLogin
-            // 
-            this.pctLogin.BackgroundImage = global::fitnessfusion.Properties.Resources.telalogin;
-            this.pctLogin.Location = new System.Drawing.Point(-8, 3);
-            this.pctLogin.Name = "pctLogin";
-            this.pctLogin.Size = new System.Drawing.Size(505, 500);
-            this.pctLogin.TabIndex = 0;
-            this.pctLogin.TabStop = false;
-            // 
             // pnlSenha
             // 
             this.pnlSenha.BackColor = System.Drawing.Color.White;
@@ -106,19 +97,10 @@
             this.txtSenha.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.Location = new System.Drawing.Point(60, 10);
             this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(367, 33);
             this.txtSenha.TabIndex = 1;
             this.txtSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSenha_KeyPress);
-            // 
-            // pctSenha
-            // 
-            this.pctSenha.BackgroundImage = global::fitnessfusion.Properties.Resources.cadeado;
-            this.pctSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctSenha.Location = new System.Drawing.Point(0, 0);
-            this.pctSenha.Name = "pctSenha";
-            this.pctSenha.Size = new System.Drawing.Size(55, 50);
-            this.pctSenha.TabIndex = 8;
-            this.pctSenha.TabStop = false;
             // 
             // pnlEmail
             // 
@@ -139,16 +121,6 @@
             this.txtEmail.Size = new System.Drawing.Size(367, 33);
             this.txtEmail.TabIndex = 0;
             this.txtEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEmail_KeyPress);
-            // 
-            // pctEmail
-            // 
-            this.pctEmail.BackgroundImage = global::fitnessfusion.Properties.Resources.email;
-            this.pctEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pctEmail.Location = new System.Drawing.Point(0, 0);
-            this.pctEmail.Name = "pctEmail";
-            this.pctEmail.Size = new System.Drawing.Size(55, 50);
-            this.pctEmail.TabIndex = 7;
-            this.pctEmail.TabStop = false;
             // 
             // lblSenha
             // 
@@ -193,6 +165,8 @@
             this.btnSair.BackgroundImage = global::fitnessfusion.Properties.Resources.sair;
             this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(8)))), ((int)(((byte)(22)))));
+            this.btnSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(8)))), ((int)(((byte)(22)))));
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.Location = new System.Drawing.Point(453, 12);
             this.btnSair.Name = "btnSair";
@@ -209,6 +183,8 @@
             this.btnEntrar.BackgroundImage = global::fitnessfusion.Properties.Resources.btnEntrar;
             this.btnEntrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnEntrar.FlatAppearance.BorderSize = 0;
+            this.btnEntrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(8)))), ((int)(((byte)(22)))));
+            this.btnEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(8)))), ((int)(((byte)(22)))));
             this.btnEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEntrar.Location = new System.Drawing.Point(200, 410);
             this.btnEntrar.Name = "btnEntrar";
@@ -218,6 +194,33 @@
             this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             this.btnEntrar.MouseEnter += new System.EventHandler(this.btnEntrar_MouseEnter);
             this.btnEntrar.MouseLeave += new System.EventHandler(this.btnEntrar_MouseLeave);
+            // 
+            // pctLogin
+            // 
+            this.pctLogin.BackgroundImage = global::fitnessfusion.Properties.Resources.telalogin;
+            this.pctLogin.Location = new System.Drawing.Point(-8, 3);
+            this.pctLogin.Name = "pctLogin";
+            this.pctLogin.Size = new System.Drawing.Size(505, 500);
+            this.pctLogin.TabIndex = 0;
+            this.pctLogin.TabStop = false;
+            // 
+            // pctSenha
+            // 
+            this.pctSenha.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctSenha.Location = new System.Drawing.Point(0, 0);
+            this.pctSenha.Name = "pctSenha";
+            this.pctSenha.Size = new System.Drawing.Size(55, 50);
+            this.pctSenha.TabIndex = 8;
+            this.pctSenha.TabStop = false;
+            // 
+            // pctEmail
+            // 
+            this.pctEmail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pctEmail.Location = new System.Drawing.Point(0, 0);
+            this.pctEmail.Name = "pctEmail";
+            this.pctEmail.Size = new System.Drawing.Size(55, 50);
+            this.pctEmail.TabIndex = 7;
+            this.pctEmail.TabStop = false;
             // 
             // frmLogin
             // 
@@ -236,12 +239,12 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctLogin)).EndInit();
             this.pnlSenha.ResumeLayout(false);
             this.pnlSenha.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctSenha)).EndInit();
             this.pnlEmail.ResumeLayout(false);
             this.pnlEmail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctLogin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctSenha)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctEmail)).EndInit();
             this.ResumeLayout(false);
 

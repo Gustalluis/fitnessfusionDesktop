@@ -9,9 +9,9 @@ namespace fitnessfusion
     public static class variaveis
     {
         //GERAL
-
+        public static string funcao;
         //MENU
-
+        
         //CLIENTES
 
         //FUNCIONARIOS

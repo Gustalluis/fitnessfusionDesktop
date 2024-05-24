@@ -104,6 +104,18 @@
     <Compile Include="4-MenuFuncionario.Designer.cs">
       <DependentUpon>4-MenuFuncionario.cs</DependentUpon>
     </Compile>
+    <Compile Include="4.1-MenuCadastroFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="4.1-MenuCadastroFuncionario.Designer.cs">
+      <DependentUpon>4.1-MenuCadastroFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5-siteWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5-siteWeb.Designer.cs">
+      <DependentUpon>5-siteWeb.cs</DependentUpon>
+    </Compile>
     <Compile Include="banco.cs" />
     <Compile Include="1-telalogin.cs">
       <SubType>Form</SubType>
@@ -131,6 +143,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="variaveis.cs" />
     <EmbeddedResource Include="1-telalogin.resx">
       <DependentUpon>1-telalogin.cs</DependentUpon>
@@ -147,16 +164,17 @@
     <EmbeddedResource Include="4-MenuFuncionario.resx">
       <DependentUpon>4-MenuFuncionario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="4.1-MenuCadastroFuncionario.resx">
+      <DependentUpon>4.1-MenuCadastroFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5-siteWeb.resx">
+      <DependentUpon>5-siteWeb.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -172,76 +190,88 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\logoFitness.png" />
+    <None Include="img\imagens-gerais\lupa_pesquisa.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\logoFitnessvazio.ico" />
+    <None Include="img\imagens-gerais\sair.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\logoFitnessvazio.png" />
+    <None Include="img\imagens-gerais\sairHover.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\telalogin.png" />
+    <None Include="img\imagens-gerais\voltar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\btnEntrar.png" />
+    <None Include="img\imagens-gerais\voltarHover.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\btnEntrar1.png" />
+    <None Include="Resources\sair.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\cadeado.png" />
+    <None Include="img\login\btnEntrar.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\email.png" />
+    <None Include="img\login\btnEntrar1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\sair.png" />
+    <None Include="img\login\cadeado.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\sair1.png" />
+    <None Include="img\login\contatos %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\voltar - Copia.png" />
+    <None Include="img\login\contatos.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\voltar1 - Copia.png" />
+    <None Include="img\login\email.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\voltar.png" />
+    <None Include="img\login\logoFitness.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\voltar1.png" />
+    <None Include="img\login\logoFitnessvazio.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\endereco-do-website 1.png" />
+    <None Include="img\login\telalogin.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\silhueta-de-multiplos-usuarios 1.png" />
+    <None Include="img\menuPrincipal\agenda.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\academia 1.png" />
+    <None Include="img\menuPrincipal\agendaTreino.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\carteira-de-identidade 1.png" />
+    <None Include="img\menuPrincipal\ajuda.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\opcao-de-sair 3.png" />
+    <None Include="img\menuPrincipal\cliente.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\agendar 1.png" />
+    <None Include="img\menuPrincipal\contatoMenu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\ajuda 1.png" />
+    <None Include="img\menuPrincipal\funcionario.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\pesquisa-de-lupa 2.png" />
+    <None Include="img\menuPrincipal\logoFitnessMenulogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\adicionar-botao 2.png" />
+    <None Include="img\menuPrincipal\modalidadeMenu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\menu-funcionario\cadastroFuncionario.png" />
+    <None Include="img\menuPrincipal\siteweb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\menuPrincipal\treinomenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\siteWeb\banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\siteWeb\feedback-do-cliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="img\siteWeb\postagem.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
