@@ -10,6 +10,7 @@ namespace fitnessfusion
     {
         //GERAL
         public static string funcao;
+        public static int LinhaSelecionada;
         //MENU
         
         //CLIENTES

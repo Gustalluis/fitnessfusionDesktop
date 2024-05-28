@@ -39,7 +39,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnSair = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.pctPesquisa = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
@@ -163,20 +163,21 @@
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // button1
+            // btnAlterar
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.button1.FlatAppearance.BorderSize = 2;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(527, 551);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(170, 37);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "ALTERAR";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAlterar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
+            this.btnAlterar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAlterar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.btnAlterar.FlatAppearance.BorderSize = 2;
+            this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAlterar.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAlterar.Location = new System.Drawing.Point(527, 551);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(170, 37);
+            this.btnAlterar.TabIndex = 14;
+            this.btnAlterar.Text = "ALTERAR";
+            this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // pctPesquisa
             // 
@@ -195,7 +196,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(1200, 600);
             this.Controls.Add(this.lblMenuCliente);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.pctPesquisa);
             this.Controls.Add(this.btnExcluir);
@@ -208,6 +209,7 @@
             this.Name = "frmMenuCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
+            this.Load += new System.EventHandler(this.frmMenuCliente_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
@@ -231,6 +233,6 @@
         private System.Windows.Forms.PictureBox pctPesquisa;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }

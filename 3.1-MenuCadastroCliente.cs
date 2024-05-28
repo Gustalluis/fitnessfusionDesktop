@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -39,6 +40,18 @@ namespace fitnessfusion
             {
                 pnlAvaliacao.Visible = false;
                 btnSalvar.Visible = true;
+            }
+        }
+
+        private void frmCadastro_Load(object sender, EventArgs e)
+        {
+            if (variaveis.funcao == "CADASTRAR") 
+            {
+                lblTitulo.Text = "CADASTRO CLIENTE";
+            }
+            else if (variaveis.funcao == "ALTERAR")
+            {
+                lblTitulo.Text = "ALTERAR";
             }
         }
     }

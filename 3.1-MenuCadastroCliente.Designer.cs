@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastro));
-            this.lblCadastroTitulo = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cmbStatusCad = new System.Windows.Forms.ComboBox();
@@ -41,6 +41,7 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.pctFoto = new System.Windows.Forms.PictureBox();
             this.pnlNome = new System.Windows.Forms.Panel();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -83,11 +84,11 @@
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.lblAvaliacaoFisica = new System.Windows.Forms.Label();
-            this.pctFoto = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).BeginInit();
             this.pnlNome.SuspendLayout();
             this.pnltele.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -100,19 +101,18 @@
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblCadastroTitulo
+            // lblTitulo
             // 
-            this.lblCadastroTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
-            this.lblCadastroTitulo.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCadastroTitulo.Location = new System.Drawing.Point(322, 9);
-            this.lblCadastroTitulo.Name = "lblCadastroTitulo";
-            this.lblCadastroTitulo.Size = new System.Drawing.Size(500, 38);
-            this.lblCadastroTitulo.TabIndex = 0;
-            this.lblCadastroTitulo.Text = "CADASTRO CLIENTE";
-            this.lblCadastroTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
+            this.lblTitulo.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.Location = new System.Drawing.Point(322, 9);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(500, 38);
+            this.lblTitulo.TabIndex = 0;
+            this.lblTitulo.Text = "CADASTRO CLIENTE";
+            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSair
             // 
@@ -230,6 +230,15 @@
             this.btnAdd.TabIndex = 12;
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.UseVisualStyleBackColor = false;
+            // 
+            // pctFoto
+            // 
+            this.pctFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.pctFoto.Location = new System.Drawing.Point(6, 8);
+            this.pctFoto.Name = "pctFoto";
+            this.pctFoto.Size = new System.Drawing.Size(214, 240);
+            this.pctFoto.TabIndex = 11;
+            this.pctFoto.TabStop = false;
             // 
             // pnlNome
             // 
@@ -454,7 +463,7 @@
             this.pnlAvaliacao.Controls.Add(this.panel10);
             this.pnlAvaliacao.Controls.Add(this.label3);
             this.pnlAvaliacao.Controls.Add(this.panel9);
-            this.pnlAvaliacao.Location = new System.Drawing.Point(25, 68);
+            this.pnlAvaliacao.Location = new System.Drawing.Point(23, 72);
             this.pnlAvaliacao.Name = "pnlAvaliacao";
             this.pnlAvaliacao.Size = new System.Drawing.Size(770, 323);
             this.pnlAvaliacao.TabIndex = 31;
@@ -715,15 +724,6 @@
             this.lblAvaliacaoFisica.TabIndex = 23;
             this.lblAvaliacaoFisica.Text = "AVALIAÇÃO FISICA";
             // 
-            // pctFoto
-            // 
-            this.pctFoto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pctFoto.Location = new System.Drawing.Point(6, 8);
-            this.pctFoto.Name = "pctFoto";
-            this.pctFoto.Size = new System.Drawing.Size(214, 240);
-            this.pctFoto.TabIndex = 11;
-            this.pctFoto.TabStop = false;
-            // 
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -731,19 +731,21 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(1200, 600);
             this.Controls.Add(this.pnlCad);
-            this.Controls.Add(this.lblCadastroTitulo);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnSair);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form4";
+            this.Load += new System.EventHandler(this.frmCadastro_Load);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).EndInit();
             this.pnlNome.ResumeLayout(false);
             this.pnlNome.PerformLayout();
             this.pnltele.ResumeLayout(false);
@@ -765,14 +767,13 @@
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblCadastroTitulo;
+        private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox cmbStatusCad;

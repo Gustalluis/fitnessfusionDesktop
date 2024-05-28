@@ -33,7 +33,7 @@
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dgvCliente = new System.Windows.Forms.DataGridView();
+            this.dgvFuncionario = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbmCliente = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,7 +42,7 @@
             this.lblMenuCliente = new System.Windows.Forms.Label();
             this.pctPesquisa = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -111,20 +111,20 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
-            this.panel4.Controls.Add(this.dgvCliente);
+            this.panel4.Controls.Add(this.dgvFuncionario);
             this.panel4.Location = new System.Drawing.Point(15, 99);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1170, 415);
             this.panel4.TabIndex = 17;
             // 
-            // dgvCliente
+            // dgvFuncionario
             // 
-            this.dgvCliente.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(4, 3);
-            this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(1161, 410);
-            this.dgvCliente.TabIndex = 6;
+            this.dgvFuncionario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+            this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFuncionario.Location = new System.Drawing.Point(4, 3);
+            this.dgvFuncionario.Name = "dgvFuncionario";
+            this.dgvFuncionario.Size = new System.Drawing.Size(1161, 410);
+            this.dgvFuncionario.TabIndex = 6;
             // 
             // panel3
             // 
@@ -217,8 +217,9 @@
             this.Name = "frmMenuFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "_4_MenuFuncionario";
+            this.Load += new System.EventHandler(this.frmMenuFuncionario_Load);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -236,7 +237,7 @@
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnCadastrar;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dgvCliente;
+        private System.Windows.Forms.DataGridView dgvFuncionario;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbmCliente;
         private System.Windows.Forms.Panel panel2;
