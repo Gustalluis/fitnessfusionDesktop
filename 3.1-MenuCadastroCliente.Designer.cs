@@ -32,7 +32,7 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.cmbStatusCad = new System.Windows.Forms.ComboBox();
+            this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -131,24 +131,24 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.panel4.Controls.Add(this.cmbStatusCad);
+            this.panel4.Controls.Add(this.cmbStatus);
             this.panel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.Location = new System.Drawing.Point(538, 103);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(235, 33);
             this.panel4.TabIndex = 10;
             // 
-            // cmbStatusCad
+            // cmbStatus
             // 
-            this.cmbStatusCad.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbStatusCad.FormattingEnabled = true;
-            this.cmbStatusCad.Items.AddRange(new object[] {
+            this.cmbStatus.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.Items.AddRange(new object[] {
             "ATIVO",
             "DESATIVO"});
-            this.cmbStatusCad.Location = new System.Drawing.Point(2, 3);
-            this.cmbStatusCad.Name = "cmbStatusCad";
-            this.cmbStatusCad.Size = new System.Drawing.Size(232, 27);
-            this.cmbStatusCad.TabIndex = 0;
+            this.cmbStatus.Location = new System.Drawing.Point(2, 3);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(232, 27);
+            this.cmbStatus.TabIndex = 0;
             // 
             // lblSenha
             // 
@@ -463,7 +463,7 @@
             this.pnlAvaliacao.Controls.Add(this.panel10);
             this.pnlAvaliacao.Controls.Add(this.label3);
             this.pnlAvaliacao.Controls.Add(this.panel9);
-            this.pnlAvaliacao.Location = new System.Drawing.Point(23, 72);
+            this.pnlAvaliacao.Location = new System.Drawing.Point(12, 330);
             this.pnlAvaliacao.Name = "pnlAvaliacao";
             this.pnlAvaliacao.Size = new System.Drawing.Size(770, 323);
             this.pnlAvaliacao.TabIndex = 31;
@@ -712,6 +712,7 @@
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Visible = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // lblAvaliacaoFisica
             // 
@@ -776,7 +777,7 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.ComboBox cmbStatusCad;
+        private System.Windows.Forms.ComboBox cmbStatus;
         private System.Windows.Forms.Label lblSenha;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtEmail;

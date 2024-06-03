@@ -23,7 +23,7 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT cliente.nomeCliente, cliente.telefoneCliente, treino.nomeTreino, cliente.statusCliente,  cliente.emailCliente,planoAssinatura.nomePlano  FROM cliente INNER JOIN agendaTreino ON cliente.idCliente = agendaTreino.idCliente INNER JOIN treino ON agendaTreino.idTreino = treino.idTreino INNER JOIN inscricao ON cliente.idCliente = inscricao.idCliente INNER JOIN planoAssinatura ON inscricao.idPlano = planoAssinatura.idPlano;";
+                string selecionar = "SELECT cliente.nomeCliente, cliente.telefoneCliente, treino.nomeTreino,  cliente.emailCliente, cliente.statusCliente, planoAssinatura.nomePlano FROM cliente INNER JOIN agendaTreino ON cliente.idCliente = agendaTreino.idCliente INNER JOIN treino ON agendaTreino.idTreino = treino.idTreino INNER JOIN inscricao ON cliente.idCliente = inscricao.idCliente INNER JOIN planoAssinatura ON inscricao.idPlano = planoAssinatura.idPlano;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
