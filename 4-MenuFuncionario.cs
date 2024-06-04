@@ -57,13 +57,22 @@ namespace fitnessfusion
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            new frmMenuCadastroFuncionario().Show(this);
-            Hide();
+           
+                variaveis.funcao = "CADASTRAR";         
+                new frmMenuCadastroFuncionario().Show(this);
+                Hide();
         }
 
         private void frmMenuFuncionario_Load(object sender, EventArgs e)
         {
             carregarFuncionario();
         }
-    }
+
+        private void btnAlterar_Click_1(object sender, EventArgs e)
+        {
+               variaveis.funcao = "ALTERAR";
+            new frmMenuCadastroFuncionario().Show(this);
+            Hide();
+        }
+    } 
 }

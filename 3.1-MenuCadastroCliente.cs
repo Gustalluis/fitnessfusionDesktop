@@ -75,7 +75,7 @@ namespace fitnessfusion
                 banco.Conectar();
                 string Inserir = "insert into cliente " +
                     "(nomecliente, telefoneCliente, emailcliente, senhacliente, fotoCliente, altCliente, " +
-                    "statusCliente) values (@nome, @endereco, @telefone, @email, @senha, @foto, @alt, @status);";
+                    "statusCliente) values (@nome, @telefone, @email, @senha, @foto, @alt, @status);";
                 MySqlCommand cmd = new MySqlCommand(Inserir, banco.conexaoDb);
                 //parametros
                 cmd.Parameters.AddWithValue("@none", variaveis.nomecliente);

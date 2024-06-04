@@ -463,7 +463,7 @@
             this.pnlAvaliacao.Controls.Add(this.panel10);
             this.pnlAvaliacao.Controls.Add(this.label3);
             this.pnlAvaliacao.Controls.Add(this.panel9);
-            this.pnlAvaliacao.Location = new System.Drawing.Point(12, 71);
+            this.pnlAvaliacao.Location = new System.Drawing.Point(5, 72);
             this.pnlAvaliacao.Name = "pnlAvaliacao";
             this.pnlAvaliacao.Size = new System.Drawing.Size(770, 323);
             this.pnlAvaliacao.TabIndex = 31;

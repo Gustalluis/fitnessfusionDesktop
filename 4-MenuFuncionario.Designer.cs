@@ -91,6 +91,7 @@
             this.btnAlterar.TabIndex = 19;
             this.btnAlterar.Text = "ALTERAR";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click_1);
             // 
             // btnCadastrar
             // 

@@ -61,18 +61,18 @@ namespace fitnessfusion
             new frmCadastro().Show(this);
             Hide();
         }
-
-        private void frmMenuCliente_Load(object sender, EventArgs e)
-        {
-
-            carregarCliente();
-        }
-
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             variaveis.funcao = "ALTERAR";
             new frmCadastro().Show(this);
             Hide();
         }
+        private void frmMenuCliente_Load(object sender, EventArgs e)
+        {
+
+            carregarCliente();
+        }
+
+        
     }
 }

@@ -14,11 +14,14 @@ namespace fitnessfusion
         //MENU
 
         //CLIENTES
-        public static int codigoCliente;
+        //public static int codigoCliente;
         public static string nomecliente,telefonecliente, emailcliente, senhacliente, statuscliente, altcliente, fotocliente, atFotoCliente, CaminhoFotoCliente;
         public static DateTime dataCadCliente;
         //FUNCIONARIOS
-
+        public static int codigoFuncionario;
+        public static string nomeFuncionario, enderecoFuncionario, telefoneFuncionario, cargoFuncionario,
+        emailFuncionario, senhaFuncionario, statusFuncionario, altFuncionario, fotoFuncionario, caminhofotoFuncionario,salarioFuncionario;
+        public static DateTime datacadFuncionario;
         //ESTRUTURA FTP
         public static string enderecoServidorFtp = "smpsistema.com.br";
         public static string usuarioFtp = "u283879542.fitnessfusion";
