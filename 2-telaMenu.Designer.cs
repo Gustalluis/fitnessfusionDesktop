@@ -91,6 +91,7 @@
             this.btnSite.Text = "SITE";
             this.btnSite.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSite.UseVisualStyleBackColor = false;
+            this.btnSite.Click += new System.EventHandler(this.btnSite_Click);
             // 
             // btnFuncionarios
             // 

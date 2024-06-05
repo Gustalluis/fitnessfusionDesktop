@@ -15,7 +15,8 @@ namespace fitnessfusion
 
         //CLIENTES
         //public static int codigoCliente;
-        public static string nomecliente,telefonecliente, emailcliente, senhacliente, statuscliente, altcliente, fotocliente, atFotoCliente, CaminhoFotoCliente;
+        public static string nomecliente, telefonecliente, emailcliente, senhacliente, statuscliente, altcliente, fotocliente, atFotoCliente, CaminhoFotoCliente, TreinoCliente, pagamento,
+        PlanoCliente;
         public static DateTime dataCadCliente;
         //FUNCIONARIOS
         public static int codigoFuncionario;

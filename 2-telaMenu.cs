@@ -45,5 +45,11 @@ namespace fitnessfusion
             new frmMenuFuncionario().Show(this);
             Hide();        
         }
+
+        private void btnSite_Click(object sender, EventArgs e)
+        {
+            new frmSiteWeb().Show(this);
+            Hide();
+        }
     }
 }

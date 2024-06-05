@@ -29,84 +29,86 @@
         private void InitializeComponent()
         {
             this.pnlCad = new System.Windows.Forms.Panel();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.lblFoto = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.mtbDatacad = new System.Windows.Forms.MaskedTextBox();
             this.lblPagamento = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txtSalario = new System.Windows.Forms.TextBox();
             this.lblPlano = new System.Windows.Forms.Label();
-            this.pnltele = new System.Windows.Forms.Panel();
             this.mtbTelefone = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
-            this.pnlNome = new System.Windows.Forms.Panel();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pctFoto = new System.Windows.Forms.PictureBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.txtSenha = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblSenha = new System.Windows.Forms.Label();
-            this.pnlStatus = new System.Windows.Forms.Panel();
             this.cmbStatusCad = new System.Windows.Forms.ComboBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.txtCargo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlCad.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.pnltele.SuspendLayout();
-            this.pnlNome.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).BeginInit();
-            this.panel5.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.pnlStatus.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlCad
             // 
             this.pnlCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
             this.pnlCad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCad.Controls.Add(this.panel4);
+            this.pnlCad.Controls.Add(this.txtCargo);
+            this.pnlCad.Controls.Add(this.txtSalario);
+            this.pnlCad.Controls.Add(this.txtSenha);
+            this.pnlCad.Controls.Add(this.txtEmail);
+            this.pnlCad.Controls.Add(this.txtEndereco);
+            this.pnlCad.Controls.Add(this.cmbStatusCad);
+            this.pnlCad.Controls.Add(this.mtbDatacad);
+            this.pnlCad.Controls.Add(this.mtbTelefone);
+            this.pnlCad.Controls.Add(this.txtNome);
             this.pnlCad.Controls.Add(this.label2);
             this.pnlCad.Controls.Add(this.label3);
-            this.pnlCad.Controls.Add(this.panel8);
             this.pnlCad.Controls.Add(this.lblFoto);
             this.pnlCad.Controls.Add(this.btnLimpar);
             this.pnlCad.Controls.Add(this.btnSalvar);
-            this.pnlCad.Controls.Add(this.panel2);
             this.pnlCad.Controls.Add(this.lblPagamento);
-            this.pnlCad.Controls.Add(this.panel1);
             this.pnlCad.Controls.Add(this.lblPlano);
-            this.pnlCad.Controls.Add(this.pnltele);
             this.pnlCad.Controls.Add(this.label1);
             this.pnlCad.Controls.Add(this.lblNome);
             this.pnlCad.Controls.Add(this.lblStatus);
-            this.pnlCad.Controls.Add(this.pnlNome);
             this.pnlCad.Controls.Add(this.panel6);
             this.pnlCad.Controls.Add(this.lblEmail);
-            this.pnlCad.Controls.Add(this.panel5);
-            this.pnlCad.Controls.Add(this.panel3);
             this.pnlCad.Controls.Add(this.lblSenha);
-            this.pnlCad.Controls.Add(this.pnlStatus);
             this.pnlCad.Location = new System.Drawing.Point(41, 74);
             this.pnlCad.Name = "pnlCad";
             this.pnlCad.Size = new System.Drawing.Size(1101, 483);
             this.pnlCad.TabIndex = 19;
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCargo.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCargo.Location = new System.Drawing.Point(327, 305);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(445, 26);
+            this.txtCargo.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(320, 274);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 25);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "CARGO:";
             // 
             // label3
             // 
@@ -119,20 +121,11 @@
             this.label3.TabIndex = 31;
             this.label3.Text = "ENDEREÇO:";
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.panel8.Controls.Add(this.txtEndereco);
-            this.panel8.Location = new System.Drawing.Point(22, 170);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(751, 30);
-            this.panel8.TabIndex = 32;
-            // 
             // txtEndereco
             // 
             this.txtEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEndereco.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(3, 2);
+            this.txtEndereco.Location = new System.Drawing.Point(26, 171);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(745, 26);
             this.txtEndereco.TabIndex = 3;
@@ -179,23 +172,14 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.panel2.Controls.Add(this.mtbDatacad);
-            this.panel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.Location = new System.Drawing.Point(258, 103);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(235, 33);
-            this.panel2.TabIndex = 12;
-            // 
             // mtbDatacad
             // 
-            this.mtbDatacad.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbDatacad.Location = new System.Drawing.Point(2, 1);
+            this.mtbDatacad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtbDatacad.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbDatacad.Location = new System.Drawing.Point(258, 106);
             this.mtbDatacad.Mask = "00/00/0000";
             this.mtbDatacad.Name = "mtbDatacad";
-            this.mtbDatacad.Size = new System.Drawing.Size(230, 30);
+            this.mtbDatacad.Size = new System.Drawing.Size(230, 26);
             this.mtbDatacad.TabIndex = 33;
             this.mtbDatacad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbDatacad.ValidatingType = typeof(System.DateTime);
@@ -211,23 +195,13 @@
             this.lblPagamento.TabIndex = 22;
             this.lblPagamento.Text = "DATA CADASTRO";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.panel1.Controls.Add(this.txtSalario);
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(22, 300);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 30);
-            this.panel1.TabIndex = 11;
-            // 
             // txtSalario
             // 
             this.txtSalario.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSalario.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalario.Location = new System.Drawing.Point(2, 3);
+            this.txtSalario.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSalario.Location = new System.Drawing.Point(26, 305);
             this.txtSalario.Name = "txtSalario";
-            this.txtSalario.Size = new System.Drawing.Size(225, 23);
+            this.txtSalario.Size = new System.Drawing.Size(225, 26);
             this.txtSalario.TabIndex = 0;
             // 
             // lblPlano
@@ -241,22 +215,14 @@
             this.lblPlano.TabIndex = 21;
             this.lblPlano.Text = "SALARIO:";
             // 
-            // pnltele
-            // 
-            this.pnltele.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.pnltele.Controls.Add(this.mtbTelefone);
-            this.pnltele.Location = new System.Drawing.Point(22, 104);
-            this.pnltele.Name = "pnltele";
-            this.pnltele.Size = new System.Drawing.Size(176, 32);
-            this.pnltele.TabIndex = 9;
-            // 
             // mtbTelefone
             // 
-            this.mtbTelefone.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbTelefone.Location = new System.Drawing.Point(4, 2);
+            this.mtbTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtbTelefone.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbTelefone.Location = new System.Drawing.Point(28, 106);
             this.mtbTelefone.Mask = "(00) 00000-0000";
             this.mtbTelefone.Name = "mtbTelefone";
-            this.mtbTelefone.Size = new System.Drawing.Size(169, 27);
+            this.mtbTelefone.Size = new System.Drawing.Size(169, 26);
             this.mtbTelefone.TabIndex = 16;
             // 
             // label1
@@ -292,20 +258,11 @@
             this.lblStatus.TabIndex = 15;
             this.lblStatus.Text = "STATUS";
             // 
-            // pnlNome
-            // 
-            this.pnlNome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.pnlNome.Controls.Add(this.txtNome);
-            this.pnlNome.Location = new System.Drawing.Point(22, 40);
-            this.pnlNome.Name = "pnlNome";
-            this.pnlNome.Size = new System.Drawing.Size(751, 30);
-            this.pnlNome.TabIndex = 4;
-            // 
             // txtNome
             // 
             this.txtNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtNome.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNome.Location = new System.Drawing.Point(2, 1);
+            this.txtNome.Location = new System.Drawing.Point(26, 42);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(746, 26);
             this.txtNome.TabIndex = 3;
@@ -339,38 +296,20 @@
             this.lblEmail.TabIndex = 7;
             this.lblEmail.Text = "E-MAIL:";
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.panel5.Controls.Add(this.txtSenha);
-            this.panel5.Location = new System.Drawing.Point(475, 228);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(298, 30);
-            this.panel5.TabIndex = 10;
-            // 
             // txtSenha
             // 
             this.txtSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSenha.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.Location = new System.Drawing.Point(3, 2);
+            this.txtSenha.Location = new System.Drawing.Point(477, 232);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(292, 26);
+            this.txtSenha.Size = new System.Drawing.Size(295, 26);
             this.txtSenha.TabIndex = 3;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.panel3.Controls.Add(this.txtEmail);
-            this.panel3.Location = new System.Drawing.Point(22, 228);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(406, 30);
-            this.panel3.TabIndex = 8;
             // 
             // txtEmail
             // 
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(3, 2);
+            this.txtEmail.Location = new System.Drawing.Point(26, 232);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(400, 26);
             this.txtEmail.TabIndex = 3;
@@ -386,26 +325,17 @@
             this.lblSenha.TabIndex = 9;
             this.lblSenha.Text = "SENHA:";
             // 
-            // pnlStatus
-            // 
-            this.pnlStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.pnlStatus.Controls.Add(this.cmbStatusCad);
-            this.pnlStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnlStatus.Location = new System.Drawing.Point(538, 104);
-            this.pnlStatus.Name = "pnlStatus";
-            this.pnlStatus.Size = new System.Drawing.Size(235, 32);
-            this.pnlStatus.TabIndex = 10;
-            // 
             // cmbStatusCad
             // 
-            this.cmbStatusCad.Font = new System.Drawing.Font("Bahnschrift Condensed", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbStatusCad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmbStatusCad.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatusCad.FormattingEnabled = true;
             this.cmbStatusCad.Items.AddRange(new object[] {
             "ATIVO",
             "DESATIVO"});
-            this.cmbStatusCad.Location = new System.Drawing.Point(2, 2);
+            this.cmbStatusCad.Location = new System.Drawing.Point(538, 106);
             this.cmbStatusCad.Name = "cmbStatusCad";
-            this.cmbStatusCad.Size = new System.Drawing.Size(232, 27);
+            this.cmbStatusCad.Size = new System.Drawing.Size(234, 27);
             this.cmbStatusCad.TabIndex = 0;
             // 
             // lblTitulo
@@ -433,35 +363,6 @@
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.panel4.Controls.Add(this.txtCargo);
-            this.panel4.Location = new System.Drawing.Point(322, 300);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(451, 30);
-            this.panel4.TabIndex = 12;
-            // 
-            // txtCargo
-            // 
-            this.txtCargo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCargo.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCargo.Location = new System.Drawing.Point(3, 2);
-            this.txtCargo.Name = "txtCargo";
-            this.txtCargo.Size = new System.Drawing.Size(445, 26);
-            this.txtCargo.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(320, 274);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 25);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "CARGO:";
-            // 
             // frmMenuCadastroFuncionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,25 +378,8 @@
             this.Load += new System.EventHandler(this.frmMenuCadastroFuncionario_Load);
             this.pnlCad.ResumeLayout(false);
             this.pnlCad.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.pnltele.ResumeLayout(false);
-            this.pnltele.PerformLayout();
-            this.pnlNome.ResumeLayout(false);
-            this.pnlNome.PerformLayout();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).EndInit();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.pnlStatus.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -506,35 +390,26 @@
         private System.Windows.Forms.Label lblFoto;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblPagamento;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblPlano;
-        private System.Windows.Forms.Panel pnltele;
         private System.Windows.Forms.MaskedTextBox mtbTelefone;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblStatus;
-        private System.Windows.Forms.Panel pnlNome;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.PictureBox pctFoto;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtSenha;
-        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblSenha;
-        private System.Windows.Forms.Panel pnlStatus;
         private System.Windows.Forms.ComboBox cmbStatusCad;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.TextBox txtSalario;
         private System.Windows.Forms.MaskedTextBox mtbDatacad;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox txtCargo;
         private System.Windows.Forms.Label label2;
     }

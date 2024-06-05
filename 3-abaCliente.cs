@@ -33,8 +33,8 @@ namespace fitnessfusion
                 dgvCliente.Columns[0].HeaderText = "NOME";
                 dgvCliente.Columns[1].HeaderText = "TELEFONE";
                 dgvCliente.Columns[2].HeaderText = "TREINO";
-                dgvCliente.Columns[3].HeaderText = "STATUS";
-                dgvCliente.Columns[4].HeaderText = "EMAIL";
+                dgvCliente.Columns[3].HeaderText = "EMAIL";
+                dgvCliente.Columns[4].HeaderText = "STATUS";
                 dgvCliente.Columns[5].HeaderText = "PLANO";
         
                 dgvCliente.ClearSelection();

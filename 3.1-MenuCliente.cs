@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx;
 using Org.BouncyCastle.Asn1.Cmp;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,9 @@ namespace fitnessfusion
         public frmCadastro()
         {
             InitializeComponent();
+            carregarTreino();
+
+            
         }
         //validação ftp 
         private bool validarFTP()
@@ -78,7 +82,7 @@ namespace fitnessfusion
                     "statusCliente) values (@nome, @telefone, @email, @senha, @foto, @alt, @status);";
                 MySqlCommand cmd = new MySqlCommand(Inserir, banco.conexaoDb);
                 //parametros
-                cmd.Parameters.AddWithValue("@none", variaveis.nomecliente);
+                cmd.Parameters.AddWithValue("@nome", variaveis.nomecliente);
                 cmd.Parameters.AddWithValue("@telefone", variaveis.telefonecliente);
                 cmd.Parameters.AddWithValue("@email", variaveis.emailcliente);
                 cmd.Parameters.AddWithValue("@senha", variaveis.senhacliente);
@@ -115,7 +119,29 @@ namespace fitnessfusion
 
         }
        
-        
+        private void carregarTreino()
+        {
+            try
+            {
+                banco.Conectar();
+                string selecionar = "select idTreino, nomeTreino FROM treino order by nomeTreino";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd); 
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cmbtreino.DataSource = dt;
+                cmbtreino.DisplayMember = "NomeTreino";
+                cmbtreino.ValueMember = "idTreino";
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Erro Ao carregar treino \n\n" + erro);
+            }
+        }
+
+       
 
         
 
@@ -172,6 +198,7 @@ namespace fitnessfusion
             {
                 InserirCliente();
 
+
                 lblTitulo.Text = "CADASTRO CLIENTE";
 
             }
@@ -180,6 +207,8 @@ namespace fitnessfusion
                 lblTitulo.Text = "ALTERAR";
             }
         }
+
+      
     }
 
 }

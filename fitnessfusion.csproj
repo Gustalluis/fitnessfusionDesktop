@@ -101,23 +101,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="4-MenuFuncionario.cs">
+    <Compile Include="4-abaFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="4-MenuFuncionario.Designer.cs">
-      <DependentUpon>4-MenuFuncionario.cs</DependentUpon>
+    <Compile Include="4-abaFuncionario.Designer.cs">
+      <DependentUpon>4-abaFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="4.1-MenuCadastroFuncionario.cs">
+    <Compile Include="4.1-MenuFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="4.1-MenuCadastroFuncionario.Designer.cs">
-      <DependentUpon>4.1-MenuCadastroFuncionario.cs</DependentUpon>
+    <Compile Include="4.1-MenuFuncionario.Designer.cs">
+      <DependentUpon>4.1-MenuFuncionario.cs</DependentUpon>
     </Compile>
     <Compile Include="5-siteWeb.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="5-siteWeb.Designer.cs">
       <DependentUpon>5-siteWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="5.1- menuweb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="5.1- menuweb.Designer.cs">
+      <DependentUpon>5.1- menuweb.cs</DependentUpon>
     </Compile>
     <Compile Include="banco.cs" />
     <Compile Include="1-telalogin.cs">
@@ -132,17 +138,17 @@
     <Compile Include="2-telaMenu.Designer.cs">
       <DependentUpon>2-telaMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="3-menuCliente.cs">
+    <Compile Include="3-abaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="3-menuCliente.Designer.cs">
-      <DependentUpon>3-menuCliente.cs</DependentUpon>
+    <Compile Include="3-abaCliente.Designer.cs">
+      <DependentUpon>3-abaCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="3.1-MenuCadastroCliente.cs">
+    <Compile Include="3.1-MenuCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="3.1-MenuCadastroCliente.Designer.cs">
-      <DependentUpon>3.1-MenuCadastroCliente.cs</DependentUpon>
+    <Compile Include="3.1-MenuCliente.Designer.cs">
+      <DependentUpon>3.1-MenuCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="ftp.cs" />
     <Compile Include="Program.cs" />
@@ -159,20 +165,23 @@
     <EmbeddedResource Include="2-telaMenu.resx">
       <DependentUpon>2-telaMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="3-menuCliente.resx">
-      <DependentUpon>3-menuCliente.cs</DependentUpon>
+    <EmbeddedResource Include="3-abaCliente.resx">
+      <DependentUpon>3-abaCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="3.1-MenuCadastroCliente.resx">
-      <DependentUpon>3.1-MenuCadastroCliente.cs</DependentUpon>
+    <EmbeddedResource Include="3.1-MenuCliente.resx">
+      <DependentUpon>3.1-MenuCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="4-MenuFuncionario.resx">
-      <DependentUpon>4-MenuFuncionario.cs</DependentUpon>
+    <EmbeddedResource Include="4-abaFuncionario.resx">
+      <DependentUpon>4-abaFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="4.1-MenuCadastroFuncionario.resx">
-      <DependentUpon>4.1-MenuCadastroFuncionario.cs</DependentUpon>
+    <EmbeddedResource Include="4.1-MenuFuncionario.resx">
+      <DependentUpon>4.1-MenuFuncionario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="5-siteWeb.resx">
       <DependentUpon>5-siteWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="5.1- menuweb.resx">
+      <DependentUpon>5.1- menuweb.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
