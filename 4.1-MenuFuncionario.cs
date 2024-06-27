@@ -136,7 +136,7 @@ namespace fitnessfusion
                     variaveis.senhaFuncionario = dr.GetString(6);
                     variaveis.salarioFuncionario = dr.GetFloat(7);
                     variaveis.statusFuncionario = dr.GetString(9);
-                    variaveis.fotoFuncionario = dr.GetString(10).Remove(0, 12); 
+                    variaveis.fotoFuncionario = dr.GetString(10).Remove(0, 12);
                     variaveis.altFuncionario = dr.GetString(11);
 
 
@@ -194,13 +194,15 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string alterarfoto = "update funcionario SET fotoFuncionario = @foto where idFuncionario = @codigo;";
-                MySqlCommand cmd = new MySqlCommand(alterarfoto, banco.conexaoDb);
+                string alterar = " UPDATE funcionario SET fotoFuncionario = @foto WHERE idFuncionario = @codigo;";
+                MySqlCommand cmd = new MySqlCommand(alterar, banco.conexaoDb);
+                //parametros
 
-                // parâmetros
                 cmd.Parameters.AddWithValue("@foto", variaveis.fotoFuncionario);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codigoFuncionario);
 
+
+                //fim parametros
                 cmd.ExecuteNonQuery();
                 banco.Desconectar();
 
@@ -213,31 +215,22 @@ namespace fitnessfusion
                         {
                             ftp.EnviarArquivoFtp(variaveis.caminhoFotoFuncionario, urlEnviarArquivo, variaveis.usuarioFtp, variaveis.senhaFtp);
                         }
-                        catch (Exception ex)
+                        catch
                         {
-                            MessageBox.Show("Foto não foi Selecionada ou existente no servidor.\n\n" + ex.Message, "FOTO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Foto não foi Selecionada ou existente no servidor.", "FOTO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
+
             }
-            catch (MySqlException sqlEx)
+            catch (Exception erro)
             {
-                MessageBox.Show("Erro ao acessar o banco de dados.\n\n" + sqlEx.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Erro ao alterar FOTO do funcionario.\n\n" + erro);
+
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao alterar FOTO do Funcionário.\n\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                // Garantir que a conexão será fechada em caso de erro
-                if (banco.conexaoDb != null && banco.conexaoDb.State == System.Data.ConnectionState.Open)
-                {
-                    banco.Desconectar();
-                }
-            }
+
         }
-    private void btnSair_Click(object sender, EventArgs e)
+        private void btnSair_Click(object sender, EventArgs e)
         {
             new frmMenuFuncionario().Show(this);
             Hide();
@@ -281,7 +274,7 @@ namespace fitnessfusion
             {
                 alterarFuncionario();
                 lblTitulo.Text = "ALTERAR FUNCIONARIO";
-                if (variaveis.atfotoFuncionario == "S")
+                if (variaveis.atFotoFuncionario == "S")
                 {
                     alterarFotoFuncionario();
                 }
@@ -297,9 +290,9 @@ namespace fitnessfusion
                 OpenFileDialog ofdFoto = new OpenFileDialog();
                 ofdFoto.Multiselect = false;
                 ofdFoto.FileName = "";
-                ofdFoto.InitialDirectory = @"C:/Downloads/";
+                ofdFoto.InitialDirectory = @"C:";
                 ofdFoto.Title = "SELECIONE UMA FOTO";
-                ofdFoto.Filter = "JPG ou PNG (*.jpg ou (*.png) | *.jpg;*.png";
+                ofdFoto.Filter = "JPG ou PNG (*.jpg ou (*.png)|*.jpg;*.png";
                 ofdFoto.CheckFileExists = true;
                 ofdFoto.CheckPathExists = true;
                 ofdFoto.RestoreDirectory = true;
@@ -310,16 +303,14 @@ namespace fitnessfusion
 
                 if (result == DialogResult.OK)
                 {
-
                     try
                     {
-                        variaveis.atfotoFuncionario = "S";
+                        variaveis.atFotoFuncionario = "S";
                         variaveis.caminhoFotoFuncionario = ofdFoto.FileName;
-
                     }
                     catch (SecurityException erro)
                     {
-                        MessageBox.Show("Erro de segurança - Fale com o ADMIN\n Mensagem: " + erro + "\n Detalhe: " + erro.StackTrace);
+                        MessageBox.Show("Erro de segurança - Fale com o admin \n Messagem: " + erro + "\n Detalhe: " + erro.StackTrace);
                     }
                     catch (Exception erro)
                     {
@@ -327,12 +318,10 @@ namespace fitnessfusion
                     }
                 }
                 btnSalvar.Focus();
-
             }
             catch
             {
                 btnSalvar.Focus();
-
             }
         }
     }

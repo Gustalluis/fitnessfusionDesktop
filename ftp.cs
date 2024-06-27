@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace fitnessfusion
 {
-     class ftp
+    class ftp
     {
         public static void EnviarArquivoFtp(string arquivo, string url, string usuario, string senha)
         {
@@ -27,12 +27,12 @@ namespace fitnessfusion
                     int bytesSent = 0;
                     int bytes = 0;
 
-                    using (Stream stream = request.GetRequestStream())
+                    using (Stream Stream = request.GetRequestStream())
                     {
-                        while (bytesSent < buffer.Length)
+                        while (bytesSent < arquivoInfo.Length)
                         {
                             bytes = arquivoStream.Read(buffer, 0, buffer.Length);
-                            stream.Write(buffer, 0, bytes);
+                            Stream.Write(buffer, 0, bytes);
                             bytesSent += bytes;
                         }
                     }
@@ -43,7 +43,6 @@ namespace fitnessfusion
                 throw erro;
             }
         }
-
     }
 }
 

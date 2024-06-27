@@ -24,7 +24,7 @@ namespace fitnessfusion
         //FUNCIONARIOS
         public static int codigoFuncionario;
         public static string nomeFuncionario, enderecoFuncionario, telefoneFuncionario, cargoFuncionario,
-        emailFuncionario, senhaFuncionario, statusFuncionario, altFuncionario, fotoFuncionario, atfotoFuncionario, caminhoFotoFuncionario;
+        emailFuncionario, senhaFuncionario, statusFuncionario, altFuncionario, fotoFuncionario, atFotoFuncionario, caminhoFotoFuncionario;
         public static DateTime datacadFuncionario;
         public static float salarioFuncionario;
         //EQUIPAMENTO
@@ -37,7 +37,7 @@ namespace fitnessfusion
 
 
         //ESTRUTURA FTP ONLINE
-        //public static string enderecoServidorFtp = "fitnessfusion.smpsistema.com.br/admin/";
+        //public static string enderecoServidorFtp = "smpsistema.com.br/admin";
         //public static string usuarioFtp = "u283879542.fitnessfusion";
         //public static string senhaFtp = "Senac@fitnessfusion01";
 
