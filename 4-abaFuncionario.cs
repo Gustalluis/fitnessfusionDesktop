@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,8 @@ namespace fitnessfusion
 {
     public partial class frmMenuFuncionario : Form
     {
+        
+
         public frmMenuFuncionario()
         {
             InitializeComponent();
@@ -23,29 +26,34 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string selecionar = "select nomeFuncionario, telefoneFuncionario, cargoFuncionario, statusFuncionario, enderecoFuncionario emailFuncionario, dataCadFuncionario, salarioFuncionario from funcionario;";
-                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
+                string carregar = "select*from funcionario;";
+                MySqlCommand cmd = new MySqlCommand(carregar, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
                 dgvFuncionario.DataSource = dt;
-                dgvFuncionario.Columns[0].HeaderText = "NOME";
-                dgvFuncionario.Columns[1].HeaderText = "TELEFONE";
+                dgvFuncionario.Columns[0].Visible = false;
+                dgvFuncionario.Columns[1].HeaderText = "NOME";
                 dgvFuncionario.Columns[2].HeaderText = "CARGO";
-                dgvFuncionario.Columns[3].HeaderText = "STATUS";
-                dgvFuncionario.Columns[4].HeaderText = "ENDERECO";
+                dgvFuncionario.Columns[3].HeaderText = "TELEFONE";
+                dgvFuncionario.Columns[4].HeaderText = "ENDEREÇO";
                 dgvFuncionario.Columns[5].HeaderText = "EMAIL";
-                dgvFuncionario.Columns[5].HeaderText = "DATA CADASTRO";
-                dgvFuncionario.Columns[5].HeaderText = "SALARIO";
+                dgvFuncionario.Columns[6].HeaderText = "SENHA";
+                dgvFuncionario.Columns[7].HeaderText = "SALARIO";
+                dgvFuncionario.Columns[8].HeaderText = "DATA DE CADASTRO";
+                dgvFuncionario.Columns[9].HeaderText = "STATUS";
+                dgvFuncionario.Columns[10].HeaderText = "FOTO FUNCIONARIO";
+                dgvFuncionario.Columns[11].Visible = false;
 
-                dgvFuncionario.ClearSelection();
-                banco.Desconectar();
+                dgvFuncionario.ClearSelection();//Nada selecionado
+                banco.Desconectar();//Fechar db
+
             }
             catch (Exception erro)
             {
 
-                MessageBox.Show("Erro ao tentar se conectar com o banco de dados" + erro);
+                MessageBox.Show("Erro ao selecionar o CLIENTE.\n\n" + erro);
             }
         }
 
@@ -73,6 +81,15 @@ namespace fitnessfusion
                variaveis.funcao = "ALTERAR";
             new frmMenuCadastroFuncionario().Show(this);
             Hide();
+        }
+
+        private void dgvFuncionario_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.codigoFuncionario = Convert.ToInt32(dgvFuncionario[0, variaveis.linhaSelecionada].Value);
+            }
         }
     } 
 }

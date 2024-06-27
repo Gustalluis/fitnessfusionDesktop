@@ -113,17 +113,29 @@
     <Compile Include="4.1-MenuFuncionario.Designer.cs">
       <DependentUpon>4.1-MenuFuncionario.cs</DependentUpon>
     </Compile>
-    <Compile Include="5-siteWeb.cs">
+    <Compile Include="5.1- MenuEquipamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="5-siteWeb.Designer.cs">
-      <DependentUpon>5-siteWeb.cs</DependentUpon>
+    <Compile Include="5.1- MenuEquipamento.Designer.cs">
+      <DependentUpon>5.1- MenuEquipamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="5.1- menuweb.cs">
+    <Compile Include="5 - abaEquipamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="5.1- menuweb.Designer.cs">
-      <DependentUpon>5.1- menuweb.cs</DependentUpon>
+    <Compile Include="5 - abaEquipamento.Designer.cs">
+      <DependentUpon>5 - abaEquipamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6-abaTreino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6-abaTreino.Designer.cs">
+      <DependentUpon>6-abaTreino.cs</DependentUpon>
+    </Compile>
+    <Compile Include="6.1-MenuTreino.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="6.1-MenuTreino.Designer.cs">
+      <DependentUpon>6.1-MenuTreino.cs</DependentUpon>
     </Compile>
     <Compile Include="banco.cs" />
     <Compile Include="1-telalogin.cs">
@@ -177,11 +189,17 @@
     <EmbeddedResource Include="4.1-MenuFuncionario.resx">
       <DependentUpon>4.1-MenuFuncionario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="5-siteWeb.resx">
-      <DependentUpon>5-siteWeb.cs</DependentUpon>
+    <EmbeddedResource Include="5 - abaEquipamento.resx">
+      <DependentUpon>5 - abaEquipamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="5.1- menuweb.resx">
-      <DependentUpon>5.1- menuweb.cs</DependentUpon>
+    <EmbeddedResource Include="5.1- MenuEquipamento.resx">
+      <DependentUpon>5.1- MenuEquipamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6-abaTreino.resx">
+      <DependentUpon>6-abaTreino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="6.1-MenuTreino.resx">
+      <DependentUpon>6.1-MenuTreino.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -278,13 +296,16 @@
     <None Include="img\menuPrincipal\treinomenu.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\siteWeb\banner.png" />
+    <None Include="Resources\academia.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\siteWeb\feedback-do-cliente.png" />
+    <None Include="img\menuPrincipal\equipamento.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="img\siteWeb\postagem.png" />
+    <None Include="img\menuPrincipal\treino.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\adicionarfoto.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

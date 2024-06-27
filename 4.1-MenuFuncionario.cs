@@ -194,15 +194,13 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string alterarfoto = " UPDATE funcionario SET fotoFuncionario = @foto WHERE idFuncionario = @codigo;";
+                string alterarfoto = "update funcionario SET fotoFuncionario = @foto where idFuncionario = @codigo;";
                 MySqlCommand cmd = new MySqlCommand(alterarfoto, banco.conexaoDb);
-                //parametros
 
+                // parâmetros
                 cmd.Parameters.AddWithValue("@foto", variaveis.fotoFuncionario);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codigoFuncionario);
 
-
-                //fim parametros
                 cmd.ExecuteNonQuery();
                 banco.Desconectar();
 
@@ -215,21 +213,31 @@ namespace fitnessfusion
                         {
                             ftp.EnviarArquivoFtp(variaveis.caminhoFotoFuncionario, urlEnviarArquivo, variaveis.usuarioFtp, variaveis.senhaFtp);
                         }
-                        catch
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Foto não foi Selecionada ou existente no servidor.", "FOTO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Foto não foi Selecionada ou existente no servidor.\n\n" + ex.Message, "FOTO", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
-
             }
-            catch (Exception erro)
+            catch (MySqlException sqlEx)
             {
-                MessageBox.Show("Erro ao alterar FOTO do FUncionario.\n\n" + erro);
-
+                MessageBox.Show("Erro ao acessar o banco de dados.\n\n" + sqlEx.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao alterar FOTO do Funcionário.\n\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                // Garantir que a conexão será fechada em caso de erro
+                if (banco.conexaoDb != null && banco.conexaoDb.State == System.Data.ConnectionState.Open)
+                {
+                    banco.Desconectar();
+                }
             }
         }
-        private void btnSair_Click(object sender, EventArgs e)
+    private void btnSair_Click(object sender, EventArgs e)
         {
             new frmMenuFuncionario().Show(this);
             Hide();

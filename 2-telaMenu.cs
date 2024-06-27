@@ -46,9 +46,23 @@ namespace fitnessfusion
             Hide();        
         }
 
-        private void btnSite_Click(object sender, EventArgs e)
+
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            new frmSiteWeb().Show(this);
+            lblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void btnEquipamento_Click(object sender, EventArgs e)
+        {
+            new frmEquipamento().Show(this);
+            Hide();
+        }
+
+        private void btnTreino_Click(object sender, EventArgs e)
+        {
+            new FrmTreino().Show(this);
             Hide();
         }
     }

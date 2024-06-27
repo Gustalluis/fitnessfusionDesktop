@@ -100,6 +100,7 @@
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.Size = new System.Drawing.Size(1161, 449);
             this.dgvCliente.TabIndex = 6;
+            this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick);
             // 
             // panel4
             // 

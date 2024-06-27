@@ -145,9 +145,6 @@
   <data name="ajuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\menuPrincipal\ajuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="banner" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\siteWeb\banner.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="btnEntrar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\login\btnEntrar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -160,9 +157,6 @@
   <data name="cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\menuPrincipal\cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="contatoMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\menuPrincipal\contatoMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="contatos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\login\contatos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,9 +165,6 @@
   </data>
   <data name="email" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\login\email.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="feedback_do_cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\siteWeb\feedback-do-cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="funcionario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\menuPrincipal\funcionario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -190,16 +181,16 @@
   <data name="modalidadeMenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\menuPrincipal\modalidadeMenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="postagem" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\siteWeb\postagem.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="siteweb" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\menuPrincipal\siteweb.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="telalogin" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\img\login\telalogin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="treinomenu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\img\menuPrincipal\treinomenu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="equipamento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\menuPrincipal\equipamento.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="treino" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\img\menuPrincipal\treino.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="adicionarfoto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\adicionarfoto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
