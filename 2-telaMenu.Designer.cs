@@ -32,10 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.dgvAgenda = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnAvalicao = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnTreino = new System.Windows.Forms.Button();
             this.btnEquipamento = new System.Windows.Forms.Button();
@@ -71,24 +71,25 @@
             this.panel2.Size = new System.Drawing.Size(616, 416);
             this.panel2.TabIndex = 11;
             // 
-            // button6
+            // btnAvalicao
             // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.button6.FlatAppearance.BorderSize = 2;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.button6.Image = global::fitnessfusion.Properties.Resources.agenda;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(934, 83);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(241, 92);
-            this.button6.TabIndex = 13;
-            this.button6.Text = "AVALIAÇÃO FISICA";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnAvalicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+            this.btnAvalicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAvalicao.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.btnAvalicao.FlatAppearance.BorderSize = 2;
+            this.btnAvalicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvalicao.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvalicao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.btnAvalicao.Image = global::fitnessfusion.Properties.Resources.agenda;
+            this.btnAvalicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAvalicao.Location = new System.Drawing.Point(934, 83);
+            this.btnAvalicao.Name = "btnAvalicao";
+            this.btnAvalicao.Size = new System.Drawing.Size(241, 92);
+            this.btnAvalicao.TabIndex = 13;
+            this.btnAvalicao.Text = "AVALIAÇÃO FISICA";
+            this.btnAvalicao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAvalicao.UseVisualStyleBackColor = false;
+            this.btnAvalicao.Click += new System.EventHandler(this.btnAvalicao_Click);
             // 
             // button7
             // 
@@ -115,22 +116,21 @@
             this.button8.Text = "CANCELAR";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // label2
+            // lblUsuario
             // 
-            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(3, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(280, 23);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "RODOLFO COSTA";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblUsuario.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.lblUsuario.Location = new System.Drawing.Point(3, 5);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(280, 23);
+            this.lblUsuario.TabIndex = 24;
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.lblUsuario);
             this.panel1.Location = new System.Drawing.Point(125, 118);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(285, 32);
@@ -190,7 +190,7 @@
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSair.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSair.Location = new System.Drawing.Point(1159, 3);
+            this.btnSair.Location = new System.Drawing.Point(1160, -1);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(40, 40);
             this.btnSair.TabIndex = 9;
@@ -277,7 +277,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btnAvalicao);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnFuncionarios);
@@ -287,6 +287,7 @@
             this.Name = "frmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.frmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgenda)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -301,11 +302,11 @@
         private System.Windows.Forms.DataGridView dgvAgenda;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnAvalicao;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnEquipamento;
         private System.Windows.Forms.Button btnTreino;

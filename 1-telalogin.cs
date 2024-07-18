@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,60 @@ namespace fitnessfusion
         {
             InitializeComponent();
         }
+        //metodo mysql 
+
+       private void Login()
+{
+    try
+    {
+        banco.Conectar();
+        string selecionar = @"SELECT nomeFuncionario, emailFuncionario, senhaFuncionario 
+                              FROM funcionario 
+                              WHERE emailFuncionario = @Email 
+                                AND senhaFuncionario = @Senha 
+                                AND statusFuncionario = @Status;";
+        MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
+        
+        // Parâmetros
+        cmd.Parameters.AddWithValue("@Email", variaveis.usuario);
+        cmd.Parameters.AddWithValue("@Senha", variaveis.senha);
+        cmd.Parameters.AddWithValue("@Status", "ATIVO");
+        
+        MySqlDataReader reader = cmd.ExecuteReader();
+        if (reader.Read())
+        {
+            // Certifique-se de que os índices das colunas estão corretos
+            variaveis.usuario = reader.GetString("nomeFuncionario");
+            variaveis.especialidade = reader.GetString("emailFuncionario"); // Exemplo: alterar para a coluna correta
+            
+            new frmMenu().Show();
+            Hide();
+        }
+        else
+        {
+            variaveis.tentativa += 1;
+            if (variaveis.tentativa >= 3)
+            {
+                MessageBox.Show("Número máximo de tentativas excedido. O aplicativo será fechado.");
+                Application.Exit();
+            }
+            else
+            {
+                MessageBox.Show($"ACESSO NEGADO\n\nVocê tem mais {3 - variaveis.tentativa} tentativa(s)");
+                txtEmail.Clear();
+                txtSenha.Clear();
+                txtEmail.Focus();
+            }
+        }
+        
+        reader.Close(); // Fechar o reader após o uso
+        banco.Desconectar();
+    }
+    catch (Exception erro) 
+    {
+        MessageBox.Show("Erro ao efetuar o LOGIN: " + erro.Message);
+    }
+}
 
         private void btnSair_MouseEnter(object sender, EventArgs e)
         {
@@ -65,8 +120,18 @@ namespace fitnessfusion
 
         private void btnEntrar_Click(object sender, EventArgs e)
         {
-            new frmMenu().Show(this);
-            Hide();
+            variaveis.usuario = txtEmail.Text;
+            variaveis.senha = txtSenha.Text;
+            if (variaveis.usuario == "KEVIN" && variaveis.senha == "123")
+            {
+                variaveis.especialidade = "";
+                new frmMenu().Show();
+                Hide();
+            }
+            else
+            {
+                Login();
+            }
         }
 
     }

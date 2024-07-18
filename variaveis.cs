@@ -11,8 +11,7 @@ namespace fitnessfusion
         //GERAL
         public static string funcao;
         public static int linhaSelecionada;
-        //MENU
-
+       
         //CLIENTES
         public static int codigoCliente, codigoPagamento, codigoPlano;
         public static string nomecliente, telefonecliente, emailcliente, senhacliente, statuscliente, altcliente, fotocliente, atFotoCliente, CaminhoFotoCliente, TreinoCliente, pagamento,cpfCliente, atfotocliente,
@@ -32,7 +31,15 @@ namespace fitnessfusion
         public static string nomeEquipamento, estadoEquipamento, descricaoEquipamento;
         //TREINO
         public static int codigoTreino;
-        public static string nomeTreino, descricaoTreino, duracaoTreino; 
+        public static string nomeTreino, descricaoTreino, duracaoTreino;
+        //AVALIAÇÃO
+        public static int codigoAva;
+        public static string peso, altura, medida, descricao;
+        public static DateTime data;
+
+        //LOGIN
+        public static int tentativa;
+        public static string usuario, senha, especialidade, nomeUsuario;
 
 
 

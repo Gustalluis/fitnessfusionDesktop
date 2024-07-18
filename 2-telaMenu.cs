@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,14 @@ namespace fitnessfusion
         {
             InitializeComponent();
         }
+
+
+
+        //mysql metodo
+
+  
+
+
          private void btnSair_Click(object sender, EventArgs e)
         {
             var resposta = MessageBox.Show("Deseja realmente sair do programa?", "SAIR", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Asterisk);
@@ -64,6 +73,17 @@ namespace fitnessfusion
         {
             new FrmTreino().Show(this);
             Hide();
+        }
+
+        private void btnAvalicao_Click(object sender, EventArgs e)
+        {
+            new frmAvaliacao().Show(this);
+            Hide();
+        }
+
+        private void frmMenu_Load(object sender, EventArgs e)
+        {
+            lblUsuario.Text = variaveis.usuario;
         }
     }
 }

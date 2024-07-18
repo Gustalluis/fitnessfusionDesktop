@@ -88,13 +88,13 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string carregar = "select idPagamento, nomePagamento from pagamento;";
+                string carregar = "select idPagamento, statusPagamento from pagamento;";
                 MySqlCommand cmd = new MySqlCommand(carregar, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 cmbPagamento.DataSource = dt; 
-                cmbPagamento.DisplayMember = "nomePagamento";
+                cmbPagamento.DisplayMember = "statusPagamento";
                 cmbPagamento.ValueMember = "idPagamento";
 
                 banco.Desconectar();

@@ -137,6 +137,18 @@
     <Compile Include="6.1-MenuTreino.Designer.cs">
       <DependentUpon>6.1-MenuTreino.cs</DependentUpon>
     </Compile>
+    <Compile Include="7-abaAvaliação.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7-abaAvaliação.Designer.cs">
+      <DependentUpon>7-abaAvaliação.cs</DependentUpon>
+    </Compile>
+    <Compile Include="7.1-cadastroAvaliacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="7.1-cadastroAvaliacao.Designer.cs">
+      <DependentUpon>7.1-cadastroAvaliacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="banco.cs" />
     <Compile Include="1-telalogin.cs">
       <SubType>Form</SubType>
@@ -200,6 +212,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="6.1-MenuTreino.resx">
       <DependentUpon>6.1-MenuTreino.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7-abaAvaliação.resx">
+      <DependentUpon>7-abaAvaliação.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="7.1-cadastroAvaliacao.resx">
+      <DependentUpon>7.1-cadastroAvaliacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
