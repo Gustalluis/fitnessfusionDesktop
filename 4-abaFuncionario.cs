@@ -78,9 +78,20 @@ namespace fitnessfusion
 
         private void btnAlterar_Click_1(object sender, EventArgs e)
         {
-               variaveis.funcao = "ALTERAR";
-            new frmMenuCadastroFuncionario().Show(this);
-            Hide();
+
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.funcao = "ALTERAR";
+                new frmMenuCadastroFuncionario().Show(this);
+                Hide();
+
+            }
+            else
+            {
+                MessageBox.Show("Paara alterar selecione um cliente da lista");
+            }
+
+           
         }
 
         private void dgvFuncionario_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -122,7 +122,7 @@ namespace fitnessfusion
         {
             variaveis.usuario = txtEmail.Text;
             variaveis.senha = txtSenha.Text;
-            if (variaveis.usuario == "KEVIN" && variaveis.senha == "123")
+            if (variaveis.usuario == "" && variaveis.senha == "")
             {
                 variaveis.especialidade = "";
                 new frmMenu().Show();
@@ -134,5 +134,14 @@ namespace fitnessfusion
             }
         }
 
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

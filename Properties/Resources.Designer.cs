@@ -183,6 +183,16 @@ namespace fitnessfusion.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fluxoDeCaixa {
+            get {
+                object obj = ResourceManager.GetObject("fluxoDeCaixa", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap funcionario {
             get {
                 object obj = ResourceManager.GetObject("funcionario", resourceCulture);

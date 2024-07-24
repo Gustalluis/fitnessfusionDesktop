@@ -73,9 +73,18 @@ namespace fitnessfusion
         }
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            variaveis.funcao = "ALTERAR";
-            new frmCadastro().Show(this);
-            Hide();
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.funcao = "ALTERAR";
+                new frmCadastro().Show(this);
+                Hide();
+
+            }
+            else
+            {
+                MessageBox.Show("Paara alterar selecione um cliente da lista");
+            }
+            
         }
         private void frmMenuCliente_Load(object sender, EventArgs e)
         {

@@ -41,6 +41,8 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.pctPesquisa = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.panel4.SuspendLayout();
@@ -121,9 +123,9 @@
             this.btnCadastrar.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastrar.Location = new System.Drawing.Point(15, 551);
             this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(170, 37);
+            this.btnCadastrar.Size = new System.Drawing.Size(213, 37);
             this.btnCadastrar.TabIndex = 8;
-            this.btnCadastrar.Text = "CADASTRAR";
+            this.btnCadastrar.Text = "CADASTRAR CLIENTE";
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
@@ -134,9 +136,9 @@
             this.btnExcluir.FlatAppearance.BorderSize = 2;
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExcluir.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(1015, 551);
+            this.btnExcluir.Location = new System.Drawing.Point(984, 551);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(170, 37);
+            this.btnExcluir.Size = new System.Drawing.Size(201, 37);
             this.btnExcluir.TabIndex = 10;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = false;
@@ -172,11 +174,11 @@
             this.btnAlterar.FlatAppearance.BorderSize = 2;
             this.btnAlterar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAlterar.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAlterar.Location = new System.Drawing.Point(527, 551);
+            this.btnAlterar.Location = new System.Drawing.Point(234, 551);
             this.btnAlterar.Name = "btnAlterar";
-            this.btnAlterar.Size = new System.Drawing.Size(170, 37);
+            this.btnAlterar.Size = new System.Drawing.Size(244, 37);
             this.btnAlterar.TabIndex = 14;
-            this.btnAlterar.Text = "ALTERAR";
+            this.btnAlterar.Text = "ALTERAR CLIENTE";
             this.btnAlterar.UseVisualStyleBackColor = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
@@ -190,12 +192,44 @@
             this.pctPesquisa.TabIndex = 11;
             this.pctPesquisa.TabStop = false;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(484, 551);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(244, 37);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "CADASTRAR PAGAMENTO";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(734, 551);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(244, 37);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "ALTERAR PAGAMENTO";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // frmMenuCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(1200, 600);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblMenuCliente);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnSair);
@@ -235,5 +269,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }

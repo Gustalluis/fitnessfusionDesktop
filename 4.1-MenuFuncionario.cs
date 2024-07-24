@@ -1,10 +1,13 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx;
 using Mysqlx.Crud;
 using Org.BouncyCastle.Asn1.Cmp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -14,10 +17,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using Mysqlx;
 
 namespace fitnessfusion
 {
@@ -68,31 +67,31 @@ namespace fitnessfusion
             mStream.Dispose();
             return bm;
         }
-        // METODO mysql 
 
+        // METODO mysql 
         private void inserirFuncionario()
         {
             try
             {
                 banco.Conectar();
-                string inserir = "INSERT INTO funcionario (nomeFuncionario, cargoFuncionario, telefoneFuncionario, enderecoFuncionario, emailFuncionario, senhaFuncionario, salarioFuncionario, dataCadFuncionario, statusFuncionario, fotoFuncionario, altFuncionario) " +
-                    "VALUES (@nome, @cargo, @telefone, @endereco, @email, @senha, @salario, @dataCad, @status, @foto, @alt);";
-                MySqlCommand cmd = new MySqlCommand(inserir, banco.conexaoDb);
-
+                string fucao = "INSERT INTO funcionario (nomeFuncionario, cargoFuncionario, telefoneFuncionario, enderecoFuncionario, emailFuncionario, senhaFuncionario, salarioFuncionario, dataCadFuncionario, statusFuncionario, fotoFuncionario, altFuncionario) VALUES (@nome, @cargo, @fone, @endereco, @email, @senha, @salario, @data, @status, @foto, @alt);";
+                MySqlCommand cmd = new MySqlCommand(fucao, banco.conexaoDb);
+        
                 cmd.Parameters.AddWithValue("@nome", variaveis.nomeFuncionario);
                 cmd.Parameters.AddWithValue("@cargo", variaveis.cargoFuncionario);
-                cmd.Parameters.AddWithValue("@telefone", variaveis.telefoneFuncionario);
+                cmd.Parameters.AddWithValue("@fone", variaveis.telefoneFuncionario);
                 cmd.Parameters.AddWithValue("@endereco", variaveis.enderecoFuncionario);
                 cmd.Parameters.AddWithValue("@email", variaveis.emailFuncionario);
                 cmd.Parameters.AddWithValue("@senha", variaveis.senhaFuncionario);
                 cmd.Parameters.AddWithValue("@salario", variaveis.salarioFuncionario);
-                cmd.Parameters.AddWithValue("@dataCad", variaveis.datacadFuncionario);
+                cmd.Parameters.AddWithValue("@data", variaveis.datacadFuncionario);
                 cmd.Parameters.AddWithValue("@status", variaveis.statusFuncionario);
                 cmd.Parameters.AddWithValue("@foto", variaveis.fotoFuncionario);
                 cmd.Parameters.AddWithValue("@alt", variaveis.altFuncionario);
 
+
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Funcionario cadastrado com sucesso", "CADASTRO");
+                MessageBox.Show("FUNCIONARIO cadastrado com sucesso", "CADASTRO DE FUNCIONARIO");
                 banco.Desconectar();
 
                 if (ValidarFTP())
@@ -113,10 +112,10 @@ namespace fitnessfusion
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro Ao inserir Funcionario\n\n" + erro);
+                MessageBox.Show("Erro Ao inserir Cliente\n\n" + erro);
             }
         }
-
+     
         private void carregarfuncionario()
         {
             try
@@ -163,9 +162,9 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string alterar = "update funcionario set nomeFuncionario = @nome, cargoFuncionario = @cargo, telefoneFuncionario = @telefone, enderecoFuncionario = @endereco," +
-               " emailFuncionario = @email, senhaFuncionario = @senha, salarioFuncionario = @salario, statusFuncionario = @status, altFuncionario = @alt WHERE idFuncionario = @codigo;";
+                string alterar = "update funcionario set nomeFuncionario = @nome, cargoFuncionario = @cargo, telefoneFuncionario = @telefone, enderecoFuncionario = @endereco, emailFuncionario = @email, senhaFuncionario = @senha, salarioFuncionario = @salario,  statusFuncionario = @status  WHERE idFuncionario = @codigo;";
                 MySqlCommand cmd = new MySqlCommand(alterar, banco.conexaoDb);
+
 
                 cmd.Parameters.AddWithValue("@nome", variaveis.nomeFuncionario);
                 cmd.Parameters.AddWithValue("@cargo", variaveis.cargoFuncionario);
@@ -175,17 +174,16 @@ namespace fitnessfusion
                 cmd.Parameters.AddWithValue("@senha", variaveis.senhaFuncionario);
                 cmd.Parameters.AddWithValue("@salario", variaveis.salarioFuncionario);
                 cmd.Parameters.AddWithValue("@status", variaveis.statusFuncionario);
-                cmd.Parameters.AddWithValue("@alt", variaveis.altFuncionario);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codigoFuncionario);
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("funcionario alterado com sucesso", "CADASTRO FUNCIONARIO");
                 banco.Desconectar();
+
             }
             catch (Exception erro)
             {
-
-                MessageBox.Show("Erro ao alterar .\n\n" + erro);
+                MessageBox.Show("erro ao alterar funcionario" + erro);
             }
         }
 
@@ -194,15 +192,12 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string alterar = " UPDATE funcionario SET fotoFuncionario = @foto WHERE idFuncionario = @codigo;";
-                MySqlCommand cmd = new MySqlCommand(alterar, banco.conexaoDb);
-                //parametros
+                string carregarFoto = "UPDATE funcionario SET fotoFuncionario = @foto WHERE idFuncionario = @codigo;";
+                MySqlCommand cmd = new MySqlCommand(carregarFoto, banco.conexaoDb);
 
                 cmd.Parameters.AddWithValue("@foto", variaveis.fotoFuncionario);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codigoFuncionario);
 
-
-                //fim parametros
                 cmd.ExecuteNonQuery();
                 banco.Desconectar();
 
@@ -221,15 +216,15 @@ namespace fitnessfusion
                         }
                     }
                 }
-
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro ao alterar FOTO do funcionario.\n\n" + erro);
-
+                MessageBox.Show("Erro ao alterar FOTO do cliente.\n\n" + erro);
             }
-
         }
+
+     
+       
         private void btnSair_Click(object sender, EventArgs e)
         {
             new frmMenuFuncionario().Show(this);
@@ -251,15 +246,14 @@ namespace fitnessfusion
             }
         }
 
-        private void btnSalvar_Click(object sender, EventArgs e)
+         private void btnSalvar_Click(object sender, EventArgs e)
         {
             variaveis.nomeFuncionario = txtNome.Text;
             variaveis.cargoFuncionario = txtCargo.Text;
             variaveis.telefoneFuncionario = mtbTelefone.Text;
-            variaveis.enderecoFuncionario = txtEndereco.Text;
             variaveis.emailFuncionario = txtEmail.Text;
             variaveis.senhaFuncionario = txtSenha.Text;
-            variaveis.salarioFuncionario = float.Parse(txtSalario.Text);
+            variaveis.salarioFuncionario = double.Parse(txtSalario.Text);
             variaveis.datacadFuncionario = DateTime.Now;
             variaveis.statusFuncionario = cmbStatusCad.Text;
             variaveis.altFuncionario = "foto" + txtNome.Text;
@@ -267,26 +261,27 @@ namespace fitnessfusion
             if (variaveis.funcao == "CADASTRAR")
             {
                 inserirFuncionario();
-                lblTitulo.Text = "CADASTRO FUNCIONARIO";
+
+                lblTitulo.Text = "CADASTRO CLIENTE";
 
             }
             else if (variaveis.funcao == "ALTERAR")
             {
                 alterarFuncionario();
-                lblTitulo.Text = "ALTERAR FUNCIONARIO";
+
+                lblTitulo.Text = "ALTERAR";
                 if (variaveis.atFotoFuncionario == "S")
                 {
                     alterarFotoFuncionario();
                 }
-
             }
-
         }
 
         private void btnAddFoto_Click(object sender, EventArgs e)
         {
             try
             {
+
                 OpenFileDialog ofdFoto = new OpenFileDialog();
                 ofdFoto.Multiselect = false;
                 ofdFoto.FileName = "";
@@ -299,7 +294,7 @@ namespace fitnessfusion
 
                 DialogResult result = ofdFoto.ShowDialog();
                 pctFoto.Image = Image.FromFile(ofdFoto.FileName);
-                variaveis.fotoFuncionario = "funcionario/" + Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".png";
+                variaveis.fotoFuncionario =  "funcionario/" + Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".png";
 
                 if (result == DialogResult.OK)
                 {
@@ -324,5 +319,7 @@ namespace fitnessfusion
                 btnSalvar.Focus();
             }
         }
+
+
     }
 }

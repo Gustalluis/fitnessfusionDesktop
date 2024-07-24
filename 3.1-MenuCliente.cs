@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -20,12 +21,14 @@ using System.Windows.Forms;
 namespace fitnessfusion
 {
     public partial class frmCadastro : Form
+
     {
+        private int novoId;
         public frmCadastro()
         {
             InitializeComponent();
 
-            carregarpagamento();
+        
 
             carregarplanos();
 
@@ -79,33 +82,31 @@ namespace fitnessfusion
         //FIM METODOS FOTO FTP
         // metodo mysql
 
-
-
-
-
-        private void carregarpagamento()
+        private void ObterNovoId()
         {
+            int novoId; // Default value in case there are no clients yet
             try
             {
                 banco.Conectar();
-                string carregar = "select idPagamento, statusPagamento from pagamento;";
-                MySqlCommand cmd = new MySqlCommand(carregar, banco.conexaoDb);
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                cmbPagamento.DataSource = dt; 
-                cmbPagamento.DisplayMember = "statusPagamento";
-                cmbPagamento.ValueMember = "idPagamento";
-
-                banco.Desconectar();
+                string query = "SELECT idCliente FROM cliente order by idCliente desc limit 1;";
+                MySqlCommand command = new MySqlCommand(query, banco.conexaoDb);
+                {
+                    object result = command.ExecuteScalar();
+                    if (result != DBNull.Value)
+                    {
+                        int ultimoId = Convert.ToInt32(result);
+                        novoId = ultimoId + 1;
+                    }
+                }
             }
-            catch (Exception erro)
+            catch (Exception ex)
             {
-
-                MessageBox.Show("Erro ao carregar a listar metodo de pagamento. \n\n" + erro);
+                // Handle exceptions
+                Console.WriteLine("Erro ao obter o novo ID: " + ex.Message);
             }
         }
-       
+        
+
         private void carregarplanos()
 
         {
@@ -159,8 +160,8 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string Inserir = "INSERT INTO cliente (idCliente, idPlano, idTreino, nomeCliente, cpfCliente, telefoneCliente, statusCliente, dataNascCliente, emailCliente, senhaCliente, fotoCliente, altCliente, dataCadCliente) " +
-                    "VALUES (@idCliente, @idPlano, @idTreino, @nome, @cpfCliente, @telefone, @status, @datanasc, @email, @senha, @foto, @alt, @datacad);"; 
+                string Inserir = "INSERT INTO cliente (idCliente, idPlano, idTreino, nomeCliente, cpfCliente, telefoneCliente, statusCliente, dataNascCliente, emailCliente, senhaCliente, fotoCliente, altCliente) " +
+                    "VALUES (@idCliente, @idPlano, @idTreino, @nome, @cpfCliente, @telefone, @status, @datanasc, @email, @senha, @foto, @alt);"; 
                 MySqlCommand cmd = new MySqlCommand(Inserir, banco.conexaoDb);
                 //parametros
                 cmd.Parameters.AddWithValue("@idCliente", variaveis.codigoCliente);
@@ -175,12 +176,34 @@ namespace fitnessfusion
                 cmd.Parameters.AddWithValue("@senha", variaveis.senhacliente);
                 cmd.Parameters.AddWithValue("@Foto", variaveis.fotocliente);
                 cmd.Parameters.AddWithValue("@alt", variaveis.altcliente);
-                cmd.Parameters.AddWithValue("@datacad", variaveis.dataCadCliente);
+             
 
                 //Fim parametros
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Cliente cadastrado com sucesso", "CADASTRO DE CLIENTE");
+
+                string obterUltimoId = "SELECT idcliente, nomeCliente FROM cliente ORDER BY idcliente DESC limit 1;";
+                MySqlCommand cmdUltimoId = new MySqlCommand(obterUltimoId, banco.conexaoDb);
+                long novoIdCliente = Convert.ToInt64(cmdUltimoId.ExecuteScalar());
+
+                // Inserir registro na tabela de pagamento
+                string inserirPagamento = "INSERT INTO pagamento (idCliente, idPlano, dataPagamento, metodoPagamento) " +
+                                          "VALUES (@idCliente, @idPlano, @dataPagamento, @metodopagamento);";
+                MySqlCommand cmdPagamento = new MySqlCommand(inserirPagamento, banco.conexaoDb);
+
+                // Parâmetros para inserção de pagamento
+                cmdPagamento.Parameters.AddWithValue("@idCliente", novoIdCliente);
+                cmdPagamento.Parameters.AddWithValue("@idPlano", variaveis.codigoPlano);
+                cmdPagamento.Parameters.AddWithValue("@dataPagamento", DateTime.Now);
+                cmdPagamento.Parameters.AddWithValue("@metodopagamento", variaveis.metododepagamento);
+
+                // Executar a inserção de pagamento
+                cmdPagamento.ExecuteNonQuery();
+
+                MessageBox.Show("Cliente e pagamento cadastrados com sucesso", "CADASTRO DE CLIENTE");
                 banco.Desconectar();
+
+
 
                 if (ValidarFTP())
                 {
@@ -228,7 +251,7 @@ namespace fitnessfusion
                     variaveis.dataCadCliente = dr.GetDateTime(12);
 
                     txtNome.Text        = variaveis.nomecliente;
-                    txtcpfCliente.Text  = variaveis.cpfCliente;
+                    mtbCpf.Text =  variaveis.cpfCliente.ToString();
                     mtbTelefone.Text    = variaveis.telefonecliente.ToString();
                     cmbStatus.Text      = variaveis.statuscliente;
                     mtbNascCliente.Text = variaveis.datanasccliente.ToShortDateString();
@@ -253,7 +276,7 @@ namespace fitnessfusion
             {
                 banco.Conectar();
                 string atualizar = "update cliente SET idTreino = @codTreino, idPlano = @codPlano, nomeCliente = @nome, cpfCliente = @cpf, telefoneCliente = @telefone, statusCliente = " +
-                    "@status, dataNascCliente = @dataNasc, emailCliente = @email, senhaCliente = @senha, datacadCliente = @datacad WHERE idCliente = @codigo;";
+                    "@status, dataNascCliente = @dataNasc, emailCliente = @email, senhaCliente = @senha  WHERE idCliente = @codigo;";
                 MySqlCommand cmd = new MySqlCommand(atualizar, banco.conexaoDb);
 
                 cmd.Parameters.AddWithValue("@codTreino", variaveis.codigoTreino);
@@ -265,7 +288,6 @@ namespace fitnessfusion
                 cmd.Parameters.AddWithValue("@dataNasc", variaveis.datanasccliente);
                 cmd.Parameters.AddWithValue("@email", variaveis.emailcliente);
                 cmd.Parameters.AddWithValue("@senha", variaveis.senhacliente);
-                cmd.Parameters.AddWithValue("@datacad", variaveis.dataCadCliente);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codigoCliente);
 
 
@@ -276,7 +298,7 @@ namespace fitnessfusion
             }
             catch (Exception erro)
             {
-                MessageBox.Show("erro ao carregar cliente" + erro);
+                MessageBox.Show("erro ao alterar cliente" + erro);
             }
         }
 
@@ -321,6 +343,8 @@ namespace fitnessfusion
 
             }
         }
+
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             new frmMenuCliente().Show(this);
@@ -339,6 +363,7 @@ namespace fitnessfusion
             else if (variaveis.funcao == "ALTERAR")
             {
                 carregarCliente();
+             
                 lblTitulo.Text = "ALTERAR";
             }
         }
@@ -347,21 +372,22 @@ namespace fitnessfusion
         {
             variaveis.nomecliente = txtNome.Text;
             variaveis.telefonecliente = mtbTelefone.Text;
-            variaveis.cpfCliente = txtcpfCliente.Text;
+            variaveis.cpfCliente = mtbCpf.Text;
             variaveis.emailcliente = txtEmail.Text;
             variaveis.senhacliente = txtSenha.Text;
             variaveis.statuscliente = cmbStatus.Text;
             variaveis.altcliente = "foto" + txtNome.Text;
+            variaveis.metododepagamento = cmbPagamento.Text;
             variaveis.datanasccliente = Convert.ToDateTime(mtbNascCliente.Text);
-            variaveis.dataCadCliente = DateTime.Now;
             variaveis.codigoPlano = Convert.ToInt32(cmbPlano.SelectedValue);
             variaveis.codigoTreino = Convert.ToInt32(cmbTreino.SelectedValue);
-            variaveis.codigoPagamento = Convert.ToInt32(cmbPagamento.SelectedValue);
+            variaveis.statusPagamento = Convert.ToString(cmbStatus.SelectedValue);
             
 
             if (variaveis.funcao == "CADASTRAR")
             {
                 InserirCliente();
+
                 lblTitulo.Text = "CADASTRO CLIENTE";
 
             }
@@ -392,7 +418,8 @@ namespace fitnessfusion
 
                 DialogResult result = ofdFoto.ShowDialog();
                 pctFoto.Image = Image.FromFile(ofdFoto.FileName);
-                variaveis.fotocliente = "cliente/" + Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".png";
+                variaveis.fotocliente = novoId + " _ " + Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".png";
+                //variavel foto cliente, tem que conter id cliente e nome cliente, e extenção
 
                 if (result == DialogResult.OK)
                 {

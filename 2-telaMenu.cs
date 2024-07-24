@@ -85,5 +85,11 @@ namespace fitnessfusion
         {
             lblUsuario.Text = variaveis.usuario;
         }
+
+        private void btnPlano_Click(object sender, EventArgs e)
+        {
+            new frmPlanoAssinatura().Show(this);
+            Hide();
+        }
     }
 }

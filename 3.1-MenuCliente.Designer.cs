@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastro));
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnSair = new System.Windows.Forms.Button();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
             this.lblSenha = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -47,12 +45,11 @@
             this.lblPagamento = new System.Windows.Forms.Label();
             this.cmbPagamento = new System.Windows.Forms.ComboBox();
             this.pnlCad = new System.Windows.Forms.Panel();
+            this.mtbCpf = new System.Windows.Forms.MaskedTextBox();
             this.mtbNascCliente = new System.Windows.Forms.MaskedTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.cmbTreino = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtcpfCliente = new System.Windows.Forms.TextBox();
             this.cpfCliente = new System.Windows.Forms.Label();
             this.lblFoto = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
@@ -60,8 +57,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.pctFoto = new System.Windows.Forms.PictureBox();
-            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnSair = new System.Windows.Forms.Button();
             this.pnlCad.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctFoto)).BeginInit();
@@ -77,20 +73,6 @@
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "CADASTRO CLIENTE";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnSair
-            // 
-            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
-            this.btnSair.BackgroundImage = global::fitnessfusion.Properties.Resources.voltar;
-            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnSair.FlatAppearance.BorderSize = 0;
-            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSair.Location = new System.Drawing.Point(1158, 1);
-            this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(40, 40);
-            this.btnSair.TabIndex = 14;
-            this.btnSair.UseVisualStyleBackColor = false;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // cmbStatus
             // 
@@ -190,7 +172,7 @@
             // 
             this.mtbTelefone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtbTelefone.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbTelefone.Location = new System.Drawing.Point(27, 100);
+            this.mtbTelefone.Location = new System.Drawing.Point(29, 101);
             this.mtbTelefone.Mask = "(00) 00000-0000";
             this.mtbTelefone.Name = "mtbTelefone";
             this.mtbTelefone.Size = new System.Drawing.Size(169, 26);
@@ -231,6 +213,11 @@
             // 
             this.cmbPagamento.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbPagamento.FormattingEnabled = true;
+            this.cmbPagamento.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4"});
             this.cmbPagamento.Location = new System.Drawing.Point(27, 253);
             this.cmbPagamento.Name = "cmbPagamento";
             this.cmbPagamento.Size = new System.Drawing.Size(233, 31);
@@ -240,12 +227,11 @@
             // 
             this.pnlCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
             this.pnlCad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCad.Controls.Add(this.mtbCpf);
             this.pnlCad.Controls.Add(this.mtbNascCliente);
             this.pnlCad.Controls.Add(this.label4);
-            this.pnlCad.Controls.Add(this.label3);
             this.pnlCad.Controls.Add(this.cmbTreino);
             this.pnlCad.Controls.Add(this.label2);
-            this.pnlCad.Controls.Add(this.txtcpfCliente);
             this.pnlCad.Controls.Add(this.cpfCliente);
             this.pnlCad.Controls.Add(this.cmbPlano);
             this.pnlCad.Controls.Add(this.cmbPagamento);
@@ -270,6 +256,16 @@
             this.pnlCad.Size = new System.Drawing.Size(1101, 483);
             this.pnlCad.TabIndex = 16;
             // 
+            // mtbCpf
+            // 
+            this.mtbCpf.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mtbCpf.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mtbCpf.Location = new System.Drawing.Point(236, 101);
+            this.mtbCpf.Mask = "999,999,999-99";
+            this.mtbCpf.Name = "mtbCpf";
+            this.mtbCpf.Size = new System.Drawing.Size(252, 26);
+            this.mtbCpf.TabIndex = 36;
+            // 
             // mtbNascCliente
             // 
             this.mtbNascCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -293,17 +289,6 @@
             this.label4.TabIndex = 35;
             this.label4.Text = "DATA DE NASCIMENTO";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(831, 294);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(204, 25);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "DATA DE CADASTRO";
-            // 
             // cmbTreino
             // 
             this.cmbTreino.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -323,15 +308,6 @@
             this.label2.Size = new System.Drawing.Size(84, 25);
             this.label2.TabIndex = 31;
             this.label2.Text = "TREINO";
-            // 
-            // txtcpfCliente
-            // 
-            this.txtcpfCliente.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtcpfCliente.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtcpfCliente.Location = new System.Drawing.Point(237, 101);
-            this.txtcpfCliente.Name = "txtcpfCliente";
-            this.txtcpfCliente.Size = new System.Drawing.Size(251, 26);
-            this.txtcpfCliente.TabIndex = 28;
             // 
             // cpfCliente
             // 
@@ -423,12 +399,19 @@
             this.pctFoto.TabIndex = 11;
             this.pctFoto.TabStop = false;
             // 
-            // mySqlCommand1
+            // btnSair
             // 
-            this.mySqlCommand1.CacheAge = 0;
-            this.mySqlCommand1.Connection = null;
-            this.mySqlCommand1.EnableCaching = false;
-            this.mySqlCommand1.Transaction = null;
+            this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
+            this.btnSair.BackgroundImage = global::fitnessfusion.Properties.Resources.voltar;
+            this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSair.FlatAppearance.BorderSize = 0;
+            this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSair.Location = new System.Drawing.Point(1158, 1);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(40, 40);
+            this.btnSair.TabIndex = 14;
+            this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // frmCadastro
             // 
@@ -475,17 +458,14 @@
         private System.Windows.Forms.Label lblFoto;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.TextBox txtcpfCliente;
         private System.Windows.Forms.Label cpfCliente;
-        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private System.Windows.Forms.ComboBox cmbTreino;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox mtbNascCliente;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.PictureBox pctFoto;
         private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.MaskedTextBox mtbCpf;
     }
 }

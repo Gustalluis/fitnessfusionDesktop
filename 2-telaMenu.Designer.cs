@@ -32,20 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.dgvAgenda = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnAvalicao = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTreino = new System.Windows.Forms.Button();
-            this.btnEquipamento = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnSair = new System.Windows.Forms.Button();
-            this.btnFuncionarios = new System.Windows.Forms.Button();
-            this.BtnCliente = new System.Windows.Forms.Button();
             this.lblData = new System.Windows.Forms.Label();
             this.lblHora = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnTreino = new System.Windows.Forms.Button();
+            this.btnEquipamento = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAvalicao = new System.Windows.Forms.Button();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.btnFuncionarios = new System.Windows.Forms.Button();
+            this.BtnCliente = new System.Windows.Forms.Button();
+            this.btnPlano = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAgenda)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -71,51 +70,6 @@
             this.panel2.Size = new System.Drawing.Size(616, 416);
             this.panel2.TabIndex = 11;
             // 
-            // btnAvalicao
-            // 
-            this.btnAvalicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.btnAvalicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAvalicao.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.btnAvalicao.FlatAppearance.BorderSize = 2;
-            this.btnAvalicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAvalicao.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAvalicao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.btnAvalicao.Image = global::fitnessfusion.Properties.Resources.agenda;
-            this.btnAvalicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAvalicao.Location = new System.Drawing.Point(934, 83);
-            this.btnAvalicao.Name = "btnAvalicao";
-            this.btnAvalicao.Size = new System.Drawing.Size(241, 92);
-            this.btnAvalicao.TabIndex = 13;
-            this.btnAvalicao.Text = "AVALIAÇÃO FISICA";
-            this.btnAvalicao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAvalicao.UseVisualStyleBackColor = false;
-            this.btnAvalicao.Click += new System.EventHandler(this.btnAvalicao_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(792, 93);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(136, 32);
-            this.button7.TabIndex = 14;
-            this.button7.Text = "EDITAR";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(792, 131);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(136, 32);
-            this.button8.TabIndex = 15;
-            this.button8.Text = "CANCELAR";
-            this.button8.UseVisualStyleBackColor = false;
-            // 
             // lblUsuario
             // 
             this.lblUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -136,6 +90,36 @@
             this.panel1.Size = new System.Drawing.Size(285, 32);
             this.panel1.TabIndex = 25;
             // 
+            // lblData
+            // 
+            this.lblData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.lblData.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblData.ForeColor = System.Drawing.Color.Black;
+            this.lblData.Location = new System.Drawing.Point(795, 95);
+            this.lblData.Name = "lblData";
+            this.lblData.Size = new System.Drawing.Size(141, 32);
+            this.lblData.TabIndex = 28;
+            this.lblData.Text = "00/00/0000";
+            this.lblData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblHora
+            // 
+            this.lblHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.lblHora.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.Black;
+            this.lblHora.Location = new System.Drawing.Point(795, 134);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(141, 32);
+            this.lblHora.TabIndex = 29;
+            this.lblHora.Text = "00:00:00";
+            this.lblHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // btnTreino
             // 
             this.btnTreino.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
@@ -146,7 +130,7 @@
             this.btnTreino.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
             this.btnTreino.Image = global::fitnessfusion.Properties.Resources.treino;
             this.btnTreino.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTreino.Location = new System.Drawing.Point(281, 381);
+            this.btnTreino.Location = new System.Drawing.Point(280, 381);
             this.btnTreino.Name = "btnTreino";
             this.btnTreino.Size = new System.Drawing.Size(255, 200);
             this.btnTreino.TabIndex = 27;
@@ -163,24 +147,46 @@
             this.btnEquipamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEquipamento.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEquipamento.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.btnEquipamento.Image = global::fitnessfusion.Properties.Resources.equipamento;
-            this.btnEquipamento.Location = new System.Drawing.Point(281, 175);
+            this.btnEquipamento.Image = global::fitnessfusion.Properties.Resources.fluxoDeCaixa;
+            this.btnEquipamento.Location = new System.Drawing.Point(280, 175);
             this.btnEquipamento.Name = "btnEquipamento";
             this.btnEquipamento.Size = new System.Drawing.Size(255, 200);
             this.btnEquipamento.TabIndex = 26;
-            this.btnEquipamento.Text = "EQUIPAMENTO";
+            this.btnEquipamento.Text = "CAIXA";
             this.btnEquipamento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEquipamento.UseVisualStyleBackColor = false;
             this.btnEquipamento.Click += new System.EventHandler(this.btnEquipamento_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::fitnessfusion.Properties.Resources.logoFitness;
+            this.pictureBox1.BackgroundImage = global::fitnessfusion.Properties.Resources.logoFitnessMenulogo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Location = new System.Drawing.Point(125, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(285, 100);
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnAvalicao
+            // 
+            this.btnAvalicao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+            this.btnAvalicao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAvalicao.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.btnAvalicao.FlatAppearance.BorderSize = 2;
+            this.btnAvalicao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAvalicao.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAvalicao.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.btnAvalicao.Image = global::fitnessfusion.Properties.Resources.agenda;
+            this.btnAvalicao.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAvalicao.Location = new System.Drawing.Point(956, 84);
+            this.btnAvalicao.Name = "btnAvalicao";
+            this.btnAvalicao.Size = new System.Drawing.Size(219, 92);
+            this.btnAvalicao.TabIndex = 13;
+            this.btnAvalicao.Text = "AVALIAÇÃO\r\nFISICA";
+            this.btnAvalicao.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAvalicao.UseVisualStyleBackColor = false;
+            this.btnAvalicao.Click += new System.EventHandler(this.btnAvalicao_Click);
             // 
             // btnSair
             // 
@@ -233,35 +239,25 @@
             this.BtnCliente.UseVisualStyleBackColor = false;
             this.BtnCliente.Click += new System.EventHandler(this.BtnCliente_Click);
             // 
-            // lblData
+            // btnPlano
             // 
-            this.lblData.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.lblData.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.lblData.Location = new System.Drawing.Point(559, 83);
-            this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(227, 42);
-            this.lblData.TabIndex = 28;
-            this.lblData.Text = "00/00/0000";
-            this.lblData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblHora
-            // 
-            this.lblHora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.lblHora.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.lblHora.Location = new System.Drawing.Point(559, 132);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(227, 42);
-            this.lblHora.TabIndex = 29;
-            this.lblHora.Text = "00:00:00";
-            this.lblHora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.btnPlano.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+            this.btnPlano.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnPlano.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.btnPlano.FlatAppearance.BorderSize = 2;
+            this.btnPlano.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlano.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlano.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.btnPlano.Image = global::fitnessfusion.Properties.Resources.modalidadeMenu;
+            this.btnPlano.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlano.Location = new System.Drawing.Point(559, 84);
+            this.btnPlano.Name = "btnPlano";
+            this.btnPlano.Size = new System.Drawing.Size(218, 92);
+            this.btnPlano.TabIndex = 30;
+            this.btnPlano.Text = "PLANOS E ASSINATURA";
+            this.btnPlano.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPlano.UseVisualStyleBackColor = false;
+            this.btnPlano.Click += new System.EventHandler(this.btnPlano_Click);
             // 
             // frmMenu
             // 
@@ -269,14 +265,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(1200, 600);
+            this.Controls.Add(this.btnPlano);
             this.Controls.Add(this.lblHora);
             this.Controls.Add(this.lblData);
             this.Controls.Add(this.btnTreino);
             this.Controls.Add(this.btnEquipamento);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.btnAvalicao);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnSair);
@@ -303,8 +298,6 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnAvalicao;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.Panel panel1;
@@ -313,5 +306,6 @@
         private System.Windows.Forms.Label lblData;
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnPlano;
     }
 }
