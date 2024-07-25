@@ -23,12 +23,12 @@ namespace fitnessfusion
     public partial class frmCadastro : Form
 
     {
-        private int novoId;
+        
         public frmCadastro()
         {
             InitializeComponent();
 
-        
+            
 
             carregarplanos();
 
@@ -81,23 +81,24 @@ namespace fitnessfusion
 
         //FIM METODOS FOTO FTP
         // metodo mysql
-
         private void ObterNovoId()
         {
-            int novoId; // Default value in case there are no clients yet
             try
             {
                 banco.Conectar();
-                string query = "SELECT idCliente FROM cliente order by idCliente desc limit 1;";
+                string query = "SELECT idCliente FROM cliente ORDER BY idCliente DESC LIMIT 1;";
                 MySqlCommand command = new MySqlCommand(query, banco.conexaoDb);
+                object result = command.ExecuteScalar();
+                if (result != DBNull.Value)
                 {
-                    object result = command.ExecuteScalar();
-                    if (result != DBNull.Value)
-                    {
-                        int ultimoId = Convert.ToInt32(result);
-                        novoId = ultimoId + 1;
-                    }
+                    int ultimoId = Convert.ToInt32(result);
+                    variaveis.novoId = ultimoId + 1;
                 }
+                else
+                {
+                    variaveis.novoId = 1; // Caso não haja clientes ainda
+                }
+                banco.Desconectar();
             }
             catch (Exception ex)
             {
@@ -105,7 +106,6 @@ namespace fitnessfusion
                 Console.WriteLine("Erro ao obter o novo ID: " + ex.Message);
             }
         }
-        
 
         private void carregarplanos()
 
@@ -159,12 +159,16 @@ namespace fitnessfusion
         {
             try
             {
+                // Mensagem de sucesso para o cadastro do cliente
+                
+                ObterNovoId();
                 banco.Conectar();
-                string Inserir = "INSERT INTO cliente (idCliente, idPlano, idTreino, nomeCliente, cpfCliente, telefoneCliente, statusCliente, dataNascCliente, emailCliente, senhaCliente, fotoCliente, altCliente) " +
-                    "VALUES (@idCliente, @idPlano, @idTreino, @nome, @cpfCliente, @telefone, @status, @datanasc, @email, @senha, @foto, @alt);"; 
+
+                string Inserir = "INSERT INTO cliente (idPlano, idTreino, nomeCliente, cpfCliente, telefoneCliente, statusCliente, dataNascCliente, emailCliente, senhaCliente, fotoCliente, altCliente) " +
+                    "VALUES (@idPlano, @idTreino, @nome, @cpfCliente, @telefone, @status, @datanasc, @email, @senha, @foto, @alt);";
                 MySqlCommand cmd = new MySqlCommand(Inserir, banco.conexaoDb);
-                //parametros
-                cmd.Parameters.AddWithValue("@idCliente", variaveis.codigoCliente);
+
+                // Parâmetros para inserção de cliente
                 cmd.Parameters.AddWithValue("@idPlano", variaveis.codigoPlano);
                 cmd.Parameters.AddWithValue("@idTreino", variaveis.codigoTreino);
                 cmd.Parameters.AddWithValue("@nome", variaveis.nomecliente);
@@ -174,25 +178,17 @@ namespace fitnessfusion
                 cmd.Parameters.AddWithValue("@datanasc", variaveis.datanasccliente);
                 cmd.Parameters.AddWithValue("@email", variaveis.emailcliente);
                 cmd.Parameters.AddWithValue("@senha", variaveis.senhacliente);
-                cmd.Parameters.AddWithValue("@Foto", variaveis.fotocliente);
+                cmd.Parameters.AddWithValue("@foto", variaveis.fotocliente);
                 cmd.Parameters.AddWithValue("@alt", variaveis.altcliente);
-             
-
-                //Fim parametros
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Cliente cadastrado com sucesso", "CADASTRO DE CLIENTE");
-
-                string obterUltimoId = "SELECT idcliente, nomeCliente FROM cliente ORDER BY idcliente DESC limit 1;";
-                MySqlCommand cmdUltimoId = new MySqlCommand(obterUltimoId, banco.conexaoDb);
-                long novoIdCliente = Convert.ToInt64(cmdUltimoId.ExecuteScalar());
 
                 // Inserir registro na tabela de pagamento
-                string inserirPagamento = "INSERT INTO pagamento (idCliente, idPlano, dataPagamento, metodoPagamento) " +
-                                          "VALUES (@idCliente, @idPlano, @dataPagamento, @metodopagamento);";
+                string inserirPagamento = "INSERT INTO pagamento (idCliente, idPlano, dataPagamento, metodoPagamento, statusPagamento) " +
+                                          "VALUES (@idCliente, @idPlano, @dataPagamento, @metodopagamento, 'PAGO');"; // Valor fixo 'PAGO'
                 MySqlCommand cmdPagamento = new MySqlCommand(inserirPagamento, banco.conexaoDb);
 
                 // Parâmetros para inserção de pagamento
-                cmdPagamento.Parameters.AddWithValue("@idCliente", novoIdCliente);
+                cmdPagamento.Parameters.AddWithValue("@idCliente", variaveis.novoId);
                 cmdPagamento.Parameters.AddWithValue("@idPlano", variaveis.codigoPlano);
                 cmdPagamento.Parameters.AddWithValue("@dataPagamento", DateTime.Now);
                 cmdPagamento.Parameters.AddWithValue("@metodopagamento", variaveis.metododepagamento);
@@ -202,8 +198,6 @@ namespace fitnessfusion
 
                 MessageBox.Show("Cliente e pagamento cadastrados com sucesso", "CADASTRO DE CLIENTE");
                 banco.Desconectar();
-
-
 
                 if (ValidarFTP())
                 {
@@ -406,6 +400,8 @@ namespace fitnessfusion
         {
             try
             {
+                ObterNovoId(); // Chama a função para obter o novo ID
+
                 OpenFileDialog ofdFoto = new OpenFileDialog();
                 ofdFoto.Multiselect = false;
                 ofdFoto.FileName = "";
@@ -417,12 +413,11 @@ namespace fitnessfusion
                 ofdFoto.RestoreDirectory = true;
 
                 DialogResult result = ofdFoto.ShowDialog();
-                pctFoto.Image = Image.FromFile(ofdFoto.FileName);
-                variaveis.fotocliente = novoId + " _ " + Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".png";
-                //variavel foto cliente, tem que conter id cliente e nome cliente, e extenção
-
                 if (result == DialogResult.OK)
                 {
+                    pctFoto.Image = Image.FromFile(ofdFoto.FileName);
+                    variaveis.fotocliente = variaveis.novoId + "_" + Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".jpeg";
+
                     try
                     {
                         variaveis.atfotocliente = "S";
@@ -430,13 +425,14 @@ namespace fitnessfusion
                     }
                     catch (SecurityException erro)
                     {
-                        MessageBox.Show("Erro de segurança - Fale com o admin \n Messagem: " + erro + "\n Detalhe: " + erro.StackTrace);
+                        MessageBox.Show("Erro de segurança - Fale com o admin \n Mensagem: " + erro + "\n Detalhe: " + erro.StackTrace);
                     }
                     catch (Exception erro)
                     {
                         MessageBox.Show("Você não tem permissão. \n Detalhe: " + erro);
                     }
                 }
+
                 btnSalvar.Focus();
             }
             catch

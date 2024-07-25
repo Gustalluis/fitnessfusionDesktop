@@ -42,6 +42,7 @@ namespace fitnessfusion
         public static string usuario, senha, especialidade, nomeUsuario;
 
         //pagamento
+        public static int novoId;
         public static string statusPagamento, metododepagamento;
         //PLANO ASSINATURA
         public static string nomePlano, descricaoPlano, statusPlano;

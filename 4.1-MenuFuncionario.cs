@@ -42,30 +42,28 @@ namespace fitnessfusion
         /*CONVERTER A IMAGEM EM BYTE*/
         public byte[] GetImgToByte(string caminhoArquivoFtp)
         {
-            WebClient ftpCliente = new WebClient();
-            ftpCliente.Credentials = new NetworkCredential(variaveis.usuarioFtp, variaveis.senhaFtp);
-            try
+            using (WebClient ftpCliente = new WebClient())
             {
-                byte[] imageToByte = ftpCliente.DownloadData(caminhoArquivoFtp);
-                return imageToByte;
+                ftpCliente.Credentials = new NetworkCredential(variaveis.usuarioFtp, variaveis.senhaFtp);
+                try
+                {
+                    return ftpCliente.DownloadData(caminhoArquivoFtp);
+                }
+                catch
+                {
+                    return ftpCliente.DownloadData("ftp://127.0.0.1/admin/img/funcionario/semfoto.png");
+                }
             }
-            catch
-            {
-                byte[] imageToByte = ftpCliente.DownloadData("ftp://127.0.0.1/admin/img/funcionario/semfoto.png");
-                return imageToByte;
-            }
-
         }
 
         /*CONVERTER A IMAGEM DE BYTE para IMAGEM*/
+
         public static Bitmap ByteToImage(byte[] blob)
         {
-            MemoryStream mStream = new MemoryStream();
-            byte[] pData = blob;
-            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-            Bitmap bm = new Bitmap(mStream, false);
-            mStream.Dispose();
-            return bm;
+            using (MemoryStream mStream = new MemoryStream(blob))
+            {
+                return new Bitmap(mStream);
+            }
         }
 
         // METODO mysql 
@@ -74,7 +72,7 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string fucao = "INSERT INTO funcionario (nomeFuncionario, cargoFuncionario, telefoneFuncionario, enderecoFuncionario, emailFuncionario, senhaFuncionario, salarioFuncionario, dataCadFuncionario, statusFuncionario, fotoFuncionario, altFuncionario) VALUES (@nome, @cargo, @fone, @endereco, @email, @senha, @salario, @data, @status, @foto, @alt);";
+                string fucao = "INSERT INTO funcionario (nomeFuncionario, cargoFuncionario, telefoneFuncionario, enderecoFuncionario, emailFuncionario, senhaFuncionario, salarioFuncionario, statusFuncionario, fotoFuncionario, altFuncionario) VALUES (@nome, @cargo, @fone, @endereco, @email, @senha, @salario, @status, @foto, @alt);";
                 MySqlCommand cmd = new MySqlCommand(fucao, banco.conexaoDb);
         
                 cmd.Parameters.AddWithValue("@nome", variaveis.nomeFuncionario);
@@ -84,11 +82,9 @@ namespace fitnessfusion
                 cmd.Parameters.AddWithValue("@email", variaveis.emailFuncionario);
                 cmd.Parameters.AddWithValue("@senha", variaveis.senhaFuncionario);
                 cmd.Parameters.AddWithValue("@salario", variaveis.salarioFuncionario);
-                cmd.Parameters.AddWithValue("@data", variaveis.datacadFuncionario);
                 cmd.Parameters.AddWithValue("@status", variaveis.statusFuncionario);
                 cmd.Parameters.AddWithValue("@foto", variaveis.fotoFuncionario);
                 cmd.Parameters.AddWithValue("@alt", variaveis.altFuncionario);
-
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("FUNCIONARIO cadastrado com sucesso", "CADASTRO DE FUNCIONARIO");
@@ -112,7 +108,7 @@ namespace fitnessfusion
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro Ao inserir Cliente\n\n" + erro);
+                MessageBox.Show("Erro Ao inserir funcionario\n\n" + erro);
             }
         }
      
@@ -254,7 +250,6 @@ namespace fitnessfusion
             variaveis.emailFuncionario = txtEmail.Text;
             variaveis.senhaFuncionario = txtSenha.Text;
             variaveis.salarioFuncionario = double.Parse(txtSalario.Text);
-            variaveis.datacadFuncionario = DateTime.Now;
             variaveis.statusFuncionario = cmbStatusCad.Text;
             variaveis.altFuncionario = "foto" + txtNome.Text;
 
