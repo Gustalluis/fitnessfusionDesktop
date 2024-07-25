@@ -17,6 +17,7 @@ namespace fitnessfusion
         public frmPlanoAssinatura()
         {
             InitializeComponent();
+            carregarPlano();
         }
         //metodo mysql
 
@@ -99,6 +100,7 @@ namespace fitnessfusion
             }
         }
 
+
         private void cbmPlano_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbmPlano.Text == "TODOS")
@@ -114,7 +116,7 @@ namespace fitnessfusion
 
         private void frmPlanoAssinatura_Load(object sender, EventArgs e)
         {
-            CarregarPlanoStatus();
+            dgvPlano.ClearSelection();
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
@@ -137,6 +139,29 @@ namespace fitnessfusion
         {
             new frmMenu().Show(this);
             Hide();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            variaveis.funcao = "CADASTRAR";
+            new frmCadPlano().Show();
+            Hide();
+        }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+            variaveis.funcao = "ALTERAR";
+            new frmCadPlano().Show();
+            Hide();
+        }
+
+        private void dgvPlano_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                variaveis.codigoPlano = Convert.ToInt32(dgvPlano[0, variaveis.linhaSelecionada].Value);
+            }
         }
     }
 }

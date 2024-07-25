@@ -73,6 +73,7 @@
             this.btnAlterar.TabIndex = 25;
             this.btnAlterar.Text = "ALTERAR PLANO";
             this.btnAlterar.UseVisualStyleBackColor = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
             // btnSair
             // 
@@ -126,6 +127,7 @@
             this.btnCadastrar.TabIndex = 21;
             this.btnCadastrar.Text = "CADASTRAR PLANO";
             this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // panel4
             // 
@@ -144,6 +146,7 @@
             this.dgvPlano.Name = "dgvPlano";
             this.dgvPlano.Size = new System.Drawing.Size(1161, 449);
             this.dgvPlano.TabIndex = 6;
+            this.dgvPlano.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlano_CellClick);
             // 
             // panel3
             // 

@@ -123,9 +123,8 @@
             this.cbmPlano.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbmPlano.FormattingEnabled = true;
             this.cbmPlano.Items.AddRange(new object[] {
-            "1 MES",
-            "2 MESES",
-            "3 MESES"});
+            "ATIVO",
+            "INATIVO"});
             this.cbmPlano.Location = new System.Drawing.Point(409, 44);
             this.cbmPlano.Name = "cbmPlano";
             this.cbmPlano.Size = new System.Drawing.Size(188, 27);
@@ -198,9 +197,9 @@
             this.lblNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
             this.lblNome.Location = new System.Drawing.Point(22, 17);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(186, 25);
+            this.lblNome.Size = new System.Drawing.Size(182, 25);
             this.lblNome.TabIndex = 2;
-            this.lblNome.Text = "NOME DO TREINO:";
+            this.lblNome.Text = "NOME DO PLANO:";
             // 
             // lblTitulo
             // 

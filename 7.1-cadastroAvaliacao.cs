@@ -114,6 +114,7 @@ namespace fitnessfusion
                 MessageBox.Show("Erro ao cadastrar o CLIENTE.\n\n" + erro);
             }
         }
+
         public void carregarAvaliacao()
         {
             try
