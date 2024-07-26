@@ -32,13 +32,15 @@
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtDescricaoTreino = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbduracaoTreino = new System.Windows.Forms.ComboBox();
             this.txtNomeTreino = new System.Windows.Forms.TextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbmTreino = new System.Windows.Forms.ComboBox();
+            this.txtDuracaoTreino = new System.Windows.Forms.TextBox();
             this.pnlCad.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,10 +48,12 @@
             // 
             this.pnlCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
             this.pnlCad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCad.Controls.Add(this.txtDuracaoTreino);
+            this.pnlCad.Controls.Add(this.label2);
+            this.pnlCad.Controls.Add(this.cbmTreino);
             this.pnlCad.Controls.Add(this.lblDescricao);
             this.pnlCad.Controls.Add(this.txtDescricaoTreino);
             this.pnlCad.Controls.Add(this.label1);
-            this.pnlCad.Controls.Add(this.cmbduracaoTreino);
             this.pnlCad.Controls.Add(this.txtNomeTreino);
             this.pnlCad.Controls.Add(this.btnLimpar);
             this.pnlCad.Controls.Add(this.btnSalvar);
@@ -84,24 +88,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(801, 19);
+            this.label1.Location = new System.Drawing.Point(790, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(223, 25);
             this.label1.TabIndex = 28;
             this.label1.Text = "DURACAO DO TREINO ";
-            // 
-            // cmbduracaoTreino
-            // 
-            this.cmbduracaoTreino.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbduracaoTreino.FormattingEnabled = true;
-            this.cmbduracaoTreino.Items.AddRange(new object[] {
-            "1 MES",
-            "2 MESES",
-            "3 MESES"});
-            this.cmbduracaoTreino.Location = new System.Drawing.Point(806, 47);
-            this.cmbduracaoTreino.Name = "cmbduracaoTreino";
-            this.cmbduracaoTreino.Size = new System.Drawing.Size(266, 27);
-            this.cmbduracaoTreino.TabIndex = 27;
             // 
             // txtNomeTreino
             // 
@@ -109,7 +100,7 @@
             this.txtNomeTreino.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeTreino.Location = new System.Drawing.Point(26, 45);
             this.txtNomeTreino.Name = "txtNomeTreino";
-            this.txtNomeTreino.Size = new System.Drawing.Size(541, 26);
+            this.txtNomeTreino.Size = new System.Drawing.Size(277, 26);
             this.txtNomeTreino.TabIndex = 3;
             // 
             // btnLimpar
@@ -179,6 +170,38 @@
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(419, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 25);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "STATUS DO TREINO";
+            // 
+            // cbmTreino
+            // 
+            this.cbmTreino.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmTreino.FormattingEnabled = true;
+            this.cbmTreino.Items.AddRange(new object[] {
+            "ATIVO",
+            "INATIVO"});
+            this.cbmTreino.Location = new System.Drawing.Point(424, 44);
+            this.cbmTreino.Name = "cbmTreino";
+            this.cbmTreino.Size = new System.Drawing.Size(266, 27);
+            this.cbmTreino.TabIndex = 31;
+            // 
+            // txtDuracaoTreino
+            // 
+            this.txtDuracaoTreino.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDuracaoTreino.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuracaoTreino.Location = new System.Drawing.Point(795, 45);
+            this.txtDuracaoTreino.Name = "txtDuracaoTreino";
+            this.txtDuracaoTreino.Size = new System.Drawing.Size(277, 26);
+            this.txtDuracaoTreino.TabIndex = 33;
+            // 
             // frmCadTreino
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,12 +227,14 @@
         private System.Windows.Forms.Label lblDescricao;
         private System.Windows.Forms.TextBox txtDescricaoTreino;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cmbduracaoTreino;
         private System.Windows.Forms.TextBox txtNomeTreino;
         private System.Windows.Forms.Button btnLimpar;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.TextBox txtDuracaoTreino;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbmTreino;
     }
 }

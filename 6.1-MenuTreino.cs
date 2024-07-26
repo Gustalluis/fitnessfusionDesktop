@@ -23,11 +23,12 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string inserir = "INSERT INTO treino (nomeTreino, duracaoTreino, descricaoTreino) VALUES (@nomeTreino, @duracaoTreino, @descricaoTreino);";
+                string inserir = "INSERT INTO treino (nomeTreino, duracaoTreino, descricaoTreino, statusTreino) VALUES (@nomeTreino, @duracaoTreino, @descricaoTreino, @statusTreino);";
                 MySqlCommand cmd = new MySqlCommand(inserir, banco.conexaoDb);
 
                 cmd.Parameters.AddWithValue("@nomeTreino", variaveis.nomeTreino);
                 cmd.Parameters.AddWithValue("@duracaoTreino", variaveis.duracaoTreino);
+                cmd.Parameters.AddWithValue("@statusTreino", variaveis.statusTreino);
                 cmd.Parameters.AddWithValue("@descricaoTreino", variaveis.descricaoTreino);
 
                 cmd.ExecuteNonQuery();
@@ -55,10 +56,12 @@ namespace fitnessfusion
                     variaveis.nomeTreino = dr.GetString(1);
                     variaveis.duracaoTreino = dr.GetString(2);
                     variaveis.descricaoTreino = dr.GetString(3);
+                    variaveis.statusTreino = dr.GetString(4);
 
                     txtNomeTreino.Text = variaveis.nomeTreino;
-                    cmbduracaoTreino.Text = variaveis.duracaoTreino;
+                    txtDuracaoTreino.Text = variaveis.duracaoTreino;
                     txtDescricaoTreino.Text = variaveis.descricaoTreino;
+                    cbmTreino.Text = variaveis.statusTreino;
                 }
             }
             catch (Exception erro)
@@ -73,21 +76,22 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string alterar = "UPDATE treino SET nometreino = @nome, duracaoTreino = @duracao, descricaoTreino = @descricao WHERE idTreino = @codigo;";
+                string alterar = "UPDATE treino SET nometreino = @nome, duracaoTreino = @duracao, descricaoTreino = @descricao, statusTreino = @statusTreino WHERE idTreino = @codigo;";
                 MySqlCommand cmd = new MySqlCommand(alterar, banco.conexaoDb);
 
                 cmd.Parameters.AddWithValue("@nome", variaveis.nomeTreino);
                 cmd.Parameters.AddWithValue("@duracao", variaveis.duracaoTreino);
                 cmd.Parameters.AddWithValue("@descricao", variaveis.descricaoTreino);
+                cmd.Parameters.AddWithValue("@statusTreino", variaveis.statusTreino);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codigoTreino);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Serviço EDITADO com sucesso", "EDITAR SERVIÇO");
+                MessageBox.Show("TREINO EDITADO com sucesso", "EDITAR TREINO");
                 banco.Desconectar();
             }
             catch (Exception erro)
             {
-                MessageBox.Show("erro ao alterar equipamento. \n\n" + erro);
+                MessageBox.Show("erro ao alterar TREINO. \n\n" + erro);
             }
         }
         private void btnSair_Click(object sender, EventArgs e)
@@ -118,8 +122,9 @@ namespace fitnessfusion
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             variaveis.nomeTreino = txtNomeTreino.Text;
-            variaveis.duracaoTreino = cmbduracaoTreino.Text;
+            variaveis.duracaoTreino = txtDuracaoTreino.Text;
             variaveis.descricaoTreino = txtDescricaoTreino.Text;
+            variaveis.statusTreino = cbmTreino.Text;
 
             if (variaveis.funcao == "CADASTRAR")
             {

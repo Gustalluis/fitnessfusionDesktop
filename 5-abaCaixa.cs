@@ -16,6 +16,7 @@ namespace fitnessfusion
         public frmEquipamento()
         {
             InitializeComponent();
+            carregarPagamento();
         }
         //metodo mysql
        
@@ -23,10 +24,8 @@ namespace fitnessfusion
         {
             try
             {
-                // Establish connection to the database
+              
                 banco.Conectar();
-
-                // SQL query to retrieve payment information with date formatted explicitly
                 string carregar = "SELECT pagamento.idPagamento, cliente.nomeCliente, cliente.cpfCliente, " +
                                   "planoAssinatura.nomePlano, planoAssinatura.valorPlano, " +
                                   "DATE_FORMAT(pagamento.dataPagamento, '%Y-%m-%d %H:%i:%s') as dataPagamento, " +
@@ -34,20 +33,15 @@ namespace fitnessfusion
                                   "FROM pagamento " +
                                   "INNER JOIN cliente ON pagamento.idCliente = cliente.idCliente " +
                                   "INNER JOIN planoAssinatura ON pagamento.idPlano = planoAssinatura.idPlano;";
-
-                // Create a MySqlCommand to execute the query
+                
                 MySqlCommand cmd = new MySqlCommand(carregar, banco.conexaoDb);
-
-                // Use MySqlDataAdapter to fill the DataTable with results from the query
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
 
-                // Bind the DataTable to the DataGridView
                 dgvCaixa.DataSource = dt;
-
-                // Set column headers
-                dgvCaixa.Columns[0].Visible = false;  // Hide the idPagamento column
+                
+                dgvCaixa.Columns[0].Visible = false;  
                 dgvCaixa.Columns[1].HeaderText = "NOME DO CLIENTE";
                 dgvCaixa.Columns[2].HeaderText = "CPF DO CLIENTE";
                 dgvCaixa.Columns[3].HeaderText = "NOME DO PLANO";
@@ -55,19 +49,17 @@ namespace fitnessfusion
                 dgvCaixa.Columns[5].HeaderText = "DATA DO PAGAMENTO";
                 dgvCaixa.Columns[6].HeaderText = "STATUS PAGAMENTO";
 
-                // Clear any selection in the DataGridView
+               
                 dgvCaixa.ClearSelection();
-
-                // Disconnect from the database
                 banco.Desconectar();
             }
             catch (Exception erro)
             {
-                // Handle any exceptions by showing an error message box
+                
                 MessageBox.Show("Erro ao carregar pagamentos.\n\n" + erro);
             }
+            verificarEAtualizarPagamentos();
         }
-
 
         private void verificarEAtualizarPagamentos()
         {
@@ -75,7 +67,7 @@ namespace fitnessfusion
             {
                 banco.Conectar();
                 DateTime dataLimite = DateTime.Now.AddDays(-30);
-                string updateQuery = "UPDATE pagamento SET statusPagamento = 'atrasado' WHERE dataPagamento < @dataLimite AND statusPagamento != 'atrasado'";
+                string updateQuery = "UPDATE pagamento SET statusPagamento = 'PEDENTE' WHERE dataPagamento < @dataLimite AND statusPagamento != 'PAGO';";
                 MySqlCommand command = new MySqlCommand(updateQuery, banco.conexaoDb);
                 command.Parameters.AddWithValue("@dataLimite", dataLimite);
 
@@ -90,7 +82,8 @@ namespace fitnessfusion
             }
         }
 
-
+    
+          
 
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -100,7 +93,7 @@ namespace fitnessfusion
         }
         private void frmEquipamento_Load(object sender, EventArgs e)
         {
-            carregarPagamento();
+           
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

@@ -173,6 +173,7 @@
             this.btnLimpar.TabIndex = 26;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnSalvar
             // 
@@ -224,6 +225,7 @@
             this.btnSair.Size = new System.Drawing.Size(40, 40);
             this.btnSair.TabIndex = 27;
             this.btnSair.UseVisualStyleBackColor = false;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // frmCadPlano
             // 

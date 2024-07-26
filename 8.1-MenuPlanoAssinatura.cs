@@ -24,6 +24,7 @@ namespace fitnessfusion
         private void inserirPlano()
         {
             try
+
             {
                 banco.Conectar();
                 string inserir = "insert into planoAssinatura (nomePlano, statusPlano, valorPlano, duracaoPlano, descricaoPlanos) values (@nome, @status, @valor, @duracao, @desc);";
@@ -51,7 +52,7 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string alterar = "update planoAssinatura set nomePlano = @nome, statusPlano = @status, Planovalor = @valor, Planoduracao = @duracao, descricaoPlanos = @desc WHERE idPlano = @codigo;";
+                string alterar = "update planoAssinatura set nomePlano = @nome, statusPlano = @status, ValorPlano = @valor, duracaoPlano = @duracao, descricaoPlanos = @desc WHERE idPlano = @codigo;";
                 MySqlCommand cmd = new MySqlCommand(alterar, banco.conexaoDb);
 
                 cmd.Parameters.AddWithValue("@nome", variaveis.nomePlano);
@@ -62,7 +63,7 @@ namespace fitnessfusion
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codigoPlano);
 
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Cliente alterado com sucesso", "CADASTRO CLIENTE");
+                MessageBox.Show("Plano alterado com sucesso", "CADASTRO PLANO");
                 banco.Desconectar();
 
             }
@@ -87,13 +88,13 @@ namespace fitnessfusion
                 {
                     variaveis.nomePlano = dr.GetString(1);
                     variaveis.statusPlano = dr.GetString(2);
-                    variaveis.valorPlano = dr.GetFloat(3);
+                    variaveis.valorPlano = dr.GetFloat(3); 
                     variaveis.duracaoPlano = dr.GetInt32(4);
                     variaveis.descricaoPlano = dr.GetString(5);
 
                     txtNomePlano.Text = variaveis.nomePlano;
                     cbmPlano.Text = variaveis.statusPlano;
-                    txtValor.Text = Convert.ToString(variaveis.valorPlano);
+                    txtValor.Text = Convert.ToString(variaveis.valorPlano); 
                     txtDuracao.Text = Convert.ToString(variaveis.duracaoPlano);
                     txtDescricaoPlano.Text = variaveis.descricaoPlano;
                 }
@@ -136,7 +137,7 @@ namespace fitnessfusion
             {
                 inserirPlano();
 
-                lblTitulo.Text = "CADASTRO CLIENTE";
+                lblTitulo.Text = "CADASTRO PLANO";
 
             }
             else if (variaveis.funcao == "ALTERAR")
@@ -145,6 +146,22 @@ namespace fitnessfusion
                 lblTitulo.Text = "ALTERAR";
                
             }
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            new frmMenu().Show(this);
+            Hide();
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtNomePlano.Clear();
+            txtDuracao.Clear();
+            txtDescricaoPlano.Clear();
+            cbmPlano.SelectedIndex = -1;
+            
+            txtNomePlano.Focus();
         }
     }
 }

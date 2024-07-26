@@ -41,7 +41,7 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                Console.WriteLine("Conexão estabelecida com sucesso para carregar clientes.");
+                
 
                 string planosClientes = "SELECT idCliente, nomeCliente FROM cliente;";
                 MySqlCommand cmd = new MySqlCommand(planosClientes, banco.conexaoDb);
@@ -66,7 +66,6 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                Console.WriteLine("Conexão estabelecida com sucesso para carregar funcionários.");
 
                 string funcionario = "SELECT idFuncionario, nomeFuncionario FROM funcionario;";
                 MySqlCommand cmd = new MySqlCommand(funcionario, banco.conexaoDb);
@@ -86,34 +85,35 @@ namespace fitnessfusion
             }
         }
 
-            private void inserirAvaliacao() { 
+            private void inserirAvaliacao() 
+            { 
         
-            try
-            {
-                banco.Conectar();
-                string inserir = "insert into avaliacaoFisica (idAvaliacaoFisica, idCliente, idFuncionario, peso, altura, medidaCorporal, descricaoAvaliacao,  dataAvaliacaoFisica) " +
-                "Values (@idava, @idCliente, @idFuncionario, @peso, @altura, @medida, @descricao, @data);";
-                MySqlCommand cmd = new MySqlCommand(inserir, banco.conexaoDb);
+                try
+                {
+                    banco.Conectar();
+                    string inserir = "insert into avaliacaoFisica (idAvaliacaoFisica, idCliente, idFuncionario, peso, altura, medidaCorporal, descricaoAvaliacao,  dataAvaliacaoFisica) " +
+                    "Values (@idava, @idCliente, @idFuncionario, @peso, @altura, @medida, @descricao, @data);";
+                    MySqlCommand cmd = new MySqlCommand(inserir, banco.conexaoDb);
 
 
-                cmd.Parameters.AddWithValue("@idava", variaveis.codigoAva);
-                cmd.Parameters.AddWithValue("@idFuncionario", variaveis.codigoFuncionario);
-                cmd.Parameters.AddWithValue("@idCliente", variaveis.codigoCliente);
-                cmd.Parameters.AddWithValue("@peso", variaveis.peso);
-                cmd.Parameters.AddWithValue("@altura", variaveis.altura);
-                cmd.Parameters.AddWithValue("@medida", variaveis.medida);
-                cmd.Parameters.AddWithValue("@descricao", variaveis.descricao);
-                cmd.Parameters.AddWithValue("@data", variaveis.data);
+                    cmd.Parameters.AddWithValue("@idava", variaveis.codigoAva);
+                    cmd.Parameters.AddWithValue("@idFuncionario", variaveis.codigoFuncionario);
+                    cmd.Parameters.AddWithValue("@idCliente", variaveis.codigoCliente);
+                    cmd.Parameters.AddWithValue("@peso", variaveis.peso);
+                    cmd.Parameters.AddWithValue("@altura", variaveis.altura);
+                    cmd.Parameters.AddWithValue("@medida", variaveis.medida);
+                    cmd.Parameters.AddWithValue("@descricao", variaveis.descricao);
+                    cmd.Parameters.AddWithValue("@data", variaveis.data);
 
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("avaliacao cadastrada com sucesso", "CADASTRO DE AVALIACAO");
-                banco.Desconectar();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("avaliacao cadastrada com sucesso", "CADASTRO DE AVALIACAO");
+                    banco.Desconectar();
+                }
+                catch (Exception erro)
+                {
+                    MessageBox.Show("Erro ao cadastrar o CLIENTE.\n\n" + erro);
+                }
             }
-            catch (Exception erro)
-            {
-                MessageBox.Show("Erro ao cadastrar o CLIENTE.\n\n" + erro);
-            }
-        }
 
         public void carregarAvaliacao()
         {
@@ -127,6 +127,7 @@ namespace fitnessfusion
 
                 if (dr.Read())
                 {
+                    
                     variaveis.peso = dr.GetString(3);
                     variaveis.altura = dr.GetString(4);
                     variaveis.medida = dr.GetString(5);

@@ -101,12 +101,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="3.2-MenuPagamento.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="3.2-MenuPagamento.Designer.cs">
-      <DependentUpon>3.2-MenuPagamento.cs</DependentUpon>
-    </Compile>
     <Compile Include="4-abaFuncionario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,9 +207,6 @@
     <EmbeddedResource Include="3.1-MenuCliente.resx">
       <DependentUpon>3.1-MenuCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="3.2-MenuPagamento.resx">
-      <DependentUpon>3.2-MenuPagamento.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="4-abaFuncionario.resx">
       <DependentUpon>4-abaFuncionario.cs</DependentUpon>
     </EmbeddedResource>
@@ -251,7 +242,6 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="3.Designer.2-MenuPagamento" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

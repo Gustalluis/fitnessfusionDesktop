@@ -31,7 +31,7 @@ namespace fitnessfusion
         public static string nomeEquipamento, estadoEquipamento, descricaoEquipamento;
         //TREINO
         public static int codigoTreino;
-        public static string nomeTreino, descricaoTreino, duracaoTreino;
+        public static string nomeTreino, descricaoTreino, duracaoTreino, statusTreino;
         //AVALIAÇÃO
         public static int codigoAva;
         public static string peso, altura, medida, descricao;

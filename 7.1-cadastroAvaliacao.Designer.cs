@@ -218,9 +218,9 @@
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
             this.label6.Location = new System.Drawing.Point(24, 218);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(205, 25);
+            this.label6.Size = new System.Drawing.Size(211, 25);
             this.label6.TabIndex = 38;
-            this.label6.Text = "DATA DO CADASTRO";
+            this.label6.Text = "DATA DA AVALIAÇÃO";
             // 
             // pnlCad
             // 

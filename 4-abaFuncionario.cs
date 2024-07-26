@@ -1,5 +1,4 @@
 ﻿using MySql.Data.MySqlClient;
-using Mysqlx;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,14 +13,15 @@ namespace fitnessfusion
 {
     public partial class frmMenuFuncionario : Form
     {
-        
-
         public frmMenuFuncionario()
         {
             InitializeComponent();
+            CarregarFuncionario();
         }
 
-        private void carregarFuncionario()
+        //mysql metodo
+
+        private void CarregarFuncionario()
         {
             try
             {
@@ -34,51 +34,139 @@ namespace fitnessfusion
 
                 dgvFuncionario.DataSource = dt;
                 dgvFuncionario.Columns[0].Visible = false;
-                dgvFuncionario.Columns[1].HeaderText = "NOME";
-                dgvFuncionario.Columns[2].HeaderText = "CARGO";
-                dgvFuncionario.Columns[3].HeaderText = "TELEFONE";
-                dgvFuncionario.Columns[4].HeaderText = "ENDEREÇO";
-                dgvFuncionario.Columns[5].HeaderText = "EMAIL";
-                dgvFuncionario.Columns[6].HeaderText = "SENHA";
-                dgvFuncionario.Columns[7].HeaderText = "SALARIO";
-                dgvFuncionario.Columns[8].HeaderText = "DATA DE CADASTRO";
-                dgvFuncionario.Columns[9].HeaderText = "STATUS";
-                dgvFuncionario.Columns[10].HeaderText = "FOTO FUNCIONARIO";
+                dgvFuncionario.Columns[1].HeaderText = "NOME DO FUNCIONARIO";
+                dgvFuncionario.Columns[2].HeaderText = "CARGO FUNCIONARIO";
+                dgvFuncionario.Columns[3].HeaderText = "TELEFONE DO FUNCIONARIO";
+                dgvFuncionario.Columns[4].HeaderText = "ENDERECO DO FUNCIONARIO";
+                dgvFuncionario.Columns[5].HeaderText = "EMAIL DO FUNCIONARIO";
+                dgvFuncionario.Columns[6].Visible = false;
+                dgvFuncionario.Columns[7].HeaderText = "SALARIO DO FUNCIONARIO";
+                dgvFuncionario.Columns[8].HeaderText = "DATA DO CADASTRO";
+                dgvFuncionario.Columns[9].HeaderText = "STATUS DO FUNCIONARIO";
+                dgvFuncionario.Columns[10].HeaderText = "FOTO DO FUNCIONARIO";
                 dgvFuncionario.Columns[11].Visible = false;
 
                 dgvFuncionario.ClearSelection();//Nada selecionado
                 banco.Desconectar();//Fechar db
-
             }
             catch (Exception erro)
             {
 
-                MessageBox.Show("Erro ao selecionar o CLIENTE.\n\n" + erro);
+                MessageBox.Show("Erro ao selecionar o funcionario.\n\n" + erro);
             }
         }
 
-        private void btnSair_Click(object sender, EventArgs e)
+        private void CarregarFuncionarioStatus()
         {
-            new frmMenu().Show(this);
-            Hide();
+            try
+            {
+                banco.Conectar(); //Abrir o banco de dados
+                string selecionar = "SELECT * FROM funcionario WHERE statusFuncionario = @status ORDER BY nomeFuncionario;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
+                cmd.Parameters.AddWithValue("@status", cbmCliente.Text);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd); //Adaptar ao C#
+                DataTable dt = new DataTable();//Criando uma estrutura da tabela
+                da.Fill(dt);//Preencher a tabela (dt)
+                dgvFuncionario.DataSource = dt;
+                dgvFuncionario.Columns[0].Visible = false;
+                dgvFuncionario.Columns[1].HeaderText = "NOME DO FUNCIONARIO";
+                dgvFuncionario.Columns[2].HeaderText = "CARGO FUNCIONARIO";
+                dgvFuncionario.Columns[3].HeaderText = "TELEFONE DO FUNCIONARIO";
+                dgvFuncionario.Columns[4].HeaderText = "ENDERECO DO FUNCIONARIO";
+                dgvFuncionario.Columns[5].HeaderText = "EMAIL DO FUNCIONARIO";
+                dgvFuncionario.Columns[6].Visible = false;
+                dgvFuncionario.Columns[7].HeaderText = "SALARIO DO FUNCIONARIO";
+                dgvFuncionario.Columns[8].HeaderText = "DATA DO CADASTRO";
+                dgvFuncionario.Columns[9].HeaderText = "STATUS DO FUNCIONARIO";
+                dgvFuncionario.Columns[10].HeaderText = "FOTO DO FUNCIONARIO";
+                dgvFuncionario.Columns[11].Visible = false;
+
+                dgvFuncionario.ClearSelection();//Nada selecionado
+                banco.Desconectar();//Fechar db
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Erro ao selecionar o funcionario.\n\n" + erro);
+            }
         }
 
-        private void btnCadastrar_Click(object sender, EventArgs e)
+        private void ExcluirFuncionario()
         {
-           
-                variaveis.funcao = "CADASTRAR";         
-                new frmMenuCadastroFuncionario().Show(this);
-                Hide();
+            try
+            {
+                banco.Conectar();
+                string alterar = " UPDATE funcionario SET statusFuncionario = 'INATIVO' WHERE idFuncionario = @codigo;";
+                MySqlCommand cmd = new MySqlCommand(alterar, banco.conexaoDb);
+                //parametros
+
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codigoFuncionario);
+
+
+                //fim parametros
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Funcionario desativado com sucesso", "EXCLUIR FUNCIONARIO");
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir FUNCIONARIO.\n\n" + erro);
+
+            }
+        }
+
+        private void CarregarFuncionarionome()
+
+
+        {
+            try
+            {
+                banco.Conectar(); //Abrir o banco de dados
+                string selecionar = "SELECT * FROM funcionario WHERE nomeFuncionario LIKE '%" + txtPesquisa.Text + "%' ORDER BY nomeFuncionario;";
+                MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd); //Adaptar ao C#
+                DataTable dt = new DataTable();//Criando uma estrutura da tabela
+                da.Fill(dt);//Preencher a tabela (dt)
+
+                dgvFuncionario.DataSource = dt;
+                dgvFuncionario.Columns[0].Visible = false;
+                dgvFuncionario.Columns[1].HeaderText = "NOME DO FUNCIONARIO";
+                dgvFuncionario.Columns[2].HeaderText = "CARGO FUNCIONARIO";
+                dgvFuncionario.Columns[3].HeaderText = "TELEFONE DO FUNCIONARIO";
+                dgvFuncionario.Columns[4].HeaderText = "ENDERECO DO FUNCIONARIO";
+                dgvFuncionario.Columns[5].HeaderText = "EMAIL DO FUNCIONARIO";
+                dgvFuncionario.Columns[6].Visible = false;
+                dgvFuncionario.Columns[7].HeaderText = "SALARIO DO FUNCIONARIO";
+                dgvFuncionario.Columns[8].HeaderText = "DATA DO CADASTRO";
+                dgvFuncionario.Columns[9].HeaderText = "STATUS DO FUNCIONARIO";
+                dgvFuncionario.Columns[10].HeaderText = "FOTO DO FUNCIONARIO";
+                dgvFuncionario.Columns[11].Visible = false;
+
+                dgvFuncionario.ClearSelection();//Nada selecionado
+                banco.Desconectar();//Fechar db
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Erro ao selecionar o funcionario.\n\n" + erro);
+            }
+
         }
 
         private void frmMenuFuncionario_Load(object sender, EventArgs e)
         {
-            carregarFuncionario();
+            dgvFuncionario.ClearSelection();
         }
 
-        private void btnAlterar_Click_1(object sender, EventArgs e)
+        private void btnCadastrar_Click(object sender, EventArgs e)
         {
+            variaveis.funcao = "CADASTRAR";
+            new frmMenuCadastroFuncionario().Show(this);
+            Hide();
+        }
 
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
             if (variaveis.linhaSelecionada >= 0)
             {
                 variaveis.funcao = "ALTERAR";
@@ -90,8 +178,64 @@ namespace fitnessfusion
             {
                 MessageBox.Show("Paara alterar selecione um cliente da lista");
             }
+        }
 
-           
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                var resposta = MessageBox.Show("Deseja mesmo excluir esse cliente?", "EXCLUIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resposta == DialogResult.Yes)
+                {
+                    var resposta2 = MessageBox.Show("Tem certeza? Essa ação não poderá ser alterada", "CONFIRMAÇÃO", MessageBoxButtons.YesNo);
+                    if (resposta2 == DialogResult.Yes)
+                    {
+                        CarregarFuncionario();
+                        ExcluirFuncionario();
+
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Para excluir selecione um cliente da lista");
+            }
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            new frmMenu().Show(this);
+            Hide();
+        }
+
+        private void cbmCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbmCliente.Text == "TODOS")
+            {
+                CarregarFuncionario();
+
+            }
+            else
+            {
+                CarregarFuncionarioStatus();
+            }
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            if (txtPesquisa.Text == "")
+            {
+                cbmCliente.Enabled = true;
+                cbmCliente.Text = "TODOS";
+                CarregarFuncionario();
+            }
+            else
+            {
+                cbmCliente.Enabled = false;
+                CarregarFuncionarionome();
+
+            }
         }
 
         private void dgvFuncionario_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -102,5 +246,5 @@ namespace fitnessfusion
                 variaveis.codigoFuncionario = Convert.ToInt32(dgvFuncionario[0, variaveis.linhaSelecionada].Value);
             }
         }
-    } 
+    }
 }
