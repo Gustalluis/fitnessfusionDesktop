@@ -150,7 +150,7 @@ namespace fitnessfusion
 
         private void btnSair_Click(object sender, EventArgs e)
         {
-            new frmMenu().Show(this);
+            new frmPlanoAssinatura().Show(this);
             Hide();
         }
 

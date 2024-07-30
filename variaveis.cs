@@ -13,13 +13,14 @@ namespace fitnessfusion
         public static int linhaSelecionada;
        
         //CLIENTES
-        public static int codigoCliente, codigoPagamento, codigoPlano;
+        public static int codigoCliente, codigoPagamento, codigoPlano, pagamentoCliente;
         public static string nomecliente, telefonecliente, emailcliente, senhacliente, statuscliente, altcliente, fotocliente, atFotoCliente, CaminhoFotoCliente, TreinoCliente, pagamento,cpfCliente, atfotocliente,
         PlanoCliente;
         public static DateTime dataCadCliente;
         public static DateTime dataCadPagamento;
         public static DateTime datanasccliente;
         
+
         //FUNCIONARIOS
         public static int codigoFuncionario;
         public static string nomeFuncionario, enderecoFuncionario, telefoneFuncionario, cargoFuncionario,
@@ -34,7 +35,7 @@ namespace fitnessfusion
         public static string nomeTreino, descricaoTreino, duracaoTreino, statusTreino;
         //AVALIAÇÃO
         public static int codigoAva;
-        public static string peso, altura, medida, descricao;
+        public static string peso, altura, medida, descricao, statusAvaliacao;
         public static DateTime data;
 
         //LOGIN
@@ -56,9 +57,9 @@ namespace fitnessfusion
 
 
         //ESTRUTURA FTP LOCAL
-        public static string enderecoServidorFtp = "ftp://127.0.0.1/admin/";
-        public static string usuarioFtp = "fusion";
-        public static string senhaFtp = "123";
+        public static string enderecoServidorFtp = "ftp://u283879542.fitnessfusion@smpsistema.com.br/admin/";
+        public static string usuarioFtp = "u283879542.fitnessfusion";
+        public static string senhaFtp = "Senac@fitnessfusion01";
         //fim estrutura
 
     }

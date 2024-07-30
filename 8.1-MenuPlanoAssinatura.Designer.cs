@@ -210,7 +210,7 @@
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(500, 38);
             this.lblTitulo.TabIndex = 26;
-            this.lblTitulo.Text = "CADASTRO EQUIPAMENTO";
+            this.lblTitulo.Text = "CADASTRO PLANO";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSair

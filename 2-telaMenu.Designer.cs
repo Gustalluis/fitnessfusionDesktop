@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            this.dgvAgenda = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -45,26 +44,17 @@
             this.btnFuncionarios = new System.Windows.Forms.Button();
             this.BtnCliente = new System.Windows.Forms.Button();
             this.btnPlano = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAgenda)).BeginInit();
+            this.dgvMenu = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvAgenda
-            // 
-            this.dgvAgenda.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.dgvAgenda.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvAgenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAgenda.Location = new System.Drawing.Point(3, 3);
-            this.dgvAgenda.Name = "dgvAgenda";
-            this.dgvAgenda.Size = new System.Drawing.Size(610, 410);
-            this.dgvAgenda.TabIndex = 8;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
-            this.panel2.Controls.Add(this.dgvAgenda);
+            this.panel2.Controls.Add(this.dgvMenu);
             this.panel2.Location = new System.Drawing.Point(559, 179);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(616, 416);
@@ -259,6 +249,23 @@
             this.btnPlano.UseVisualStyleBackColor = false;
             this.btnPlano.Click += new System.EventHandler(this.btnPlano_Click);
             // 
+            // dgvMenu
+            // 
+            this.dgvMenu.AllowUserToAddRows = false;
+            this.dgvMenu.AllowUserToDeleteRows = false;
+            this.dgvMenu.AllowUserToResizeColumns = false;
+            this.dgvMenu.AllowUserToResizeRows = false;
+            this.dgvMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvMenu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+            this.dgvMenu.EnableHeadersVisualStyles = false;
+            this.dgvMenu.Location = new System.Drawing.Point(3, 3);
+            this.dgvMenu.MultiSelect = false;
+            this.dgvMenu.Name = "dgvMenu";
+            this.dgvMenu.ReadOnly = true;
+            this.dgvMenu.RowHeadersVisible = false;
+            this.dgvMenu.Size = new System.Drawing.Size(610, 410);
+            this.dgvMenu.TabIndex = 31;
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,10 +290,10 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAgenda)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,7 +301,6 @@
         #endregion
         private System.Windows.Forms.Button BtnCliente;
         private System.Windows.Forms.Button btnFuncionarios;
-        private System.Windows.Forms.DataGridView dgvAgenda;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnAvalicao;
@@ -307,5 +313,6 @@
         private System.Windows.Forms.Label lblHora;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnPlano;
+        private System.Windows.Forms.DataGridView dgvMenu;
     }
 }

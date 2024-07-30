@@ -16,12 +16,41 @@ namespace fitnessfusion
         public frmMenu()
         {
             InitializeComponent();
+            carregarTela();
         }
 
 
 
         //mysql metodo
+        private void carregarTela()
+        {
+            try
+            {
+                banco.Conectar();
+                string carregar = "SELECT p.idPagamento, c.nomeCliente, c.cpfCliente, pa.nomePlano, pa.valorPlano, p.dataPagamento," +
+                    " p.statusPagamento FROM pagamento p JOIN cliente c ON p.idCliente = c.idCliente JOIN planoAssinatura pa ON c.idPlano = pa.idPlano;";
+                MySqlCommand cmd = new MySqlCommand(carregar, banco.conexaoDb);
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
 
+                dgvMenu.DataSource = dt;
+                dgvMenu.Columns[0].Visible = false;
+                dgvMenu.Columns[1].HeaderText = "NOME DO CLIENTE";
+                dgvMenu.Columns[2].HeaderText = "CPF DO CLIENTE";
+                dgvMenu.Columns[3].HeaderText = "NOME DO PLANO";
+                dgvMenu.Columns[4].HeaderText = "VALOR DO PLANO";
+                dgvMenu.Columns[5].HeaderText = "DATA DO PAGAMENTO";
+                dgvMenu.Columns[6].HeaderText = "STATUS DO PAGAMENTO";
+                
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
   
 
 

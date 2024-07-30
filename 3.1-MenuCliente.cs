@@ -62,7 +62,7 @@ namespace fitnessfusion
             }
             catch
             {
-                byte[] imageToByte = ftpCliente.DownloadData("ftp://127.0.0.1/admin/img/cliente/semfoto.png");
+                byte[] imageToByte = ftpCliente.DownloadData("ftp://u283879542.fitnessfusion@smpsistema.com.br/admin/img/cliente/semfoto.png");
                 return imageToByte;
             }
 
@@ -78,7 +78,6 @@ namespace fitnessfusion
             mStream.Dispose();
             return bm;
         }
-
         //FIM METODOS FOTO FTP
         // metodo mysql
         private void ObterNovoId()
@@ -199,11 +198,14 @@ namespace fitnessfusion
                 MessageBox.Show("Cliente e pagamento cadastrados com sucesso", "CADASTRO DE CLIENTE");
                 banco.Desconectar();
 
+                MessageBox.Show(variaveis.fotocliente);
+
                 if (ValidarFTP())
                 {
                     if (!string.IsNullOrEmpty(variaveis.fotocliente))
                     {
                         string urlEnviarArquivo = variaveis.enderecoServidorFtp + "img/cliente/" + Path.GetFileName(variaveis.fotocliente);
+                        MessageBox.Show(urlEnviarArquivo);
                         try
                         {
                             ftp.EnviarArquivoFtp(variaveis.CaminhoFotoCliente, urlEnviarArquivo, variaveis.usuarioFtp, variaveis.senhaFtp);
@@ -221,46 +223,65 @@ namespace fitnessfusion
             }
 
         }
-
         private void carregarCliente()
         {
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT * FROM cliente WHERE idCliente = @codigo;";
+                string selecionar = "SELECT cliente.idCliente," +
+                    " cliente.nomeCliente, cliente.CpfCliente," +
+                    " cliente.telefoneCliente, cliente.statusCliente," +
+                    " cliente.dataNascCliente, cliente.emailCliente," +
+                    " cliente.senhaCliente, treino.nomeTreino, " +
+                    "planoAssinatura.nomePlano, pagamento.metodoPagamento," +
+                    " cliente.fotoCliente, cliente.altCliente FROM cliente" +
+                    " INNER JOIN treino ON cliente.idTreino = treino.idTreino INNER JOIN" +
+                    " planoAssinatura ON cliente.idPlano = planoAssinatura.idPlano INNER JOIN pagamento" +
+                    " ON pagamento.idCliente = cliente.idCliente WHERE cliente.idCliente = @codigo;";
+
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codigoCliente);
+
                 MySqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    variaveis.nomecliente = dr.GetString(3);
-                    variaveis.cpfCliente = dr.GetString(4);
-                    variaveis.telefonecliente = dr.GetString(5);
-                    variaveis.statuscliente = dr.GetString(6);
-                    variaveis.datanasccliente = dr.GetDateTime(7);
-                    variaveis.emailcliente = dr.GetString(8);
-                    variaveis.senhacliente = dr.GetString(9);
-                    variaveis.fotocliente = dr.GetString(10).Remove(0, 8);
-                    variaveis.altcliente = dr.GetString(11);
-                    variaveis.dataCadCliente = dr.GetDateTime(12);
+                    variaveis.nomecliente = dr.GetString(1);
+                    variaveis.cpfCliente = dr.GetString(2);
+                    variaveis.telefonecliente = dr.GetString(3);
+                    variaveis.statuscliente = dr.GetString(4);
+                    variaveis.datanasccliente = dr.GetDateTime(5);
+                    variaveis.emailcliente = dr.GetString(6);
+                    variaveis.senhacliente = dr.GetString(7);
+                    variaveis.TreinoCliente = dr.GetString(8);
+                    variaveis.PlanoCliente = dr.GetString(9);
+                    variaveis.pagamentoCliente = dr.GetInt32(10);
+                    variaveis.fotocliente = dr.GetString(11);
+                    variaveis.altcliente = dr.GetString(12);
 
-                    txtNome.Text        = variaveis.nomecliente;
-                    mtbCpf.Text =  variaveis.cpfCliente.ToString();
-                    mtbTelefone.Text    = variaveis.telefonecliente.ToString();
-                    cmbStatus.Text      = variaveis.statuscliente;
+                    txtNome.Text = variaveis.nomecliente;
+                    mtbCpf.Text = variaveis.cpfCliente; // Removeu ToString() desnecessário
+                    mtbTelefone.Text = variaveis.telefonecliente; // Removeu ToString() desnecessário
+                    cmbStatus.Text = variaveis.statuscliente;
+                    cmbPlano.Text = variaveis.PlanoCliente; // Removeu ToString() desnecessário
+                    cmbTreino.Text = variaveis.TreinoCliente; // Removeu ToString() desnecessário
+                    cmbPagamento.Text =Convert.ToString(variaveis.pagamentoCliente); // Removeu ToString() desnecessário
                     mtbNascCliente.Text = variaveis.datanasccliente.ToShortDateString();
-                    txtEmail.Text       = variaveis.emailcliente;
-                    txtSenha.Text       = variaveis.senhacliente;
-                    pctFoto.Image       = ByteToImage(GetImgToByte(variaveis.enderecoServidorFtp + "img/cliente/" + variaveis.fotocliente));
-                    
+                    txtEmail.Text = variaveis.emailcliente;
+                    txtSenha.Text = variaveis.senhacliente;
+                    if (!string.IsNullOrEmpty(variaveis.fotocliente))
+                    {
+                        string imagemCaminho = variaveis.enderecoServidorFtp + "img/cliente/" + variaveis.fotocliente;
+                        pctFoto.Image = ByteToImage(GetImgToByte(imagemCaminho));
+                    }
                 }
-
-
             }
-            catch (Exception erro)
+            catch (Exception ex)
             {
-
-                MessageBox.Show("erro ao carregar cliente" + erro); 
+                MessageBox.Show("Ocorreu um erro ao carregar o cliente: " + ex.Message);
+            }
+            finally
+            {
+                banco.Desconectar();
             }
         }
 
@@ -337,7 +358,6 @@ namespace fitnessfusion
 
             }
         }
-
 
         private void btnSair_Click(object sender, EventArgs e)
         {
@@ -416,7 +436,14 @@ namespace fitnessfusion
                 if (result == DialogResult.OK)
                 {
                     pctFoto.Image = Image.FromFile(ofdFoto.FileName);
-                    variaveis.fotocliente = variaveis.novoId + "_" + Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".jpeg";
+                    if(variaveis.funcao == "CADASTRAR")
+                    {
+                        variaveis.fotocliente = variaveis.novoId + "_" + Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".jpeg";
+                    }
+                    else
+                    {
+                        variaveis.fotocliente = variaveis.codigoCliente +"_" + Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".jpeg";
+                    }  
 
                     try
                     {

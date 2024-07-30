@@ -45,6 +45,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pnlCad = new System.Windows.Forms.Panel();
+            this.cbmStatus = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.cmbFuncionario = new System.Windows.Forms.ComboBox();
             this.cmbAluno = new System.Windows.Forms.ComboBox();
             this.mtbCad = new System.Windows.Forms.MaskedTextBox();
@@ -123,7 +125,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(24, 85);
+            this.label1.Location = new System.Drawing.Point(24, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 25);
             this.label1.TabIndex = 27;
@@ -133,7 +135,7 @@
             // 
             this.txtAltura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtAltura.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAltura.Location = new System.Drawing.Point(29, 315);
+            this.txtAltura.Location = new System.Drawing.Point(766, 35);
             this.txtAltura.Name = "txtAltura";
             this.txtAltura.Size = new System.Drawing.Size(293, 26);
             this.txtAltura.TabIndex = 29;
@@ -142,7 +144,7 @@
             // 
             this.txtpeso.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtpeso.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpeso.Location = new System.Drawing.Point(29, 180);
+            this.txtpeso.Location = new System.Drawing.Point(766, 102);
             this.txtpeso.Name = "txtpeso";
             this.txtpeso.Size = new System.Drawing.Size(293, 26);
             this.txtpeso.TabIndex = 30;
@@ -152,7 +154,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(24, 152);
+            this.label2.Location = new System.Drawing.Point(761, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(174, 25);
             this.label2.TabIndex = 31;
@@ -163,7 +165,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.label3.Location = new System.Drawing.Point(24, 287);
+            this.label3.Location = new System.Drawing.Point(761, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(197, 25);
             this.label3.TabIndex = 32;
@@ -173,20 +175,20 @@
             // 
             this.txtMedida.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMedida.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMedida.Location = new System.Drawing.Point(546, 35);
+            this.txtMedida.Location = new System.Drawing.Point(29, 233);
             this.txtMedida.Multiline = true;
             this.txtMedida.Name = "txtMedida";
-            this.txtMedida.Size = new System.Drawing.Size(517, 104);
+            this.txtMedida.Size = new System.Drawing.Size(410, 108);
             this.txtMedida.TabIndex = 33;
             // 
             // txtdescricao
             // 
             this.txtdescricao.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtdescricao.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtdescricao.Location = new System.Drawing.Point(546, 233);
+            this.txtdescricao.Location = new System.Drawing.Point(653, 233);
             this.txtdescricao.Multiline = true;
             this.txtdescricao.Name = "txtdescricao";
-            this.txtdescricao.Size = new System.Drawing.Size(517, 108);
+            this.txtdescricao.Size = new System.Drawing.Size(410, 108);
             this.txtdescricao.TabIndex = 34;
             // 
             // label4
@@ -194,7 +196,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.label4.Location = new System.Drawing.Point(541, 7);
+            this.label4.Location = new System.Drawing.Point(24, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(209, 25);
             this.label4.TabIndex = 35;
@@ -205,18 +207,19 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(541, 205);
+            this.label5.Location = new System.Drawing.Point(788, 205);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(275, 25);
             this.label5.TabIndex = 36;
             this.label5.Text = "DESCRIÇÃO DA AVALIAÇÃO";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.label6.Location = new System.Drawing.Point(24, 218);
+            this.label6.Location = new System.Drawing.Point(761, 140);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(211, 25);
             this.label6.TabIndex = 38;
@@ -226,6 +229,8 @@
             // 
             this.pnlCad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
             this.pnlCad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCad.Controls.Add(this.cbmStatus);
+            this.pnlCad.Controls.Add(this.label7);
             this.pnlCad.Controls.Add(this.cmbFuncionario);
             this.pnlCad.Controls.Add(this.cmbAluno);
             this.pnlCad.Controls.Add(this.mtbCad);
@@ -247,13 +252,36 @@
             this.pnlCad.Size = new System.Drawing.Size(1101, 483);
             this.pnlCad.TabIndex = 19;
             // 
+            // cbmStatus
+            // 
+            this.cbmStatus.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmStatus.FormattingEnabled = true;
+            this.cbmStatus.Items.AddRange(new object[] {
+            "ATIVO",
+            "INATIVO"});
+            this.cbmStatus.Location = new System.Drawing.Point(29, 165);
+            this.cbmStatus.Name = "cbmStatus";
+            this.cbmStatus.Size = new System.Drawing.Size(293, 33);
+            this.cbmStatus.TabIndex = 43;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(24, 137);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(234, 25);
+            this.label7.TabIndex = 42;
+            this.label7.Text = "STATUS DA AVALIAÇÃO";
+            // 
             // cmbFuncionario
             // 
             this.cmbFuncionario.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFuncionario.FormattingEnabled = true;
-            this.cmbFuncionario.Location = new System.Drawing.Point(29, 113);
+            this.cmbFuncionario.Location = new System.Drawing.Point(29, 101);
             this.cmbFuncionario.Name = "cmbFuncionario";
-            this.cmbFuncionario.Size = new System.Drawing.Size(459, 33);
+            this.cmbFuncionario.Size = new System.Drawing.Size(293, 33);
             this.cmbFuncionario.TabIndex = 41;
             // 
             // cmbAluno
@@ -262,14 +290,14 @@
             this.cmbAluno.FormattingEnabled = true;
             this.cmbAluno.Location = new System.Drawing.Point(29, 35);
             this.cmbAluno.Name = "cmbAluno";
-            this.cmbAluno.Size = new System.Drawing.Size(459, 33);
+            this.cmbAluno.Size = new System.Drawing.Size(293, 33);
             this.cmbAluno.TabIndex = 40;
             // 
             // mtbCad
             // 
             this.mtbCad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.mtbCad.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mtbCad.Location = new System.Drawing.Point(29, 246);
+            this.mtbCad.Location = new System.Drawing.Point(766, 168);
             this.mtbCad.Mask = "00/00/0000";
             this.mtbCad.Name = "mtbCad";
             this.mtbCad.Size = new System.Drawing.Size(293, 26);
@@ -318,5 +346,7 @@
         private System.Windows.Forms.MaskedTextBox mtbCad;
         private System.Windows.Forms.ComboBox cmbFuncionario;
         private System.Windows.Forms.ComboBox cmbAluno;
+        private System.Windows.Forms.ComboBox cbmStatus;
+        private System.Windows.Forms.Label label7;
     }
 }

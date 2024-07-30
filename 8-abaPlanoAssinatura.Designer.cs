@@ -34,17 +34,17 @@
             this.pctPesquisa = new System.Windows.Forms.PictureBox();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dgvPlano = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbmPlano = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvPlano = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pctPesquisa)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlano)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlano)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMenuCliente
@@ -112,6 +112,7 @@
             this.btnExcluir.TabIndex = 22;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnCadastrar
             // 
@@ -129,25 +130,6 @@
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.panel4.Controls.Add(this.dgvPlano);
-            this.panel4.Location = new System.Drawing.Point(15, 90);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1170, 455);
-            this.panel4.TabIndex = 20;
-            // 
-            // dgvPlano
-            // 
-            this.dgvPlano.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.dgvPlano.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlano.Location = new System.Drawing.Point(5, 3);
-            this.dgvPlano.Name = "dgvPlano";
-            this.dgvPlano.Size = new System.Drawing.Size(1161, 449);
-            this.dgvPlano.TabIndex = 6;
-            this.dgvPlano.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlano_CellClick);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
@@ -164,7 +146,7 @@
             this.cbmPlano.FormattingEnabled = true;
             this.cbmPlano.Items.AddRange(new object[] {
             "ATIVO",
-            "DESATIVADO",
+            "INATIVO",
             "TODOS"});
             this.cbmPlano.Location = new System.Drawing.Point(4, 5);
             this.cbmPlano.Name = "cbmPlano";
@@ -192,19 +174,46 @@
             this.txtPesquisa.TabIndex = 2;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.panel4.Controls.Add(this.dgvPlano);
+            this.panel4.Location = new System.Drawing.Point(15, 93);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1170, 435);
+            this.panel4.TabIndex = 26;
+            // 
+            // dgvPlano
+            // 
+            this.dgvPlano.AllowUserToAddRows = false;
+            this.dgvPlano.AllowUserToDeleteRows = false;
+            this.dgvPlano.AllowUserToResizeColumns = false;
+            this.dgvPlano.AllowUserToResizeRows = false;
+            this.dgvPlano.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPlano.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+            this.dgvPlano.EnableHeadersVisualStyles = false;
+            this.dgvPlano.Location = new System.Drawing.Point(5, 3);
+            this.dgvPlano.MultiSelect = false;
+            this.dgvPlano.Name = "dgvPlano";
+            this.dgvPlano.ReadOnly = true;
+            this.dgvPlano.RowHeadersVisible = false;
+            this.dgvPlano.Size = new System.Drawing.Size(1161, 429);
+            this.dgvPlano.TabIndex = 6;
+            this.dgvPlano.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPlano_CellClick_1);
+            // 
             // frmPlanoAssinatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(1200, 600);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.lblMenuCliente);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.pctPesquisa);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -213,11 +222,11 @@
             this.Text = "_8_abaPlanoAssinatura";
             this.Load += new System.EventHandler(this.frmPlanoAssinatura_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctPesquisa)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlano)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlano)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -229,11 +238,11 @@
         private System.Windows.Forms.PictureBox pctPesquisa;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dgvPlano;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbmPlano;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dgvPlano;
     }
 }

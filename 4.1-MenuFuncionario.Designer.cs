@@ -86,6 +86,7 @@
             this.pnlCad.Name = "pnlCad";
             this.pnlCad.Size = new System.Drawing.Size(1101, 483);
             this.pnlCad.TabIndex = 19;
+            this.pnlCad.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlCad_Paint);
             // 
             // txtCargo
             // 

@@ -172,6 +172,7 @@
             this.cbmCliente.Name = "cbmCliente";
             this.cbmCliente.Size = new System.Drawing.Size(170, 31);
             this.cbmCliente.TabIndex = 3;
+            this.cbmCliente.SelectedIndexChanged += new System.EventHandler(this.cbmCliente_SelectedIndexChanged);
             // 
             // panel4
             // 
@@ -198,6 +199,7 @@
             this.dgvTreino.RowHeadersVisible = false;
             this.dgvTreino.Size = new System.Drawing.Size(1161, 422);
             this.dgvTreino.TabIndex = 6;
+            this.dgvTreino.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTreino_CellClick_1);
             // 
             // FrmTreino
             // 

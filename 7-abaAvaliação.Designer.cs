@@ -34,17 +34,17 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnCadastrar = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dgvAvaliacao = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
             this.cbmCliente = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvAvaliacao = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pctPesquisa)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAvaliacao)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAvaliacao)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMenuCliente
@@ -96,6 +96,7 @@
             this.btnExcluir.TabIndex = 29;
             this.btnExcluir.Text = "EXCLUIR";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnAlterar
             // 
@@ -129,30 +130,11 @@
             this.btnCadastrar.UseVisualStyleBackColor = false;
             this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
-            this.panel4.Controls.Add(this.dgvAvaliacao);
-            this.panel4.Location = new System.Drawing.Point(17, 110);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1170, 415);
-            this.panel4.TabIndex = 26;
-            // 
-            // dgvAvaliacao
-            // 
-            this.dgvAvaliacao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.dgvAvaliacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAvaliacao.Location = new System.Drawing.Point(4, 3);
-            this.dgvAvaliacao.Name = "dgvAvaliacao";
-            this.dgvAvaliacao.Size = new System.Drawing.Size(1161, 410);
-            this.dgvAvaliacao.TabIndex = 6;
-            this.dgvAvaliacao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvaliacao_CellClick_1);
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(214)))), ((int)(((byte)(10)))));
             this.panel3.Controls.Add(this.cbmCliente);
-            this.panel3.Location = new System.Drawing.Point(995, 62);
+            this.panel3.Location = new System.Drawing.Point(1008, 62);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(177, 40);
             this.panel3.TabIndex = 25;
@@ -164,11 +146,13 @@
             this.cbmCliente.FormattingEnabled = true;
             this.cbmCliente.Items.AddRange(new object[] {
             "ATIVO",
-            "DESATIVADO"});
-            this.cbmCliente.Location = new System.Drawing.Point(4, 5);
+            "INATIVO",
+            "TODOS"});
+            this.cbmCliente.Location = new System.Drawing.Point(4, 4);
             this.cbmCliente.Name = "cbmCliente";
             this.cbmCliente.Size = new System.Drawing.Size(170, 31);
             this.cbmCliente.TabIndex = 3;
+            this.cbmCliente.SelectedIndexChanged += new System.EventHandler(this.cbmCliente_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -188,6 +172,34 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(584, 26);
             this.txtPesquisa.TabIndex = 2;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.panel4.Controls.Add(this.dgvAvaliacao);
+            this.panel4.Location = new System.Drawing.Point(17, 108);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1168, 420);
+            this.panel4.TabIndex = 32;
+            // 
+            // dgvAvaliacao
+            // 
+            this.dgvAvaliacao.AllowUserToAddRows = false;
+            this.dgvAvaliacao.AllowUserToDeleteRows = false;
+            this.dgvAvaliacao.AllowUserToResizeColumns = false;
+            this.dgvAvaliacao.AllowUserToResizeRows = false;
+            this.dgvAvaliacao.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvAvaliacao.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+            this.dgvAvaliacao.EnableHeadersVisualStyles = false;
+            this.dgvAvaliacao.Location = new System.Drawing.Point(4, 3);
+            this.dgvAvaliacao.MultiSelect = false;
+            this.dgvAvaliacao.Name = "dgvAvaliacao";
+            this.dgvAvaliacao.ReadOnly = true;
+            this.dgvAvaliacao.RowHeadersVisible = false;
+            this.dgvAvaliacao.Size = new System.Drawing.Size(1161, 414);
+            this.dgvAvaliacao.TabIndex = 6;
+            this.dgvAvaliacao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAvaliacao_CellClick);
             // 
             // frmAvaliacao
             // 
@@ -195,13 +207,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(1200, 600);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.lblMenuCliente);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.pctPesquisa);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.btnCadastrar);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -210,11 +222,11 @@
             this.Text = "_7_avaliação";
             this.Load += new System.EventHandler(this.frmAvaliacao_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctPesquisa)).EndInit();
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAvaliacao)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAvaliacao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -227,11 +239,11 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnAlterar;
         private System.Windows.Forms.Button btnCadastrar;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dgvAvaliacao;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cbmCliente;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dgvAvaliacao;
     }
 }

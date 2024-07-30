@@ -21,8 +21,6 @@ namespace fitnessfusion
             carregarCliente();
             carregarfuncionario();
             
-
-
         }
 
       
@@ -91,8 +89,8 @@ namespace fitnessfusion
                 try
                 {
                     banco.Conectar();
-                    string inserir = "insert into avaliacaoFisica (idAvaliacaoFisica, idCliente, idFuncionario, peso, altura, medidaCorporal, descricaoAvaliacao,  dataAvaliacaoFisica) " +
-                    "Values (@idava, @idCliente, @idFuncionario, @peso, @altura, @medida, @descricao, @data);";
+                    string inserir = "insert into avaliacaoFisica (idAvaliacaoFisica, idCliente, idFuncionario, peso, altura, medidaCorporal, descricaoAvaliacao,  dataAvaliacaoFisica, statusAvaliacao) " +
+                    "Values (@idava, @idCliente, @idFuncionario, @peso, @altura, @medida, @descricao, @data, @status);";
                     MySqlCommand cmd = new MySqlCommand(inserir, banco.conexaoDb);
 
 
@@ -104,6 +102,7 @@ namespace fitnessfusion
                     cmd.Parameters.AddWithValue("@medida", variaveis.medida);
                     cmd.Parameters.AddWithValue("@descricao", variaveis.descricao);
                     cmd.Parameters.AddWithValue("@data", variaveis.data);
+                    cmd.Parameters.AddWithValue("@status", variaveis.statusAvaliacao);
 
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("avaliacao cadastrada com sucesso", "CADASTRO DE AVALIACAO");
@@ -133,12 +132,14 @@ namespace fitnessfusion
                     variaveis.medida = dr.GetString(5);
                     variaveis.descricao = dr.GetString(6);
                     variaveis.data = dr.GetDateTime(7);
+                    variaveis.statusAvaliacao = dr.GetString(8);
 
                     txtpeso.Text = variaveis.peso;
                     txtAltura.Text = variaveis.altura;
                     txtMedida.Text = variaveis.medida;
                     txtdescricao.Text = variaveis.descricao;
                     mtbCad.Text = variaveis.data.ToShortDateString();
+                    cbmStatus.Text = variaveis.statusAvaliacao;
                 }
 
                 banco.Desconectar();
@@ -156,7 +157,7 @@ namespace fitnessfusion
                 banco.Conectar();
                 string editar = "update avaliacaoFisica SET idCliente = " +
                     "@codCliente, idFuncionario = @codFuncionario, peso = @peso, " +
-                    "altura = @altura, medidaCorporal = @medida, descricaoAvaliacao = @descricao, dataAvaliacaoFisica = @data WHERE idAvaliacaoFisica = @codigo;";
+                    "altura = @altura, medidaCorporal = @medida, descricaoAvaliacao = @descricao, dataAvaliacaoFisica = @data, statusAvaliacao = @status WHERE idAvaliacaoFisica = @codigo;";
                     MySqlCommand cmd = new MySqlCommand(editar, banco.conexaoDb);
 
                     cmd.Parameters.AddWithValue("@codCliente", variaveis.codigoCliente);
@@ -166,6 +167,7 @@ namespace fitnessfusion
                     cmd.Parameters.AddWithValue("@medida", variaveis.medida);
                     cmd.Parameters.AddWithValue("@descricao", variaveis.descricao);
                     cmd.Parameters.AddWithValue("@data", variaveis.data);
+                    cmd.Parameters.AddWithValue("@status", variaveis.statusAvaliacao);
                     cmd.Parameters.AddWithValue("@codigo", variaveis.codigoAva);
 
                     cmd.ExecuteNonQuery();
@@ -185,7 +187,7 @@ namespace fitnessfusion
             if (variaveis.funcao == "CADASTRAR")
             {
 
-                lblTitulo.Text = "CADASTRO CLIENTE";
+                lblTitulo.Text = "CADASTRO AVALIAÇÃO";
 
             }
             else if (variaveis.funcao == "ALTERAR")
@@ -204,6 +206,7 @@ namespace fitnessfusion
             variaveis.descricao = txtdescricao.Text;
             variaveis.codigoFuncionario = Convert.ToInt32(cmbFuncionario.SelectedValue);
             variaveis.codigoCliente = Convert.ToInt32(cmbAluno.SelectedValue);
+            variaveis.statusAvaliacao = cbmStatus.Text;
 
             if (variaveis.funcao == "CADASTRAR")
             {

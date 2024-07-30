@@ -100,7 +100,29 @@ namespace fitnessfusion
             }
         }
 
+        private void ExcluirPlano()
+        {
+            try
+            {
+                banco.Conectar();
+                string alterar = " UPDATE planoAssinatura SET statusPlano = 'INATIVO' WHERE idPlano = @codigo;";
+                MySqlCommand cmd = new MySqlCommand(alterar, banco.conexaoDb);
+                //parametros
 
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codigoPlano);
+
+
+                //fim parametros
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("desativado com sucesso", "EXCLUIR Plano");
+                banco.Desconectar();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir.\n\n" + erro);
+
+            }
+        }
         private void cbmPlano_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbmPlano.Text == "TODOS")
@@ -155,12 +177,35 @@ namespace fitnessfusion
             Hide();
         }
 
-        private void dgvPlano_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvPlano_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
             if (variaveis.linhaSelecionada >= 0)
             {
                 variaveis.codigoPlano = Convert.ToInt32(dgvPlano[0, variaveis.linhaSelecionada].Value);
+            }
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (variaveis.linhaSelecionada >= 0)
+            {
+                var resposta = MessageBox.Show("Deseja mesmo excluir?", "EXCLUIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resposta == DialogResult.Yes)
+                {
+                    var resposta2 = MessageBox.Show("Tem certeza?", "CONFIRMAÇÃO", MessageBoxButtons.YesNo);
+                    if (resposta2 == DialogResult.Yes)
+                    {
+                        ExcluirPlano();
+                        carregarPlano();
+                    }
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Para excluir selecione um cliente da lista");
             }
         }
     }
