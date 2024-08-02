@@ -28,7 +28,7 @@ namespace fitnessfusion
             {
                 banco.Conectar();
                 string carregar = "SELECT p.idPagamento, c.nomeCliente, c.cpfCliente, pa.nomePlano, pa.valorPlano, p.dataPagamento," +
-                    " p.statusPagamento FROM pagamento p JOIN cliente c ON p.idCliente = c.idCliente JOIN planoAssinatura pa ON c.idPlano = pa.idPlano;";
+                    " p.statusPagamento FROM pagamento p JOIN cliente c ON p.idCliente = c.idCliente JOIN planoAssinatura pa ON c.idPlano = pa.idPlano WHERE p.statusPagamento = 'PAGO' ;";
                 MySqlCommand cmd = new MySqlCommand(carregar, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

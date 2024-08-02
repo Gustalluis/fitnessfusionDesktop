@@ -168,7 +168,7 @@ namespace fitnessfusion
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             variaveis.funcao = "CADASTRAR";
-            new frmCadastro().Show(this);
+            new frmCadastro().Show();
             Hide();
         }
         private void btnAlterar_Click(object sender, EventArgs e)
@@ -176,7 +176,7 @@ namespace fitnessfusion
             if (variaveis.linhaSelecionada >= 0)
             {
                 variaveis.funcao = "ALTERAR";
-                new frmCadastro().Show(this);
+                new frmCadastro().Show();
                 Hide();
 
             }

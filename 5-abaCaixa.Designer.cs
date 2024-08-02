@@ -33,8 +33,14 @@
             this.btnSair = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvCaixa = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cbmCliente = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaixa)).BeginInit();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblMenuCliente
@@ -67,7 +73,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
             this.panel4.Controls.Add(this.dgvCaixa);
-            this.panel4.Location = new System.Drawing.Point(15, 73);
+            this.panel4.Location = new System.Drawing.Point(12, 94);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1170, 455);
             this.panel4.TabIndex = 23;
@@ -89,12 +95,57 @@
             this.dgvCaixa.Size = new System.Drawing.Size(1161, 449);
             this.dgvCaixa.TabIndex = 6;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.panel3.Controls.Add(this.cbmCliente);
+            this.panel3.Location = new System.Drawing.Point(1001, 48);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(177, 40);
+            this.panel3.TabIndex = 25;
+            // 
+            // cbmCliente
+            // 
+            this.cbmCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbmCliente.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmCliente.FormattingEnabled = true;
+            this.cbmCliente.Items.AddRange(new object[] {
+            "ATIVO",
+            "INATIVO",
+            "TODOS"});
+            this.cbmCliente.Location = new System.Drawing.Point(4, 5);
+            this.cbmCliente.Name = "cbmCliente";
+            this.cbmCliente.Size = new System.Drawing.Size(170, 31);
+            this.cbmCliente.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.panel2.Controls.Add(this.txtPesquisa);
+            this.panel2.Location = new System.Drawing.Point(17, 53);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(590, 35);
+            this.panel2.TabIndex = 24;
+            // 
+            // txtPesquisa
+            // 
+            this.txtPesquisa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPesquisa.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPesquisa.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisa.Location = new System.Drawing.Point(3, 4);
+            this.txtPesquisa.Name = "txtPesquisa";
+            this.txtPesquisa.Size = new System.Drawing.Size(584, 26);
+            this.txtPesquisa.TabIndex = 2;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
+            // 
             // frmEquipamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
             this.ClientSize = new System.Drawing.Size(1200, 600);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.lblMenuCliente);
             this.Controls.Add(this.btnSair);
@@ -106,6 +157,9 @@
             this.Load += new System.EventHandler(this.frmEquipamento_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaixa)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -116,5 +170,9 @@
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dgvCaixa;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.ComboBox cbmCliente;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox txtPesquisa;
     }
 }
