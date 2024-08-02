@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuFuncionario));
             this.lblMenuCliente = new System.Windows.Forms.Label();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
@@ -199,6 +200,7 @@
             this.dgvFuncionario.RowHeadersVisible = false;
             this.dgvFuncionario.Size = new System.Drawing.Size(1161, 449);
             this.dgvFuncionario.TabIndex = 6;
+            this.dgvFuncionario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellClick_1);
             // 
             // frmMenuFuncionario
             // 
@@ -216,7 +218,9 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenuFuncionario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "_4_abaFuncionario";
             this.Load += new System.EventHandler(this.frmMenuFuncionario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pctPesquisa)).EndInit();

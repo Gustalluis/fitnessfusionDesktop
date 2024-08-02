@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadTreino));
             this.pnlCad = new System.Windows.Forms.Panel();
+            this.txtDuracaoTreino = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbmTreino = new System.Windows.Forms.ComboBox();
             this.lblDescricao = new System.Windows.Forms.Label();
             this.txtDescricaoTreino = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,9 +42,6 @@
             this.lblNome = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cbmTreino = new System.Windows.Forms.ComboBox();
-            this.txtDuracaoTreino = new System.Windows.Forms.TextBox();
             this.pnlCad.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +64,38 @@
             this.pnlCad.Size = new System.Drawing.Size(1101, 483);
             this.pnlCad.TabIndex = 25;
             // 
+            // txtDuracaoTreino
+            // 
+            this.txtDuracaoTreino.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDuracaoTreino.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuracaoTreino.Location = new System.Drawing.Point(795, 45);
+            this.txtDuracaoTreino.Name = "txtDuracaoTreino";
+            this.txtDuracaoTreino.Size = new System.Drawing.Size(277, 26);
+            this.txtDuracaoTreino.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(419, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(197, 25);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "STATUS DO TREINO";
+            // 
+            // cbmTreino
+            // 
+            this.cbmTreino.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbmTreino.FormattingEnabled = true;
+            this.cbmTreino.Items.AddRange(new object[] {
+            "ATIVO",
+            "INATIVO"});
+            this.cbmTreino.Location = new System.Drawing.Point(424, 44);
+            this.cbmTreino.Name = "cbmTreino";
+            this.cbmTreino.Size = new System.Drawing.Size(266, 27);
+            this.cbmTreino.TabIndex = 2;
+            // 
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
@@ -81,7 +114,7 @@
             this.txtDescricaoTreino.Multiline = true;
             this.txtDescricaoTreino.Name = "txtDescricaoTreino";
             this.txtDescricaoTreino.Size = new System.Drawing.Size(1046, 285);
-            this.txtDescricaoTreino.TabIndex = 29;
+            this.txtDescricaoTreino.TabIndex = 4;
             // 
             // label1
             // 
@@ -101,7 +134,7 @@
             this.txtNomeTreino.Location = new System.Drawing.Point(26, 45);
             this.txtNomeTreino.Name = "txtNomeTreino";
             this.txtNomeTreino.Size = new System.Drawing.Size(277, 26);
-            this.txtNomeTreino.TabIndex = 3;
+            this.txtNomeTreino.TabIndex = 1;
             // 
             // btnLimpar
             // 
@@ -114,9 +147,10 @@
             this.btnLimpar.Location = new System.Drawing.Point(902, 411);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(170, 37);
-            this.btnLimpar.TabIndex = 26;
+            this.btnLimpar.TabIndex = 6;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnSalvar
             // 
@@ -129,7 +163,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(26, 411);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(170, 37);
-            this.btnSalvar.TabIndex = 25;
+            this.btnSalvar.TabIndex = 5;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -153,7 +187,7 @@
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(500, 38);
             this.lblTitulo.TabIndex = 23;
-            this.lblTitulo.Text = "CADASTRO EQUIPAMENTO";
+            this.lblTitulo.Text = "CADASTRO TREINO";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSair
@@ -170,38 +204,6 @@
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.label2.Location = new System.Drawing.Point(419, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(197, 25);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "STATUS DO TREINO";
-            // 
-            // cbmTreino
-            // 
-            this.cbmTreino.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbmTreino.FormattingEnabled = true;
-            this.cbmTreino.Items.AddRange(new object[] {
-            "ATIVO",
-            "INATIVO"});
-            this.cbmTreino.Location = new System.Drawing.Point(424, 44);
-            this.cbmTreino.Name = "cbmTreino";
-            this.cbmTreino.Size = new System.Drawing.Size(266, 27);
-            this.cbmTreino.TabIndex = 31;
-            // 
-            // txtDuracaoTreino
-            // 
-            this.txtDuracaoTreino.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDuracaoTreino.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDuracaoTreino.Location = new System.Drawing.Point(795, 45);
-            this.txtDuracaoTreino.Name = "txtDuracaoTreino";
-            this.txtDuracaoTreino.Size = new System.Drawing.Size(277, 26);
-            this.txtDuracaoTreino.TabIndex = 33;
-            // 
             // frmCadTreino
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -212,7 +214,9 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnSair);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadTreino";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "_6";
             this.Load += new System.EventHandler(this.frmCadTreino_Load);
             this.pnlCad.ResumeLayout(false);

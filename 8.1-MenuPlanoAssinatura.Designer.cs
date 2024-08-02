@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadPlano));
             this.pnlCad = new System.Windows.Forms.Panel();
             this.txtDuracao = new System.Windows.Forms.TextBox();
             this.txtValor = new System.Windows.Forms.TextBox();
@@ -74,7 +75,7 @@
             this.txtDuracao.Location = new System.Drawing.Point(884, 44);
             this.txtDuracao.Name = "txtDuracao";
             this.txtDuracao.Size = new System.Drawing.Size(188, 26);
-            this.txtDuracao.TabIndex = 38;
+            this.txtDuracao.TabIndex = 4;
             // 
             // txtValor
             // 
@@ -83,7 +84,7 @@
             this.txtValor.Location = new System.Drawing.Point(646, 44);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(188, 26);
-            this.txtValor.TabIndex = 37;
+            this.txtValor.TabIndex = 3;
             // 
             // label3
             // 
@@ -128,7 +129,7 @@
             this.cbmPlano.Location = new System.Drawing.Point(409, 44);
             this.cbmPlano.Name = "cbmPlano";
             this.cbmPlano.Size = new System.Drawing.Size(188, 27);
-            this.cbmPlano.TabIndex = 31;
+            this.cbmPlano.TabIndex = 2;
             // 
             // lblDescricao
             // 
@@ -148,7 +149,7 @@
             this.txtDescricaoPlano.Multiline = true;
             this.txtDescricaoPlano.Name = "txtDescricaoPlano";
             this.txtDescricaoPlano.Size = new System.Drawing.Size(1046, 285);
-            this.txtDescricaoPlano.TabIndex = 29;
+            this.txtDescricaoPlano.TabIndex = 5;
             // 
             // txtNomePlano
             // 
@@ -157,7 +158,7 @@
             this.txtNomePlano.Location = new System.Drawing.Point(26, 44);
             this.txtNomePlano.Name = "txtNomePlano";
             this.txtNomePlano.Size = new System.Drawing.Size(324, 26);
-            this.txtNomePlano.TabIndex = 3;
+            this.txtNomePlano.TabIndex = 1;
             // 
             // btnLimpar
             // 
@@ -170,7 +171,7 @@
             this.btnLimpar.Location = new System.Drawing.Point(902, 411);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(170, 37);
-            this.btnLimpar.TabIndex = 26;
+            this.btnLimpar.TabIndex = 7;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = false;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
@@ -186,7 +187,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(26, 411);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(170, 37);
-            this.btnSalvar.TabIndex = 25;
+            this.btnSalvar.TabIndex = 6;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -237,7 +238,9 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnSair);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCadPlano";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "_8";
             this.Load += new System.EventHandler(this.frmCadPlano_Load);
             this.pnlCad.ResumeLayout(false);

@@ -384,12 +384,12 @@ namespace fitnessfusion
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            variaveis.nomecliente = txtNome.Text;
+            variaveis.nomecliente =     txtNome.Text;
             variaveis.telefonecliente = mtbTelefone.Text;
-            variaveis.cpfCliente = mtbCpf.Text;
-            variaveis.emailcliente = txtEmail.Text;
-            variaveis.senhacliente = txtSenha.Text;
-            variaveis.statuscliente = cmbStatus.Text;
+            variaveis.cpfCliente =      mtbCpf.Text;
+            variaveis.emailcliente =    txtEmail.Text;
+            variaveis.senhacliente =    txtSenha.Text;
+            variaveis.statuscliente =    cmbStatus.Text;
             variaveis.altcliente = "foto" + txtNome.Text;
             variaveis.metododepagamento = cmbPagamento.Text;
             variaveis.datanasccliente = Convert.ToDateTime(mtbNascCliente.Text);
@@ -468,7 +468,24 @@ namespace fitnessfusion
             }
         }
 
-     
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtNome.Clear();
+
+            txtNome.    Clear();
+            mtbTelefone.Clear();
+            mtbCpf.     Clear();
+            txtEmail.   Clear();
+            txtSenha.   Clear();
+            mtbNascCliente.Clear();
+            cmbPlano.SelectedIndex = -1;
+            cmbTreino.SelectedIndex = -1;
+            cmbPagamento.SelectedIndex = -1;
+            cmbStatus .SelectedIndex = -1;
+            
+            pctFoto.Image = null;
+            txtNome.Focus();
+        }
     }
 }
 

@@ -98,16 +98,12 @@ namespace fitnessfusion
 
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
-            variaveis.funcao = "CADASTRAR";
-            new frmCadastroEquipamento().Show(this);
-            Hide();
+           
         }
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-            variaveis.funcao = "ALTERAR";
-            new frmCadastroEquipamento().Show(this);
-            Hide();
+           
         }
 
         private void dgvEquipamento_CellClick(object sender, DataGridViewCellEventArgs e)

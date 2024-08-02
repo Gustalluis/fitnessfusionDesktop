@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPlanoAssinatura));
             this.lblMenuCliente = new System.Windows.Forms.Label();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
@@ -217,6 +218,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPlanoAssinatura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "_8_abaPlanoAssinatura";

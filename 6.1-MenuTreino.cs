@@ -140,5 +140,16 @@ namespace fitnessfusion
 
             }
         }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtNomeTreino.Clear();
+            txtDuracaoTreino.Clear();
+            txtDescricaoTreino.Clear();
+            cbmTreino.SelectedIndex = -1;
+
+            txtNomeTreino.Focus();
+
+        }
     }
 }

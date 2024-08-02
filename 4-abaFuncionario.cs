@@ -238,7 +238,8 @@ namespace fitnessfusion
             }
         }
 
-        private void dgvFuncionario_CellClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dgvFuncionario_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             variaveis.linhaSelecionada = int.Parse(e.RowIndex.ToString());
             if (variaveis.linhaSelecionada >= 0)

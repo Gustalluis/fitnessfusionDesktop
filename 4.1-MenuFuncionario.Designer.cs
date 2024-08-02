@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuCadastroFuncionario));
             this.pnlCad = new System.Windows.Forms.Panel();
             this.txtCargo = new System.Windows.Forms.TextBox();
             this.txtSalario = new System.Windows.Forms.TextBox();
@@ -95,16 +96,16 @@
             this.txtCargo.Location = new System.Drawing.Point(26, 300);
             this.txtCargo.Name = "txtCargo";
             this.txtCargo.Size = new System.Drawing.Size(400, 26);
-            this.txtCargo.TabIndex = 3;
+            this.txtCargo.TabIndex = 8;
             // 
             // txtSalario
             // 
             this.txtSalario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSalario.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSalario.Location = new System.Drawing.Point(547, 108);
+            this.txtSalario.Location = new System.Drawing.Point(547, 106);
             this.txtSalario.Name = "txtSalario";
             this.txtSalario.Size = new System.Drawing.Size(225, 26);
-            this.txtSalario.TabIndex = 0;
+            this.txtSalario.TabIndex = 4;
             // 
             // txtSenha
             // 
@@ -113,7 +114,7 @@
             this.txtSenha.Location = new System.Drawing.Point(477, 232);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(295, 26);
-            this.txtSenha.TabIndex = 3;
+            this.txtSenha.TabIndex = 7;
             // 
             // txtEmail
             // 
@@ -122,7 +123,7 @@
             this.txtEmail.Location = new System.Drawing.Point(26, 232);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(400, 26);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 6;
             // 
             // txtEndereco
             // 
@@ -131,20 +132,19 @@
             this.txtEndereco.Location = new System.Drawing.Point(26, 171);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(745, 26);
-            this.txtEndereco.TabIndex = 3;
+            this.txtEndereco.TabIndex = 5;
             // 
             // cmbStatusCad
             // 
-            this.cmbStatusCad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbStatusCad.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbStatusCad.FormattingEnabled = true;
             this.cmbStatusCad.Items.AddRange(new object[] {
             "ATIVO",
-            "DESATIVO"});
-            this.cmbStatusCad.Location = new System.Drawing.Point(231, 107);
+            "INATIVO"});
+            this.cmbStatusCad.Location = new System.Drawing.Point(258, 105);
             this.cmbStatusCad.Name = "cmbStatusCad";
             this.cmbStatusCad.Size = new System.Drawing.Size(234, 27);
-            this.cmbStatusCad.TabIndex = 0;
+            this.cmbStatusCad.TabIndex = 3;
             // 
             // mtbTelefone
             // 
@@ -154,7 +154,7 @@
             this.mtbTelefone.Mask = "(00) 00000-0000";
             this.mtbTelefone.Name = "mtbTelefone";
             this.mtbTelefone.Size = new System.Drawing.Size(169, 26);
-            this.mtbTelefone.TabIndex = 16;
+            this.mtbTelefone.TabIndex = 2;
             // 
             // txtNome
             // 
@@ -163,7 +163,7 @@
             this.txtNome.Location = new System.Drawing.Point(26, 42);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(746, 26);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 1;
             // 
             // label2
             // 
@@ -209,9 +209,10 @@
             this.btnLimpar.Location = new System.Drawing.Point(599, 411);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(170, 37);
-            this.btnLimpar.TabIndex = 26;
+            this.btnLimpar.TabIndex = 11;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnSalvar
             // 
@@ -224,7 +225,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(258, 411);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(170, 37);
-            this.btnSalvar.TabIndex = 25;
+            this.btnSalvar.TabIndex = 10;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -267,7 +268,7 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(195)))), ((int)(((byte)(0)))));
-            this.lblStatus.Location = new System.Drawing.Point(228, 80);
+            this.lblStatus.Location = new System.Drawing.Point(253, 80);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(85, 25);
             this.lblStatus.TabIndex = 15;
@@ -292,7 +293,7 @@
             this.btnAddFoto.Location = new System.Drawing.Point(171, 197);
             this.btnAddFoto.Name = "btnAddFoto";
             this.btnAddFoto.Size = new System.Drawing.Size(50, 50);
-            this.btnAddFoto.TabIndex = 12;
+            this.btnAddFoto.TabIndex = 9;
             this.btnAddFoto.UseVisualStyleBackColor = false;
             this.btnAddFoto.Click += new System.EventHandler(this.btnAddFoto_Click);
             // 
@@ -363,6 +364,7 @@
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.btnSair);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMenuCadastroFuncionario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmMenuCadastroFuncionario_Load);

@@ -54,7 +54,7 @@ namespace fitnessfusion
             }
             catch
             {
-                byte[] imageToByte = ftpCliente.DownloadData("ftp://u283879542.fitnessfusion@smpsistema.com.br/admin/img/funcionario/semfoto.png");
+                byte[] imageToByte = ftpCliente.DownloadData("ftp://u283879542.fitnessfusion@smpsistema.com.br/admin/img/funcionario/semfoto.jpeg");
                 return imageToByte;
             }
 
@@ -72,12 +72,38 @@ namespace fitnessfusion
         }
 
         // METODO mysql 
-
+        private void ObterNovoId()
+        {
+            try
+            {
+                banco.Conectar();
+                string query = "SELECT idFuncionario FROM funcionario ORDER BY idFuncionario DESC LIMIT 1;";
+                MySqlCommand command = new MySqlCommand(query, banco.conexaoDb);
+                object result = command.ExecuteScalar();
+                if (result != DBNull.Value)
+                {
+                    int ultimoId = Convert.ToInt32(result);
+                    variaveis.novoId = ultimoId + 1;
+                }
+                else
+                {
+                    variaveis.novoId = 1; // Caso não haja clientes ainda
+                }
+                banco.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                // Handle exceptions
+                Console.WriteLine("Erro ao obter o novo ID: " + ex.Message);
+            }
+        }
 
         private void inserirFuncionario()
         {
-            try { 
-            banco.Conectar();
+            try 
+            {
+                ObterNovoId();
+                banco.Conectar();
             string query = "INSERT INTO funcionario (nomeFuncionario, cargoFuncionario, telefoneFuncionario, enderecoFuncionario, emailFuncionario, senhaFuncionario, salarioFuncionario, statusFuncionario, altFuncionario, dataCadFuncionario, fotoFuncionario) " +
                            "VALUES (@nome, @cargo, @fone, @endereco, @email, @senha, @salario, @status, @alt, @dataCad, @foto);";
             MySqlCommand cmd = new MySqlCommand(query, banco.conexaoDb);
@@ -120,10 +146,130 @@ namespace fitnessfusion
                 MessageBox.Show("Erro Ao inserir funcionario\n\n" + erro);
             }
         }
-     
-      
-     
-       
+
+
+        private void carregarFuncinario()
+        {
+            try
+            {
+                banco.Conectar();
+                string carregar = "SELECT * FROM funcionario where idFuncionario = @codigo ;";
+                MySqlCommand cmd = new MySqlCommand(carregar, banco.conexaoDb);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codigoFuncionario);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+                    variaveis.nomeFuncionario = dr.GetString(1);
+                    variaveis.cargoFuncionario = dr.GetString(2);
+                    variaveis.telefoneFuncionario = dr.GetString(3);
+                    variaveis.enderecoFuncionario = dr.GetString(4);
+                    variaveis.emailFuncionario = dr.GetString(5);
+                    variaveis.senhaFuncionario = dr.GetString(6);
+                    variaveis.salarioFuncionario = dr.GetDouble(7);
+                    variaveis.statusFuncionario = dr.GetString(9);
+                    variaveis.fotoFuncionario = dr.GetString(10);
+                    variaveis.altFuncionario = dr.GetString(11);
+
+                    txtNome.Text = variaveis.nomeFuncionario;
+                    txtCargo.Text = variaveis.cargoFuncionario; // Removeu ToString() desnecessário
+                    mtbTelefone.Text = variaveis.telefoneFuncionario; // Removeu ToString() desnecessário
+                    txtEndereco.Text = variaveis.enderecoFuncionario;
+                    txtEmail.Text = variaveis.emailFuncionario;
+                    txtSenha.Text = variaveis.senhaFuncionario;// Removeu ToString() desnecessário
+                    cmbStatusCad.Text = variaveis.statusFuncionario; // Removeu ToString() desnecessário
+                    txtSalario.Text = Convert.ToString(variaveis.salarioFuncionario); // Removeu ToString() desnecessário
+                    if (!string.IsNullOrEmpty(variaveis.fotoFuncionario))
+                    {
+                        string imagemCaminho = variaveis.enderecoServidorFtp + "img/funcionario/" + variaveis.fotoFuncionario;
+                        pctFoto.Image = ByteToImage(GetImgToByte(imagemCaminho));
+                    }
+
+
+                }
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Erro ao carregar. \n\n" + erro);
+            }
+        }
+        
+        private void alterarFuncionario()
+        {
+            try
+            {
+                banco.Conectar();
+                string alterar = "UPDATE funcionario SET nomeFuncionario = @nome, cargoFuncionario = @cargo," +
+                    " telefoneFuncionario = @fone, enderecoFuncionario = @endereco, emailFuncionario = @email," +
+                    " senhaFuncionario = @senha, salarioFuncionario = @salario, statusFuncionario = @status" +
+                    "  WHERE idFuncionario = @codigo";
+                MySqlCommand cmd = new MySqlCommand(alterar, banco.conexaoDb);
+
+                cmd.Parameters.AddWithValue("@nome", variaveis.nomeFuncionario);
+                cmd.Parameters.AddWithValue("@cargo", variaveis.cargoFuncionario);
+                cmd.Parameters.AddWithValue("@fone", variaveis.telefoneFuncionario);
+                cmd.Parameters.AddWithValue("@endereco", variaveis.enderecoFuncionario);
+                cmd.Parameters.AddWithValue("@email", variaveis.emailFuncionario);
+                cmd.Parameters.AddWithValue("@senha", variaveis.senhaFuncionario);
+                cmd.Parameters.AddWithValue("@salario", variaveis.salarioFuncionario);
+                cmd.Parameters.AddWithValue("@status", variaveis.statusFuncionario);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codigoFuncionario);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Funcionario alterado com sucesso", "CADASTRO FUNCIONARIO");
+                banco.Desconectar();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void alterarFotoFuncionario()
+        {
+
+            try
+            {
+                banco.Conectar();
+                string alterar = " UPDATE funcionario SET fotoFuncionario = @foto WHERE idFuncionario = @codigo;";
+                MySqlCommand cmd = new MySqlCommand(alterar, banco.conexaoDb);
+                //parametros
+
+                cmd.Parameters.AddWithValue("@foto", variaveis.fotoFuncionario);
+                cmd.Parameters.AddWithValue("@codigo", variaveis.codigoFuncionario);
+
+
+                //fim parametros
+                cmd.ExecuteNonQuery();
+                banco.Desconectar();
+
+                if (ValidarFTP())
+                {
+                    if (!string.IsNullOrEmpty(variaveis.fotoFuncionario))
+                    {
+                        string urlEnviarArquivo = variaveis.enderecoServidorFtp + "img/funcionario/" + Path.GetFileName(variaveis.fotoFuncionario);
+                        try
+                        {
+                            ftp.EnviarArquivoFtp(variaveis.caminhoFotoFuncionario, urlEnviarArquivo, variaveis.usuarioFtp, variaveis.senhaFtp);
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Foto não foi Selecionada ou existente no servidor.", "FOTO", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao alterar FOTO do funcionario.\n\n" + erro);
+
+            }
+        }
+
+
         private void btnSair_Click(object sender, EventArgs e)
         {
             new frmMenuFuncionario().Show(this);
@@ -139,8 +285,8 @@ namespace fitnessfusion
             }
             else if (variaveis.funcao == "ALTERAR")
             {
-              
 
+                carregarFuncinario();
                 lblTitulo.Text = "ALTERAR FUNCIONARIO";
 
             }
@@ -156,7 +302,7 @@ namespace fitnessfusion
             variaveis.enderecoFuncionario = txtEndereco.Text;
             variaveis.salarioFuncionario = double.Parse(txtSalario.Text);
             variaveis.statusFuncionario = cmbStatusCad.Text;
-            variaveis.altFuncionario = "foto" + txtNome.Text;
+            variaveis.altFuncionario = "foto " + txtNome.Text;
 
             if (variaveis.funcao == "CADASTRAR")
             {
@@ -167,11 +313,11 @@ namespace fitnessfusion
             }
             else if (variaveis.funcao == "ALTERAR")
             {
-                
 
+                alterarFuncionario();
                 if (variaveis.atFotoFuncionario == "S")
                 {
-                    
+                    alterarFotoFuncionario();
                 }
             }
         }
@@ -180,6 +326,7 @@ namespace fitnessfusion
         {
             try
             {
+                ObterNovoId(); // Chama a função para obter o novo ID
 
                 OpenFileDialog ofdFoto = new OpenFileDialog();
                 ofdFoto.Multiselect = false;
@@ -195,7 +342,15 @@ namespace fitnessfusion
                 if (result == DialogResult.OK)
                 {
                     pctFoto.Image = Image.FromFile(ofdFoto.FileName);
-                    variaveis.fotoFuncionario = Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".png";
+                    if (variaveis.funcao == "CADASTRAR")
+                    {
+                        variaveis.fotoFuncionario = variaveis.novoId + "_" + Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".jpeg";
+                    }
+                    else
+                    {
+                        variaveis.fotoFuncionario = variaveis.codigoFuncionario + "_" + Regex.Replace(txtNome.Text, @"\s", "").ToLower() + ".jpeg";
+                    }
+
                     try
                     {
                         variaveis.atFotoFuncionario = "S";
@@ -203,13 +358,14 @@ namespace fitnessfusion
                     }
                     catch (SecurityException erro)
                     {
-                        MessageBox.Show("Erro de segurança - Fale com o admin \n Messagem: " + erro + "\n Detalhe: " + erro.StackTrace);
+                        MessageBox.Show("Erro de segurança - Fale com o admin \n Mensagem: " + erro + "\n Detalhe: " + erro.StackTrace);
                     }
                     catch (Exception erro)
                     {
                         MessageBox.Show("Você não tem permissão. \n Detalhe: " + erro);
                     }
                 }
+
                 btnSalvar.Focus();
             }
             catch
@@ -221,6 +377,21 @@ namespace fitnessfusion
         private void pnlCad_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtNome.Clear();
+            txtCargo.Clear();
+            mtbTelefone.Clear();
+            txtEndereco.Clear();
+            txtEmail. Clear();
+            txtSalario.Clear();
+            txtSenha. Clear();
+            cmbStatusCad. SelectedIndex = -1;
+            pctFoto.Image  = null;
+
+            txtNome.Focus();
         }
     }
 }

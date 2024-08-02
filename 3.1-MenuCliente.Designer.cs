@@ -84,7 +84,7 @@
             this.cmbStatus.Location = new System.Drawing.Point(541, 100);
             this.cmbStatus.Name = "cmbStatus";
             this.cmbStatus.Size = new System.Drawing.Size(232, 31);
-            this.cmbStatus.TabIndex = 0;
+            this.cmbStatus.TabIndex = 5;
             // 
             // lblSenha
             // 
@@ -104,7 +104,7 @@
             this.txtEmail.Location = new System.Drawing.Point(28, 180);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(400, 26);
-            this.txtEmail.TabIndex = 3;
+            this.txtEmail.TabIndex = 6;
             // 
             // txtSenha
             // 
@@ -113,7 +113,7 @@
             this.txtSenha.Location = new System.Drawing.Point(480, 180);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(292, 26);
-            this.txtSenha.TabIndex = 3;
+            this.txtSenha.TabIndex = 7;
             // 
             // lblEmail
             // 
@@ -133,7 +133,7 @@
             this.txtNome.Location = new System.Drawing.Point(29, 35);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(459, 26);
-            this.txtNome.TabIndex = 3;
+            this.txtNome.TabIndex = 1;
             // 
             // lblStatus
             // 
@@ -176,7 +176,7 @@
             this.mtbTelefone.Mask = "(00) 00000-0000";
             this.mtbTelefone.Name = "mtbTelefone";
             this.mtbTelefone.Size = new System.Drawing.Size(169, 26);
-            this.mtbTelefone.TabIndex = 16;
+            this.mtbTelefone.TabIndex = 3;
             // 
             // lblPlano
             // 
@@ -196,7 +196,7 @@
             this.cmbPlano.Location = new System.Drawing.Point(284, 253);
             this.cmbPlano.Name = "cmbPlano";
             this.cmbPlano.Size = new System.Drawing.Size(232, 31);
-            this.cmbPlano.TabIndex = 0;
+            this.cmbPlano.TabIndex = 9;
             // 
             // lblPagamento
             // 
@@ -221,7 +221,7 @@
             this.cmbPagamento.Location = new System.Drawing.Point(27, 253);
             this.cmbPagamento.Name = "cmbPagamento";
             this.cmbPagamento.Size = new System.Drawing.Size(233, 31);
-            this.cmbPagamento.TabIndex = 0;
+            this.cmbPagamento.TabIndex = 8;
             // 
             // pnlCad
             // 
@@ -264,7 +264,7 @@
             this.mtbCpf.Mask = "999,999,999-99";
             this.mtbCpf.Name = "mtbCpf";
             this.mtbCpf.Size = new System.Drawing.Size(252, 26);
-            this.mtbCpf.TabIndex = 36;
+            this.mtbCpf.TabIndex = 4;
             // 
             // mtbNascCliente
             // 
@@ -274,7 +274,7 @@
             this.mtbNascCliente.Mask = "00/00/0000";
             this.mtbNascCliente.Name = "mtbNascCliente";
             this.mtbNascCliente.Size = new System.Drawing.Size(232, 26);
-            this.mtbNascCliente.TabIndex = 34;
+            this.mtbNascCliente.TabIndex = 2;
             this.mtbNascCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mtbNascCliente.ValidatingType = typeof(System.DateTime);
             // 
@@ -296,7 +296,7 @@
             this.cmbTreino.Location = new System.Drawing.Point(541, 253);
             this.cmbTreino.Name = "cmbTreino";
             this.cmbTreino.Size = new System.Drawing.Size(232, 31);
-            this.cmbTreino.TabIndex = 30;
+            this.cmbTreino.TabIndex = 10;
             // 
             // label2
             // 
@@ -342,9 +342,10 @@
             this.btnLimpar.Location = new System.Drawing.Point(599, 411);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(170, 37);
-            this.btnLimpar.TabIndex = 26;
+            this.btnLimpar.TabIndex = 13;
             this.btnLimpar.Text = "LIMPAR";
             this.btnLimpar.UseVisualStyleBackColor = false;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
             // btnSalvar
             // 
@@ -357,7 +358,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(258, 411);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(170, 37);
-            this.btnSalvar.TabIndex = 25;
+            this.btnSalvar.TabIndex = 12;
             this.btnSalvar.Text = "SALVAR";
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
@@ -382,7 +383,7 @@
             this.btnAdd.Location = new System.Drawing.Point(168, 199);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(52, 49);
-            this.btnAdd.TabIndex = 12;
+            this.btnAdd.TabIndex = 11;
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);

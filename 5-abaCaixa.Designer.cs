@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEquipamento));
             this.lblMenuCliente = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -98,7 +99,9 @@
             this.Controls.Add(this.lblMenuCliente);
             this.Controls.Add(this.btnSair);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEquipamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "abaEquipamento";
             this.Load += new System.EventHandler(this.frmEquipamento_Load);
             this.panel4.ResumeLayout(false);
