@@ -110,13 +110,14 @@
             this.cbmCliente.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbmCliente.FormattingEnabled = true;
             this.cbmCliente.Items.AddRange(new object[] {
-            "ATIVO",
-            "INATIVO",
+            "PAGO",
+            "PEDENTE",
             "TODOS"});
             this.cbmCliente.Location = new System.Drawing.Point(4, 5);
             this.cbmCliente.Name = "cbmCliente";
             this.cbmCliente.Size = new System.Drawing.Size(170, 31);
             this.cbmCliente.TabIndex = 3;
+            this.cbmCliente.SelectedIndexChanged += new System.EventHandler(this.cbmCliente_SelectedIndexChanged);
             // 
             // panel2
             // 

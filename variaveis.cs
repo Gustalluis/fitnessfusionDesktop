@@ -57,7 +57,7 @@ namespace fitnessfusion
 
 
         //ESTRUTURA FTP LOCAL
-        public static string enderecoServidorFtp = "ftp://u283879542.fitnessfusion@smpsistema.com.br/admin/";
+        public static string enderecoServidorFtp = "ftp://u283879542.fitnessfusion@smpsistema.com.br/dashboard/";
         public static string usuarioFtp = "u283879542.fitnessfusion";
         public static string senhaFtp = "Senac@fitnessfusion01";
         //fim estrutura

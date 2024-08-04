@@ -63,12 +63,12 @@ namespace fitnessfusion
             }
             else if (resposta == DialogResult.No)
             {
-                new frmLogin().Show();
+                new frmMenu().Show();
                 Close();
             }
             else
             {
-                new frmLogin().Show();
+                new frmMenu().Show();
                 Close();
             }
         }

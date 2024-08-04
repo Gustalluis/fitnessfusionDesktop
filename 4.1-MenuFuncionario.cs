@@ -54,7 +54,7 @@ namespace fitnessfusion
             }
             catch
             {
-                byte[] imageToByte = ftpCliente.DownloadData("ftp://u283879542.fitnessfusion@smpsistema.com.br/admin/img/funcionario/semfoto.jpeg");
+                byte[] imageToByte = ftpCliente.DownloadData("ftp://u283879542.fitnessfusion@smpsistema.com.br/dashboard/img/funcionario/semfoto.jpeg");
                 return imageToByte;
             }
 

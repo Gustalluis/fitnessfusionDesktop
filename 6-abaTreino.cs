@@ -34,7 +34,8 @@ namespace fitnessfusion
                 dgvTreino.Columns[0].Visible = false;
                 dgvTreino.Columns[1].HeaderText = "NOME TREINO";
                 dgvTreino.Columns[2].HeaderText = "DURAÇÃO TREINO";
-                dgvTreino.Columns[3].HeaderText = "DESCRIÇÃO TREINO";
+                dgvTreino.Columns[3].HeaderText = "STATUS DO TREINO";
+                dgvTreino.Columns[4].HeaderText = "DESCRIÇÃO TREINO";
 
                 dgvTreino.ClearSelection();
                 banco.Desconectar();
@@ -64,7 +65,8 @@ namespace fitnessfusion
                 dgvTreino.Columns[0].Visible = false;
                 dgvTreino.Columns[1].HeaderText = "NOME TREINO";
                 dgvTreino.Columns[2].HeaderText = "DURAÇÃO TREINO";
-                dgvTreino.Columns[3].HeaderText = "DESCRIÇÃO TREINO";
+                dgvTreino.Columns[3].HeaderText = "STATUS DO TREINO";
+                dgvTreino.Columns[4].HeaderText = "DESCRIÇÃO TREINO";
 
                 dgvTreino.ClearSelection();
                 banco.Desconectar();
@@ -93,7 +95,8 @@ namespace fitnessfusion
                 dgvTreino.Columns[0].Visible = false;
                 dgvTreino.Columns[1].HeaderText = "NOME TREINO";
                 dgvTreino.Columns[2].HeaderText = "DURAÇÃO TREINO";
-                dgvTreino.Columns[3].HeaderText = "DESCRIÇÃO TREINO";
+                dgvTreino.Columns[3].HeaderText = "STATUS DO TREINO";
+                dgvTreino.Columns[4].HeaderText = "DESCRIÇÃO TREINO";
 
                 dgvTreino.ClearSelection();
                 banco.Desconectar();

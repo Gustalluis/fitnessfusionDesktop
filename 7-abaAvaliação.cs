@@ -124,7 +124,7 @@ namespace fitnessfusion
                     "avaliacaoFisica.peso, avaliacaoFisica.altura, avaliacaoFisica.medidaCorporal, avaliacaoFisica.descricaoAvaliacao," +
                     " avaliacaoFisica.dataAvaliacaoFisica FROM  avaliacaoFisica INNER JOIN cliente ON avaliacaoFisica.idCliente = cliente.idCliente INNER JOIN" +
                     " funcionario ON avaliacaoFisica.idFuncionario = funcionario.idFuncionario" +
-                    " WHERE nomeFuncionario LIKE '%" + txtPesquisa.Text + "%' ORDER BY nomeFuncionario;";
+                    " WHERE nomeFuncionario LIKE '%" + txtPesquisa.Text + "%' ORDER BY funcionario.nomeFuncionario AND cliente.nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd); //Adaptar ao C#
                 DataTable dt = new DataTable();//Criando uma estrutura da tabela

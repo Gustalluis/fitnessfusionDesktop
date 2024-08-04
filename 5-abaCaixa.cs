@@ -66,7 +66,11 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar(); //Abrir o banco de dados
-                string selecionar = "SELECT statusPagamento where statusPagamento = @status ORDER BY nomeFuncionario;";
+                string selecionar = "SELECT pagamento.idPagamento, cliente.nomeCliente, cliente.cpfCliente, " +
+                    "planoAssinatura.nomePlano, planoAssinatura.valorPlano," +
+                    "DATE_FORMAT(pagamento.dataPagamento, '%Y-%m-%d %H:%i:%s') as dataPagamento," +
+                    "pagamento.statusPagamento FROM pagamento INNER JOIN cliente ON pagamento.idCliente = cliente.idCliente " +
+                    "INNER JOIN planoAssinatura ON pagamento.idPlano = planoAssinatura.idPlano where statusPagamento = @status ORDER BY cliente.nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
                 cmd.Parameters.AddWithValue("@status", cbmCliente.Text);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd); //Adaptar ao C#
@@ -100,7 +104,10 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar(); //Abrir o banco de dados
-                string selecionar = "SELECT pagamento.idPagamento, cliente.nomeCliente, cliente.cpfCliente, planoAssinatura.nomePlano, planoAssinatura.valorPlano, DATE_FORMAT(pagamento.dataPagamento, '%Y-%m-%d %H:%i:%s') as dataPagamento, pagamento.statusPagamento FROM pagamento JOIN cliente ON pagamento.idCliente = cliente.idCliente JOIN planoAssinatura ON cliente.idPlano = planoAssinatura.idPlano WHERE cliente.nomeCliente LIKE '%" + txtPesquisa.Text + "%' ORDER BY cliente.nomeCliente;";
+                string selecionar = "SELECT pagamento.idPagamento, cliente.nomeCliente, cliente.cpfCliente, " +
+                    "planoAssinatura.nomePlano, planoAssinatura.valorPlano, DATE_FORMAT(pagamento.dataPagamento, '%Y-%m-%d %H:%i:%s') " +
+                    "as dataPagamento, pagamento.statusPagamento FROM pagamento JOIN cliente ON pagamento.idCliente = cliente.idCliente JOIN" +
+                    " planoAssinatura ON cliente.idPlano = planoAssinatura.idPlano WHERE cliente.nomeCliente LIKE '%" + txtPesquisa.Text + "%' ORDER BY cliente.nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd); //Adaptar ao C#
                 DataTable dt = new DataTable();//Criando uma estrutura da tabela
@@ -197,5 +204,20 @@ namespace fitnessfusion
 
             }
         }
+
+        private void cbmCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbmCliente.Text == "TODOS")
+            {
+                carregarPagamento();
+
+            }
+            else
+            {
+                CarregarFuncionarioStatus();
+            }
+        }
     }
+    
 }
