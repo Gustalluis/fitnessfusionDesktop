@@ -24,7 +24,7 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string selecionar = "SELECT*From treino;";
+                string selecionar = "SELECT * From treino;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

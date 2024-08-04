@@ -62,7 +62,11 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar(); //Abrir o banco de dados
-                string selecionar = "SELECT * FROM cliente WHERE statusCliente = @status ORDER BY nomeCliente;";
+                string selecionar = "SELECT cliente.idCliente, cliente.idPlano, cliente.idTreino, cliente.nomeCliente, cliente.cpfCliente," +
+                    " cliente.telefoneCliente, cliente.StatusCliente, cliente.dataNascCliente, cliente.emailCliente, cliente.fotoCliente," +
+                    " cliente.dataCadCliente, planoAssinatura.nomePlano, treino.nomeTreino  " +
+                    "FROM cliente INNER JOIN planoAssinatura ON cliente.idPlano = planoAssinatura.idPlano INNER JOIN treino ON cliente.idTreino = treino.idTreino " +
+                    "WHERE statusCliente = @status ORDER BY nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
                 cmd.Parameters.AddWithValue("@status", cbmCliente.Text);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd); //Adaptar ao C#
@@ -127,7 +131,9 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar(); //Abrir o banco de dados
-                string selecionar = "SELECT * FROM cliente WHERE nomeCliente LIKE '%" + txtPesquisa.Text + "%' ORDER BY nomeCliente;";
+                string selecionar = "SELECT cliente.idCliente, cliente.idPlano, cliente.idTreino, cliente.nomeCliente, cliente.cpfCliente, cliente.telefoneCliente, cliente.StatusCliente, cliente.dataNascCliente, " +
+                    "cliente.emailCliente, cliente.fotoCliente, cliente.dataCadCliente, planoAssinatura.nomePlano, treino.nomeTreino FROM cliente INNER JOIN planoAssinatura ON cliente.idPlano = planoAssinatura.idPlano" +
+                    " INNER JOIN treino ON cliente.idTreino = treino.idTreino WHERE cliente.nomeCliente LIKE '%" + txtPesquisa.Text + "%' ORDER BY nomeCliente;";
                 MySqlCommand cmd = new MySqlCommand(selecionar, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd); //Adaptar ao C#
                 DataTable dt = new DataTable();//Criando uma estrutura da tabela

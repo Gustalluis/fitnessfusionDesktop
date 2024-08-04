@@ -62,7 +62,7 @@ namespace fitnessfusion
             }
             catch
             {
-                byte[] imageToByte = ftpCliente.DownloadData("ftp://u283879542.fitnessfusion@smpsistema.com.br/admin/img/cliente/semfoto.png");
+                byte[] imageToByte = ftpCliente.DownloadData("ftp://u283879542.fitnessfusion@smpsistema.com.br/admin/img/cliente/semfoto.jpeg");
                 return imageToByte;
             }
 
@@ -268,16 +268,12 @@ namespace fitnessfusion
                     mtbNascCliente.Text = variaveis.datanasccliente.ToShortDateString();
                     txtEmail.Text = variaveis.emailcliente;
                     txtSenha.Text = variaveis.senhacliente;
-                    if (!string.IsNullOrEmpty(variaveis.fotocliente))
-                    {
-                        string imagemCaminho = variaveis.enderecoServidorFtp + "img/cliente/" + variaveis.fotocliente;
-                        pctFoto.Image = ByteToImage(GetImgToByte(imagemCaminho));
-                    }
+                    pctFoto.Image = ByteToImage(GetImgToByte(variaveis.enderecoServidorFtp + "img/cliente/" + variaveis.fotocliente));
                 }
             }
-            catch (Exception ex)
+            catch (Exception erro)
             {
-                MessageBox.Show("Ocorreu um erro ao carregar o cliente: " + ex.Message);
+                MessageBox.Show("Ocorreu um erro ao carregar o cliente: " + erro);
             }
             finally
             {
@@ -427,7 +423,7 @@ namespace fitnessfusion
                 ofdFoto.FileName = "";
                 ofdFoto.InitialDirectory = @"C:";
                 ofdFoto.Title = "SELECIONE UMA FOTO";
-                ofdFoto.Filter = "JPG ou PNG (*.jpg ou (*.png)|*.jpg;*.png";
+                ofdFoto.Filter = "JPG, JPEG, PNG (*.jpg;*.jpeg;*.png)|*.jpg;*.jpeg;*.png";
                 ofdFoto.CheckFileExists = true;
                 ofdFoto.CheckPathExists = true;
                 ofdFoto.RestoreDirectory = true;
