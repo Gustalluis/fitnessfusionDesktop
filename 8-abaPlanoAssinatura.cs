@@ -36,8 +36,9 @@ namespace fitnessfusion
                 dgvPlano.Columns[0].Visible = false;
                 dgvPlano.Columns[1].HeaderText = "NOME DO PLANO";
                 dgvPlano.Columns[2].HeaderText = "STATUS PLANO";
-                dgvPlano.Columns[3].HeaderText = "DURAÇÃO DO PLANO";
-                dgvPlano.Columns[4].HeaderText = "DESCRIÇÃO DO PLANO";
+                dgvPlano.Columns[3].HeaderText = "VALOR DO PLANO";
+                dgvPlano.Columns[4].HeaderText = "DURAÇÃO DO PLANO";
+                dgvPlano.Columns[5].HeaderText = "DESCRIÇÃO DO PLANO";
             }
             catch (Exception erro)
             {
@@ -62,8 +63,9 @@ namespace fitnessfusion
                 dgvPlano.Columns[0].Visible = false;
                 dgvPlano.Columns[1].HeaderText = "NOME DO PLANO";
                 dgvPlano.Columns[2].HeaderText = "STATUS PLANO";
-                dgvPlano.Columns[3].HeaderText = "DURAÇÃO DO PLANO";
-                dgvPlano.Columns[4].HeaderText = "DESCRIÇÃO DO PLANO";
+                dgvPlano.Columns[3].HeaderText = "VALOR DO PLANO";
+                dgvPlano.Columns[4].HeaderText = "DURAÇÃO DO PLANO";
+                dgvPlano.Columns[5].HeaderText = "DESCRIÇÃO DO PLANO";
 
             }
             catch (Exception erro)
@@ -89,9 +91,12 @@ namespace fitnessfusion
                 dgvPlano.Columns[0].Visible = false;
                 dgvPlano.Columns[1].HeaderText = "NOME DO PLANO";
                 dgvPlano.Columns[2].HeaderText = "STATUS PLANO";
-                dgvPlano.Columns[3].HeaderText = "DURAÇÃO DO PLANO";
-                dgvPlano.Columns[4].HeaderText = "DESCRIÇÃO DO PLANO";
+                dgvPlano.Columns[3].HeaderText = "VALOR DO PLANO";
+                dgvPlano.Columns[4].HeaderText = "DURAÇÃO DO PLANO";
+                dgvPlano.Columns[5].HeaderText = "DESCRIÇÃO DO PLANO";
 
+                cmd.ExecuteNonQuery();
+                banco.Desconectar();
             }
             catch (Exception erro)
             {

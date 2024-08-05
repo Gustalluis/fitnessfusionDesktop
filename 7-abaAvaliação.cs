@@ -24,9 +24,9 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string carregar = "SELECT \r\n    avaliacaoFisica.idAvaliacaoFisica, \r\n    cliente.nomeCliente, \r\n    funcionario.nomeFuncionario, \r\n    avaliacaoFisica.peso, \r\n " +
-                    "   avaliacaoFisica.altura, \r\n    avaliacaoFisica.medidaCorporal, \r\n    avaliacaoFisica.descricaoAvaliacao, \r\n    avaliacaoFisica.dataAvaliacaoFisica \r\nFROM \r\n  " +
-                    "  avaliacaoFisica \r\nINNER JOIN \r\n    cliente ON avaliacaoFisica.idCliente = cliente.idCliente \r\nINNER JOIN \r\n    funcionario ON avaliacaoFisica.idFuncionario = funcionario.idFuncionario;";
+                string carregar = "SELECT avaliacaoFisica.idAvaliacaoFisica, cliente.nomeCliente, funcionario.nomeFuncionario, avaliacaoFisica.peso,  " +
+                    "   avaliacaoFisica.altura, avaliacaoFisica.medidaCorporal, avaliacaoFisica.descricaoAvaliacao, avaliacaoFisica.dataAvaliacaoFisica FROM" +
+                    "  avaliacaoFisica INNER JOIN cliente ON avaliacaoFisica.idCliente = cliente.idCliente INNER JOIN funcionario ON avaliacaoFisica.idFuncionario = funcionario.idFuncionario;";
                 MySqlCommand cmd = new MySqlCommand(carregar, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

@@ -184,10 +184,10 @@ namespace fitnessfusion
         {
             if (variaveis.linhaSelecionada >= 0)
             {
-                var resposta = MessageBox.Show("Deseja mesmo excluir esse cliente?", "EXCLUIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var resposta = MessageBox.Show("Deseja mesmo excluir?", "EXCLUIR", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resposta == DialogResult.Yes)
                 {
-                    var resposta2 = MessageBox.Show("Tem certeza? Essa ação não poderá ser alterada", "CONFIRMAÇÃO", MessageBoxButtons.YesNo);
+                    var resposta2 = MessageBox.Show("Tem certeza?", "CONFIRMAÇÃO", MessageBoxButtons.YesNo);
                     if (resposta2 == DialogResult.Yes)
                     {
                         CarregarFuncionario();
@@ -199,7 +199,7 @@ namespace fitnessfusion
             }
             else
             {
-                MessageBox.Show("Para excluir selecione um cliente da lista");
+                MessageBox.Show("Para excluir selecione um da lista");
             }
         }
 

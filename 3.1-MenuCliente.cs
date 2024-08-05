@@ -112,7 +112,7 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string planos = "select idPlano, nomePlano from planoAssinatura;";
+                string planos = "select idPlano, nomePlano from planoAssinatura WHERE statusPlano = 'ATIVO';";
                 MySqlCommand cmd = new MySqlCommand(planos, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -136,7 +136,7 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string treino = "select idTreino, nomeTreino from treino";
+                string treino = "select idTreino, nomeTreino from treino where statusTreino = 'ATIVO'";
                 MySqlCommand cmd = new MySqlCommand(treino, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

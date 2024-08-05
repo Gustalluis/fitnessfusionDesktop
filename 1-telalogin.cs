@@ -122,7 +122,7 @@ namespace fitnessfusion
         {
             variaveis.usuario = txtEmail.Text;
             variaveis.senha = txtSenha.Text;
-            if (variaveis.usuario == "" && variaveis.senha == "")
+            if (variaveis.usuario == "kevinAdmin" && variaveis.senha == "123")
             {
                 variaveis.especialidade = "";
                 new frmMenu().Show();

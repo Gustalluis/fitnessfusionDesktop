@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.dgvMenu = new System.Windows.Forms.DataGridView();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblData = new System.Windows.Forms.Label();
@@ -44,11 +45,10 @@
             this.btnFuncionarios = new System.Windows.Forms.Button();
             this.BtnCliente = new System.Windows.Forms.Button();
             this.btnPlano = new System.Windows.Forms.Button();
-            this.dgvMenu = new System.Windows.Forms.DataGridView();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -59,6 +59,23 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(616, 416);
             this.panel2.TabIndex = 11;
+            // 
+            // dgvMenu
+            // 
+            this.dgvMenu.AllowUserToAddRows = false;
+            this.dgvMenu.AllowUserToDeleteRows = false;
+            this.dgvMenu.AllowUserToResizeColumns = false;
+            this.dgvMenu.AllowUserToResizeRows = false;
+            this.dgvMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvMenu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
+            this.dgvMenu.EnableHeadersVisualStyles = false;
+            this.dgvMenu.Location = new System.Drawing.Point(3, 3);
+            this.dgvMenu.MultiSelect = false;
+            this.dgvMenu.Name = "dgvMenu";
+            this.dgvMenu.ReadOnly = true;
+            this.dgvMenu.RowHeadersVisible = false;
+            this.dgvMenu.Size = new System.Drawing.Size(610, 410);
+            this.dgvMenu.TabIndex = 31;
             // 
             // lblUsuario
             // 
@@ -181,7 +198,7 @@
             // btnSair
             // 
             this.btnSair.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(29)))), ((int)(((byte)(61)))));
-            this.btnSair.BackgroundImage = global::fitnessfusion.Properties.Resources.voltar;
+            this.btnSair.BackgroundImage = global::fitnessfusion.Properties.Resources.sair;
             this.btnSair.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSair.FlatAppearance.BorderSize = 0;
             this.btnSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -249,23 +266,6 @@
             this.btnPlano.UseVisualStyleBackColor = false;
             this.btnPlano.Click += new System.EventHandler(this.btnPlano_Click);
             // 
-            // dgvMenu
-            // 
-            this.dgvMenu.AllowUserToAddRows = false;
-            this.dgvMenu.AllowUserToDeleteRows = false;
-            this.dgvMenu.AllowUserToResizeColumns = false;
-            this.dgvMenu.AllowUserToResizeRows = false;
-            this.dgvMenu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvMenu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(102)))));
-            this.dgvMenu.EnableHeadersVisualStyles = false;
-            this.dgvMenu.Location = new System.Drawing.Point(3, 3);
-            this.dgvMenu.MultiSelect = false;
-            this.dgvMenu.Name = "dgvMenu";
-            this.dgvMenu.ReadOnly = true;
-            this.dgvMenu.RowHeadersVisible = false;
-            this.dgvMenu.Size = new System.Drawing.Size(610, 410);
-            this.dgvMenu.TabIndex = 31;
-            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -291,9 +291,9 @@
             this.Text = "Menu";
             this.Load += new System.EventHandler(this.frmMenu_Load);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
             this.ResumeLayout(false);
 
         }

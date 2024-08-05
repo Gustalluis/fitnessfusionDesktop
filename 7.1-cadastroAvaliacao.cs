@@ -41,7 +41,7 @@ namespace fitnessfusion
                 banco.Conectar();
                 
 
-                string planosClientes = "SELECT idCliente, nomeCliente FROM cliente;";
+                string planosClientes = "SELECT idCliente, nomeCliente FROM cliente where statusCliente = 'ATIVO';";
                 MySqlCommand cmd = new MySqlCommand(planosClientes, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -65,7 +65,7 @@ namespace fitnessfusion
             {
                 banco.Conectar();
 
-                string funcionario = "SELECT idFuncionario, nomeFuncionario FROM funcionario;";
+                string funcionario = "SELECT idFuncionario, nomeFuncionario FROM funcionario where statusFuncionario = 'ATIVO';";
                 MySqlCommand cmd = new MySqlCommand(funcionario, banco.conexaoDb);
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -119,14 +119,18 @@ namespace fitnessfusion
             try
             {
                 banco.Conectar();
-                string carregar = "SELECT * FROM avaliacaoFisica WHERE idAvaliacaoFisica = @codigo;";
+                string carregar = "SELECT avaliacaoFisica.idAvaliacaoFisica, cliente.nomeCliente, funcionario.nomeFuncionario, avaliacaoFisica.peso, avaliacaoFisica.altura, " +
+                    "avaliacaoFisica.medidaCorporal, avaliacaoFisica.descricaoAvaliacao, avaliacaoFisica.dataAvaliacaoFisica, avaliacaoFisica.statusAvaliacao FROM " +
+                    "avaliacaoFisica INNER JOIN cliente ON avaliacaoFisica.idCliente = cliente.idCliente INNER JOIN funcionario ON " +
+                    "avaliacaoFisica.idFuncionario = funcionario.idFuncionario WHERE idAvaliacaoFisica = @codigo;";
                 MySqlCommand cmd = new MySqlCommand(carregar, banco.conexaoDb);
                 cmd.Parameters.AddWithValue("@codigo", variaveis.codigoAva);
                 MySqlDataReader dr = cmd.ExecuteReader();
 
                 if (dr.Read())
                 {
-                    
+                    variaveis.nomecliente = dr.GetString(1);
+                    variaveis.nomeFuncionario = dr.GetString(2);
                     variaveis.peso = dr.GetString(3);
                     variaveis.altura = dr.GetString(4);
                     variaveis.medida = dr.GetString(5);
@@ -134,6 +138,8 @@ namespace fitnessfusion
                     variaveis.data = dr.GetDateTime(7);
                     variaveis.statusAvaliacao = dr.GetString(8);
 
+                    cmbAluno.Text = variaveis.nomecliente;
+                    cmbFuncionario.Text = variaveis.nomeFuncionario;
                     txtpeso.Text = variaveis.peso;
                     txtAltura.Text = variaveis.altura;
                     txtMedida.Text = variaveis.medida;
